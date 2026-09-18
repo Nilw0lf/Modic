@@ -1,0 +1,122 @@
+{
+  "base-rate-neglect": {
+    "explanationTitle": "Ask which population you are counting.",
+    "explanation": [
+      "A detection rate starts with actual spam and asks how much gets flagged. The chance that a flagged message is spam starts with all flagged messages. Swapping those denominators is an easy mistake.",
+      "In this experiment, only 1% of messages are spam initially. A 90% detection rate produces about 9 correct flags per 1,000 messages. A 5% false alarm rate among the other 990 messages produces about 49.5 false flags on average. The probability that a flag indicates spam is therefore about 15.4%, not 90%."
+    ],
+    "sections": [
+      {
+        "title": "Inside this model",
+        "paragraphs": [
+          "P(spam | flag) = p × d / [p × d + (1 − p) × f], where p is the base rate, d is the detection rate, and f is the false alarm rate.",
+          "The dot grid samples 1,000 independent messages. Sample counts fluctuate; the model probability is calculated exactly from the controls. A sample with no flags has no observed proportion."
+        ]
+      }
+    ],
+    "whyItMatters": [
+      "Evidence should update a prior belief, not erase it. Ask both how often a signal finds its target and how often it appears without that target."
+    ],
+    "limitations": [
+      "Fixed error rates and independent messages simplify a real classifier. Rates can differ across populations and change over time.",
+      "This model illustrates reasoning about evidence; it does not measure how people actually make judgments."
+    ],
+    "furtherReading": "Explore conditional probability and Bayes’ rule in Brown University’s Seeing Theory.",
+    "readingLinks": [
+      {
+        "title": "Seeing Theory — Bayesian inference",
+        "url": "https://seeing-theory.brown.edu/bayesian-inference/index.html"
+      }
+    ]
+  },
+  "regression-to-the-mean": {
+    "explanationTitle": "The first result contains some luck.",
+    "explanation": [
+      "In the experiment, each person has an unchanged underlying ability. Their two scores add fresh, independent noise to that same ability. Selecting the highest first scores also selects people whose first measurement was unusually favorable.",
+      "The next measurement usually removes some of that advantage at the group level. Nobody had to become less capable. Selecting on an unusually bad first result creates the opposite tendency."
+    ],
+    "sections": [
+      {
+        "title": "Inside this model",
+        "paragraphs": [
+          "Ability is normally distributed with mean 50 and standard deviation 10. Both scores add normally distributed noise with mean zero and the standard deviation you choose.",
+          "The model’s correlation between repeated scores is 100 / (100 + noise²). With no noise the correlation is 1 and scores match exactly. With noise, the conditional expected second score is 50 + correlation × (first score − 50). Scores are unbounded units."
+        ]
+      }
+    ],
+    "whyItMatters": [
+      "A change following an unusually good or bad result does not by itself identify a cause. A comparison group can help distinguish a real intervention from selection and noise."
+    ],
+    "limitations": [
+      "The model has stable ability and independent errors. Learning, fatigue, shared conditions, and real trends can change the pattern.",
+      "Regression is a conditional average tendency, not a force that guarantees the next individual score will be closer to 50."
+    ],
+    "furtherReading": "For a broader treatment of regression, measurement, and inference, see the authors’ resources for Regression and Other Stories.",
+    "readingLinks": [
+      {
+        "title": "Gelman, Hill & Vehtari — Regression and Other Stories",
+        "url": "https://sites.stat.columbia.edu/gelman/regression/"
+      }
+    ]
+  },
+  "power-laws": {
+    "explanationTitle": "The distribution of attention matters.",
+    "explanation": [
+      "A power relationship can allocate very different shares to different ranks. Here, the probability of visiting a page is proportional to 1 / rankᵃ. Increasing a makes the highest ranks more dominant.",
+      "At exponent zero, every page has the same probability. Random counts still vary. As the exponent increases, a small minority of ranks receives much of the traffic even before sampling variation is added."
+    ],
+    "sections": [
+      {
+        "title": "Inside this model",
+        "paragraphs": [
+          "The probabilities are normalized over a finite set of 10 to 100 ranked pages. One thousand independent visits are drawn from that distribution. Ranks do not change after a visit.",
+          "The top-tenth statistic compares observed traffic with its exact expected share. This is a rank-based, Zipf-style model, not a sample from an unbounded continuous Pareto distribution."
+        ]
+      }
+    ],
+    "whyItMatters": [
+      "An average can hide how strongly a total depends on a few contributors. Looking at concentration helps reveal that dependence."
+    ],
+    "limitations": [
+      "The model imposes a power law; it does not show how one emerges or establish that real data follow it.",
+      "All moments are finite because the number of pages is bounded. Claims about infinite variance do not apply to this finite model."
+    ],
+    "furtherReading": "Easley and Kleinberg discuss popularity, cumulative advantage, and power laws in Networks, Crowds, and Markets.",
+    "readingLinks": [
+      {
+        "title": "Networks, Crowds, and Markets — Power Laws and Rich-Get-Richer Phenomena",
+        "url": "https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch18.pdf"
+      }
+    ]
+  },
+  "network-effects": {
+    "explanationTitle": "Value can depend on who else is there.",
+    "explanation": [
+      "A communication tool can become more useful when more of the people you want to reach use it. Each additional member introduces new possible pairs. With n members there are n(n − 1)/2 distinct undirected pairs.",
+      "The experiment separates that possibility from actual connections. Each pair connects independently with the probability you choose. Hollow circles have no direct connections in the sampled network."
+    ],
+    "sections": [
+      {
+        "title": "Inside this model",
+        "paragraphs": [
+          "This is a small undirected random graph with no self-links or duplicate edges. At 0% connection chance there are no edges. At 100%, every possible pair is connected.",
+          "Connections are only an illustrative proxy for opportunity. The simulation does not assign economic value, and it does not assume that indirect connections are as useful as direct ones."
+        ]
+      }
+    ],
+    "whyItMatters": [
+      "Adoption and usefulness can reinforce one another when people gain from sharing a network. But a member count alone leaves out who can connect and why they would want to."
+    ],
+    "limitations": [
+      "Real relationships are not independent or equally likely. Clusters, geography, compatibility, and personal preferences matter.",
+      "Congestion, spam, moderation costs, and poor-quality interactions can offset benefits. More possible pairs do not guarantee more value."
+    ],
+    "furtherReading": "Easley and Kleinberg distinguish the direct benefits of network participation from copying others for information.",
+    "readingLinks": [
+      {
+        "title": "Networks, Crowds, and Markets — Network Effects",
+        "url": "https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch17.pdf"
+      }
+    ]
+  }
+}

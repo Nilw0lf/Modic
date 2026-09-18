@@ -1,0 +1,203 @@
+import { effectSchema, type ThinkerRelationshipType } from "@/types/catalog";
+const attribution = (
+  effect: string,
+  thinkerId: string,
+  relationship: ThinkerRelationshipType,
+) => ({
+  id: `${effect}-${thinkerId}`,
+  thinkerId,
+  relationship,
+  editorialStatus: "provisional" as const,
+  sources: [],
+});
+export const effects = effectSchema.array().parse([
+  {
+    id: "lindy",
+    slug: "lindy-effect",
+    name: "Lindy Effect",
+    shortDescription:
+      "For some things, the longer they have lasted, the longer they may last.",
+    categoryIds: ["risk", "complexity"],
+    thinkerRelationships: [attribution("lindy", "taleb", "POPULARIZED")],
+    status: "live",
+    difficulty: "intuitive",
+    simulationType: "lindy",
+    relatedEffectIds: ["fat-tails", "survivorship", "power-laws"],
+  },
+  {
+    id: "fat-tails",
+    slug: "fat-tails",
+    name: "Fat Tails",
+    shortDescription:
+      "Extreme events can be more common—and more consequential—than we expect.",
+    categoryIds: ["risk", "probability"],
+    thinkerRelationships: [
+      attribution("fat-tails", "taleb", "DISCUSSED"),
+      attribution("fat-tails", "mandelbrot", "ASSOCIATED_WITH"),
+    ],
+    status: "planned",
+    difficulty: "intermediate",
+    relatedEffectIds: ["power-laws", "ruin", "lindy"],
+  },
+  {
+    id: "kelly",
+    slug: "kelly-criterion",
+    name: "Kelly Criterion",
+    shortDescription:
+      "Having an edge is one thing. Knowing how much to bet is another.",
+    categoryIds: ["decisions", "markets"],
+    thinkerRelationships: [attribution("kelly", "kelly", "FORMALIZED")],
+    status: "planned",
+    difficulty: "technical",
+    relatedEffectIds: ["ruin", "fat-tails"],
+  },
+  {
+    id: "ruin",
+    slug: "gamblers-ruin",
+    name: "Gambler’s Ruin",
+    shortDescription:
+      "Even a favorable game can end badly when your resources are finite.",
+    categoryIds: ["risk", "probability"],
+    thinkerRelationships: [attribution("ruin", "taleb", "DISCUSSED")],
+    status: "live",
+    simulationType: "gamblers-ruin",
+    difficulty: "intermediate",
+    relatedEffectIds: ["kelly", "risk-of-ruin", "fat-tails", "ergodicity"],
+  },
+  {
+    id: "base-rate",
+    slug: "base-rate-neglect",
+    name: "Base Rate Neglect",
+    shortDescription:
+      "A convincing story can make us forget how rare something was to begin with.",
+    categoryIds: ["behavior", "probability"],
+    thinkerRelationships: [
+      attribution("base-rate", "kahneman", "ASSOCIATED_WITH"),
+      attribution("base-rate", "tversky", "ASSOCIATED_WITH"),
+    ],
+    status: "live",
+    simulationType: "base-rate",
+    difficulty: "intuitive",
+    relatedEffectIds: ["regression", "survivorship"],
+  },
+  {
+    id: "regression",
+    slug: "regression-to-the-mean",
+    name: "Regression to the Mean",
+    shortDescription:
+      "An extraordinary result is often followed by something more ordinary.",
+    categoryIds: ["probability", "decisions"],
+    thinkerRelationships: [attribution("regression", "kahneman", "DISCUSSED")],
+    status: "live",
+    simulationType: "regression",
+    difficulty: "intuitive",
+    relatedEffectIds: ["base-rate", "survivorship"],
+  },
+  {
+    id: "goodhart",
+    slug: "goodharts-law",
+    name: "Goodhart’s Law",
+    shortDescription:
+      "When a measure becomes a target, it can stop being a good measure.",
+    categoryIds: ["decisions", "markets"],
+    thinkerRelationships: [
+      attribution("goodhart", "goodhart", "ASSOCIATED_WITH"),
+    ],
+    status: "planned",
+    difficulty: "intuitive",
+    relatedEffectIds: ["principal-agent", "network"],
+  },
+  {
+    id: "survivorship",
+    slug: "survivorship-bias",
+    name: "Survivorship Bias",
+    shortDescription:
+      "The stories we can see may hide the evidence we need most.",
+    categoryIds: ["behavior", "risk"],
+    thinkerRelationships: [attribution("survivorship", "taleb", "DISCUSSED")],
+    status: "planned",
+    difficulty: "intuitive",
+    relatedEffectIds: ["lindy", "base-rate"],
+  },
+  {
+    id: "power-laws",
+    slug: "power-laws",
+    name: "Power Laws",
+    shortDescription:
+      "A small number of outcomes can account for a very large share of the whole.",
+    categoryIds: ["complexity", "probability"],
+    thinkerRelationships: [
+      attribution("power-laws", "mandelbrot", "ASSOCIATED_WITH"),
+    ],
+    status: "live",
+    simulationType: "power-laws",
+    difficulty: "intermediate",
+    relatedEffectIds: ["fat-tails", "network"],
+  },
+  {
+    id: "loss-aversion",
+    slug: "loss-aversion",
+    name: "Loss Aversion",
+    shortDescription:
+      "Losing something can feel larger than gaining the very same thing.",
+    categoryIds: ["behavior", "decisions"],
+    thinkerRelationships: [
+      attribution("loss-aversion", "kahneman", "DEVELOPED"),
+      attribution("loss-aversion", "tversky", "DEVELOPED"),
+    ],
+    status: "planned",
+    difficulty: "intuitive",
+    relatedEffectIds: ["base-rate", "kelly"],
+  },
+  {
+    id: "network",
+    slug: "network-effects",
+    name: "Network Effects",
+    shortDescription:
+      "Some things become more useful when more people use them.",
+    categoryIds: ["complexity", "markets"],
+    thinkerRelationships: [],
+    status: "live",
+    simulationType: "network",
+    difficulty: "intuitive",
+    relatedEffectIds: ["power-laws", "principal-agent"],
+  },
+  {
+    id: "principal-agent",
+    slug: "principal-agent-problem",
+    name: "Principal–Agent Problem",
+    shortDescription:
+      "When someone acts on your behalf, whose interests are they serving?",
+    categoryIds: ["games", "markets"],
+    thinkerRelationships: [],
+    status: "planned",
+    difficulty: "intermediate",
+    relatedEffectIds: ["goodhart", "loss-aversion"],
+  },
+  {
+    id: "risk-of-ruin",
+    slug: "risk-of-ruin",
+    name: "Risk of Ruin",
+    shortDescription:
+      "The chance of crossing a boundary from which you cannot continue.",
+    categoryIds: ["risk", "decisions"],
+    thinkerRelationships: [],
+    status: "planned",
+    difficulty: "intermediate",
+    experimentType: "calculator",
+    relatedEffectIds: ["ruin", "kelly", "fat-tails"],
+  },
+  {
+    id: "ergodicity",
+    slug: "ergodicity",
+    name: "Ergodicity",
+    shortDescription:
+      "When does an average across many worlds describe one journey through time?",
+    categoryIds: ["probability", "complexity"],
+    thinkerRelationships: [],
+    status: "planned",
+    difficulty: "technical",
+    experimentType: "thought-experiment",
+    relatedEffectIds: ["ruin", "kelly"],
+  },
+]);

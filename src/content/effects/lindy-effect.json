@@ -1,0 +1,31 @@
+{
+  "whatToNotice": "Age is evidence only under a model that makes it informative. In this experiment, stronger Lindy assumptions make age matter more.",
+  "explanation": [
+    "A book that has been read for a century may have a different outlook from one published last week. It has already endured changes in taste, distribution, and the world around it. That survival can be informative—but only if the process that kept it relevant continues.",
+    "The Lindy heuristic concerns some non-perishable things: ideas, texts, practices, and institutions. It does not say that old things cannot disappear. It suggests that, under suitable assumptions, greater age can be associated with greater remaining longevity."
+  ],
+  "whyItMatters": [
+    "Age can be one input when evaluating a method, a standard, or a body of knowledge. It invites a useful question: what has this already survived? Pair that question with another: has the environment changed enough to make its history irrelevant?"
+  ],
+  "examples": [
+    {
+      "title": "A mathematical idea",
+      "text": "A useful proof can remain useful without physically wearing out. Continued use may reveal enduring relevance."
+    },
+    {
+      "title": "A shared standard",
+      "text": "A long-lived protocol can accumulate tools, familiarity, and adoption. Those mechanisms may support persistence."
+    },
+    {
+      "title": "A book still in print",
+      "text": "Repeated discovery across generations can suggest durability, while saying little about any particular title’s future."
+    }
+  ],
+  "limitations": [
+    "Physical organisms and components age and wear out. Their survival mechanisms generally differ from the non-perishable examples above.",
+    "Disruption, regulation, changing tastes, and dependence on a fragile institution can break a historical pattern abruptly.",
+    "Looking only at survivors hides failures. A sound empirical claim needs a defined population, information about those that disappeared, and an appropriate survival model.",
+    "This experiment builds the age–longevity relationship into its assumptions. It does not estimate a real survival process or establish that the heuristic is true."
+  ],
+  "furtherReading": "A sourced reading list is being prepared. Thinker relationships in this first edition are provisional editorial associations, not claims of sole invention."
+}

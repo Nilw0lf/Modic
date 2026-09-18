@@ -1,0 +1,10 @@
+node_modules/
+.pnpm-store/
+.next/
+.vercel/
+out/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.env*
+!.env.example

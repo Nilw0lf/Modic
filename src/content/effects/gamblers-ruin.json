@@ -1,0 +1,54 @@
+{
+  "explanationTitle": "What is Gambler’s Ruin?",
+  "explanation": [
+    "A sequence of uncertain outcomes can push a participant to a boundary beyond which they cannot continue. In the classical gambler’s ruin problem, wealth moves in fixed steps between absorbing boundaries. This experiment explores a different, proportional-risk version: each round risks a fraction of current wealth, with a user-defined lower threshold.",
+    "With a stake below 100% of wealth, repeated proportional losses do not normally reach exactly zero in a finite number of rounds. Here, ruin means reaching or falling below the chosen threshold. That boundary represents a point at which participation stops, not necessarily literal bankruptcy."
+  ],
+  "sections": [
+    {
+      "title": "What the simulation assumes",
+      "paragraphs": [
+        "Each round is independent, with the same win probability and payoff. A win adds risk × current wealth × payoff; a loss removes risk × current wealth. A payoff of 1 means a net gain equal to the amount risked. Wealth is measured in illustrative units, not a specific currency.",
+        "At the first threshold crossing, the life stops betting and keeps its actual remaining wealth for all subsequent rounds. There is no reset, rescue, or return to participation. Starting wealth must be strictly greater than the threshold. There are no fees, taxes, borrowing, leverage, or cash flows.",
+        "The many-lives view uses all simulated outcomes for statistics. It displays up to 24 sample paths and pointwise 25th, 50th, and 75th percentiles at up to 101 checkpoints. The median line can join observations from different lives; it is not itself a possible individual trajectory."
+      ]
+    },
+    {
+      "title": "Why repeated risk changes outcomes",
+      "paragraphs": [
+        "Wealth compounds multiplicatively. A 20% gain followed by a 20% loss leaves 96% of the starting wealth. The order of the same outcomes would not change an unstopped final product, but it can change whether the path crosses the ruin threshold along the way.",
+        "Increasing exposure makes each gain and loss larger. Compare runs with the same probability and payoff while changing risk. Whether ruin increases, and by how much, depends on the threshold, horizon, and the rest of the model; it is not assumed by the interpretation text."
+      ]
+    },
+    {
+      "title": "Expected value versus survival",
+      "paragraphs": [
+        "Before stopping, the expected fractional change per round is risk × [win probability × payoff − loss probability]. A positive value describes an average across possible outcomes. It does not promise that any individual path survives.",
+        "Mean ending wealth gives equal weight to every life’s final wealth and can be pulled upward by exceptional winners. Median ending wealth divides the ordered outcomes in half. Expected log growth describes compounding differently: probability × log(1 + risk × payoff) + loss probability × log(1 − risk). These quantities answer different questions.",
+        "Ruin probability here is the fraction of simulated lives that crossed the threshold within the selected number of rounds. It is a Monte Carlo estimate for this model. No observed ruin in a finite run is not proof that the underlying probability is zero."
+      ]
+    },
+    {
+      "title": "Where this idea is useful",
+      "paragraphs": [
+        "This model helps separate average rewards from the ability to continue taking opportunities. It can sharpen questions about reserves, repeated project exposure, or strategies that depend on recovering after setbacks. It is an educational model, not a recommendation for a financial position.",
+        "Use the one-life view to see the sequence of drawdowns, then the many-lives view to see how atypical that sequence may be. Share a link to compare the same assumptions; links deliberately omit the seed and individual random outcomes."
+      ]
+    }
+  ],
+  "limitations": [
+    "Real outcomes can be correlated, probabilities can change, and losses may exceed a planned stake. None of those mechanisms appear here.",
+    "A symmetric logarithmic wealth axis keeps zero visible while compressing very large outcomes. Equal vertical distances do not represent equal absolute gains. Some extreme sample paths are clipped for readability; statistics still include them.",
+    "A finite number of simulated lives can miss very rare outcomes. Sample means can vary substantially when a few winners dominate.",
+    "The threshold is a modeling choice. Changing it changes the definition of ruin. Results are not the classical fixed-stake, two-boundary gambler’s ruin formula.",
+    "This model illustrates specific probabilistic mechanisms. It cannot establish broader philosophical claims about risk, time, or how anyone ought to live."
+  ],
+  "furtherReading": "For the classical fixed-stake model, see Matthew Aldridge’s University of Leeds probability lecture notes, Section 3: Gambler’s ruin. The proportional-risk experiment here uses different assumptions. Additional sourced readings are in preparation.",
+  "limitationsTitle": "Where the model breaks",
+  "readingLinks": [
+    {
+      "title": "Classical ruin: University of Leeds lecture notes",
+      "url": "https://mpaldridge.github.io/math2750/S03-gamblers-ruin.html"
+    }
+  ]
+}

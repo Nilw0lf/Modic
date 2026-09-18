@@ -1,0 +1,18 @@
+{
+  "risk-of-ruin": {
+    "explanation": [
+      "Risk of ruin is the probability that a stochastic process crosses a specified absorbing boundary over a stated horizon. The probability depends on the model, starting resources, and what counts as ruin."
+    ],
+    "limitations": [
+      "Different boundaries and time horizons answer different questions. Estimates under a simple model need not describe real-world failure probabilities."
+    ]
+  },
+  "ergodicity": {
+    "explanation": [
+      "Ergodicity concerns conditions under which averages over time agree with averages across a statistical ensemble. The property depends on the process and on the observable being averaged."
+    ],
+    "limitations": [
+      "A difference between a mean and a median alone does not establish non-ergodicity. Finite-horizon simulations illustrate differences between paths and populations, not a proof of an ergodic theorem."
+    ]
+  }
+}

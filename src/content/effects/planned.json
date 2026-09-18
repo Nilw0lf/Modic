@@ -1,0 +1,123 @@
+{
+  "fat-tails": {
+    "explanation": [
+      "A fat-tailed distribution assigns more probability to very large deviations than a thin-tailed benchmark such as a normal distribution. Rare observations can dominate totals and make estimates unstable."
+    ],
+    "whyItMatters": [
+      "A model that understates extreme outcomes can make a system look safer than it is."
+    ],
+    "limitations": [
+      "Fat-tailed does not mean every extreme event is likely. Tail definitions and the relevant comparison distribution need to be made explicit."
+    ]
+  },
+  "kelly-criterion": {
+    "explanation": [
+      "The Kelly criterion chooses an allocation that maximizes expected logarithmic wealth in a specified repeated-bet model. It links the size of a position to both its edge and its risk."
+    ],
+    "whyItMatters": [
+      "An advantage can be destroyed by betting too much. Position size is part of the decision."
+    ],
+    "limitations": [
+      "The model relies on probability estimates and payoff assumptions. Estimation error, constraints, and large drawdowns complicate practical use; this entry is educational."
+    ]
+  },
+  "gamblers-ruin": {
+    "explanation": [
+      "A player with finite resources can hit zero before benefiting from favorable long-run averages. The probability of ruin depends on the edge, stake sizes, bankroll, stopping rules, and time horizon."
+    ],
+    "whyItMatters": [
+      "The ability to keep playing can matter as much as the average payoff."
+    ],
+    "limitations": [
+      "Different boundaries and betting rules produce different ruin probabilities. There is no single probability that applies to every game."
+    ]
+  },
+  "base-rate-neglect": {
+    "explanation": [
+      "A base rate describes how common something is before new evidence arrives. Ignoring it can lead to a mistaken interpretation of an otherwise informative signal."
+    ],
+    "whyItMatters": [
+      "The same signal can mean different things in populations where the underlying event has different prevalence."
+    ],
+    "limitations": [
+      "The relevant population must be defined carefully. An inappropriate base rate can mislead just as much as ignoring one."
+    ]
+  },
+  "regression-to-the-mean": {
+    "explanation": [
+      "When repeated measurements are imperfectly correlated, observations selected for an extreme initial value tend to be less extreme on the next measurement. Random variation is part of what made the first value stand out."
+    ],
+    "whyItMatters": [
+      "An improvement after an unusually bad result does not by itself show that an intervention worked."
+    ],
+    "limitations": [
+      "This is a tendency across selected observations, not a promise about the next result. Real trends and changing conditions can coexist with it."
+    ]
+  },
+  "goodharts-law": {
+    "explanation": [
+      "A measure can lose its connection to the goal it once tracked when people begin optimizing it. Incentives, gaming, and changes in behavior can all weaken the relationship."
+    ],
+    "whyItMatters": [
+      "A target should be evaluated alongside the underlying purpose it is meant to serve."
+    ],
+    "limitations": [
+      "Targets do not always fail. The effect depends on the design of the measure, the incentives, and how easily behavior can adapt."
+    ]
+  },
+  "survivorship-bias": {
+    "explanation": [
+      "Survivorship bias arises when we draw conclusions from the cases that remain visible while overlooking those that disappeared or were filtered out."
+    ],
+    "whyItMatters": [
+      "Studying successful organizations alone cannot tell us whether their common habits caused success."
+    ],
+    "limitations": [
+      "Not every selected sample creates the same distortion. The selection process and the missing cases determine the direction and size of the bias."
+    ]
+  },
+  "power-laws": {
+    "explanation": [
+      "In a power-law relationship, one quantity scales as a fixed power of another. In certain distributions, this produces a long tail in which a few observations can account for a large share of the total."
+    ],
+    "whyItMatters": [
+      "An average can hide extreme concentration and give a poor description of a typical observation."
+    ],
+    "limitations": [
+      "A straight-looking segment on a log plot does not establish a power law. Alternative distributions and finite-size effects must be considered."
+    ]
+  },
+  "loss-aversion": {
+    "explanation": [
+      "Loss aversion describes a pattern in which losses relative to a reference point carry more weight in choices than comparable gains. The reference point is part of the model."
+    ],
+    "whyItMatters": [
+      "How a choice is framed can influence what feels acceptable, even when the underlying outcomes are similar."
+    ],
+    "limitations": [
+      "The magnitude and presence of the effect depend on context. A universal fixed multiplier is not an appropriate assumption."
+    ]
+  },
+  "network-effects": {
+    "explanation": [
+      "A network effect occurs when the value of a product or service to a user depends on participation by other users. A larger messaging network, for instance, may make more conversations possible."
+    ],
+    "whyItMatters": [
+      "Adoption can reinforce adoption, which can influence competition and the durability of shared standards."
+    ],
+    "limitations": [
+      "Congestion, poor matching, and incompatibility can limit or reverse the benefit. Growth alone does not prove a network effect."
+    ]
+  },
+  "principal-agent-problem": {
+    "explanation": [
+      "A principal delegates a task to an agent whose incentives or information may differ from their own. That difference can lead the agent to choose actions the principal would not prefer."
+    ],
+    "whyItMatters": [
+      "Contracts, oversight, and measures of performance influence what delegated work actually achieves."
+    ],
+    "limitations": [
+      "Misaligned incentives are not the only explanation for poor outcomes. Uncertainty, resource limits, and genuine disagreement also matter."
+    ]
+  }
+}
