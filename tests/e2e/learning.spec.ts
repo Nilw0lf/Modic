@@ -111,6 +111,8 @@ test("homepage and learning page fit dark mode", async ({ page }, testInfo) => {
   await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });
   for (const route of ["/", "/learn"]) {
     await page.goto(route);
+    if ((await page.locator("html").getAttribute("data-theme")) !== "dark")
+      await page.getByRole("button", { name: "Switch to dark mode" }).click();
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,

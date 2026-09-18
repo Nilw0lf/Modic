@@ -493,80 +493,78 @@ button:disabled {
     flex-shrink: 0;
   }
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --background: #171d1a;
-    --foreground: #e3e9e3;
-    --muted: #a6b1a8;
-    --border: #37433b;
-    --accent: #99b7ff;
-    --positive: #8bcbb0;
-    --negative: #f1a29a;
-    --surface: #222c25;
-    --chart-surface: #202b3c;
-    --series-1: #99b7ff;
-    --series-2: #7595cf;
-    --series-3: #bcd0ff;
-  }
-  .desktop-nav,
-  .hero-bottom p,
-  .card-categories,
-  .directory-row-meta,
-  .status,
-  .edition,
-  .preview-note,
-  .index-label,
-  .site-footer span,
-  .site-footer a:not(.footer-brand) {
-    color: var(--muted);
-  }
-  .featured-experiment,
-  .model-notes,
-  .planned-panel {
-    background: var(--surface);
-    border-color: var(--border);
-  }
-  .effect-card:hover,
-  .filter-list button:hover:not(.active) {
-    background: var(--surface);
-  }
-  .simulation-shell {
-    background: var(--background);
-  }
-  .simulation-disclaimer {
-    background: var(--surface);
-    border-color: var(--border);
-  }
-  .simulation-controls {
-    border-color: var(--border);
-  }
-  .filter-list button.active {
-    background: var(--foreground);
-    color: var(--background);
-  }
-  .segmented-control button[aria-pressed="true"] {
-    box-shadow: 0 0 0 1px var(--border);
-  }
-  .run-button {
-    color: var(--background);
-  }
-  .card-title > span,
-  .featured-index {
-    color: var(--muted);
-  }
-  .chart-caption i {
-    background: var(--chart-surface);
-  }
-  .search-row input::placeholder {
-    color: var(--muted);
-  }
-  .mobile-nav nav {
-    box-shadow: none;
-  }
-  .hero-bottom p {
-    color: var(--muted);
-  }
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #171d1a;
+  --foreground: #e3e9e3;
+  --muted: #a6b1a8;
+  --border: #37433b;
+  --accent: #99b7ff;
+  --positive: #8bcbb0;
+  --negative: #f1a29a;
+  --surface: #222c25;
+  --chart-surface: #202b3c;
+  --series-1: #99b7ff;
+  --series-2: #7595cf;
+  --series-3: #bcd0ff;
+}
+html[data-theme="dark"] .desktop-nav,
+html[data-theme="dark"] .hero-bottom p,
+html[data-theme="dark"] .card-categories,
+html[data-theme="dark"] .directory-row-meta,
+html[data-theme="dark"] .status,
+html[data-theme="dark"] .edition,
+html[data-theme="dark"] .preview-note,
+html[data-theme="dark"] .index-label,
+html[data-theme="dark"] .site-footer span,
+html[data-theme="dark"] .site-footer a:not(.footer-brand) {
+  color: var(--muted);
+}
+html[data-theme="dark"] .featured-experiment,
+html[data-theme="dark"] .model-notes,
+html[data-theme="dark"] .planned-panel {
+  background: var(--surface);
+  border-color: var(--border);
+}
+html[data-theme="dark"] .effect-card:hover,
+html[data-theme="dark"] .filter-list button:hover:not(.active) {
+  background: var(--surface);
+}
+html[data-theme="dark"] .simulation-shell {
+  background: var(--background);
+}
+html[data-theme="dark"] .simulation-disclaimer {
+  background: var(--surface);
+  border-color: var(--border);
+}
+html[data-theme="dark"] .simulation-controls {
+  border-color: var(--border);
+}
+html[data-theme="dark"] .filter-list button.active {
+  background: var(--foreground);
+  color: var(--background);
+}
+html[data-theme="dark"] .segmented-control button[aria-pressed="true"] {
+  box-shadow: 0 0 0 1px var(--border);
+}
+html[data-theme="dark"] .run-button {
+  color: var(--background);
+}
+html[data-theme="dark"] .card-title > span,
+html[data-theme="dark"] .featured-index {
+  color: var(--muted);
+}
+html[data-theme="dark"] .chart-caption i {
+  background: var(--chart-surface);
+}
+html[data-theme="dark"] .search-row input::placeholder {
+  color: var(--muted);
+}
+html[data-theme="dark"] .mobile-nav nav {
+  box-shadow: none;
+}
+html[data-theme="dark"] .hero-bottom p {
+  color: var(--muted);
 }
 @media (prefers-reduced-motion: reduce) {
   .glyph-tail,

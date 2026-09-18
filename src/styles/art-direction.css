@@ -15,8 +15,8 @@ body:has(.home-hero) {
   background: var(--background);
 }
 body:has(.home-hero) .page-shell {
-  max-width: 1540px;
-  padding-inline: clamp(24px, 4.5vw, 70px);
+  max-width: 1960px;
+  padding-inline: clamp(24px, 3.2vw, 72px);
 }
 body:has(.home-hero) .site-header {
   z-index: 2;
@@ -70,6 +70,16 @@ body:has(.home-hero) .header-explore {
 }
 body:has(.home-hero) .header-explore:hover {
   background: #ffb784;
+}
+body:has(.home-hero) .theme-toggle {
+  color: #f7f2ef;
+  border-color: #ffffff55;
+  background: #ffffff0c;
+}
+body:has(.home-hero) .theme-toggle:hover {
+  color: var(--hero-orange);
+  border-color: var(--hero-orange);
+  background: #ffffff16;
 }
 .home-hero {
   color: #f7f2ef;
@@ -434,7 +444,21 @@ body:has(.home-hero) .featured-experiment {
     padding-block: 38px 40px;
   }
   .hero-grid {
-    gap: 65px;
+    gap: clamp(65px, 4.5vw, 92px);
+  }
+}
+@media (min-width: 1700px) {
+  .home-hero {
+    padding-block: 48px 50px;
+  }
+  .home-hero h1 {
+    font-size: clamp(86px, 5.1vw, 108px);
+  }
+  .home-hero .hero-bottom p {
+    font-size: 17px;
+  }
+  .hero-model-chart {
+    max-height: 300px;
   }
 }
 @media (max-width: 1100px) {
@@ -545,29 +569,30 @@ body:has(.home-hero) .featured-experiment {
     overflow-x: auto;
   }
 }
-@media (prefers-color-scheme: dark) {
-  body:has(.home-hero) {
-    --background: #212d36;
-    --foreground: #f2eeea;
-    --muted: #bac4cb;
-    --border: #42515a;
-    --surface: #2b3944;
-    --chart-surface: #2e4152;
-    --accent: #a6c5e1;
-    --hero-blue: #284b6b;
-  }
-  body:has(.home-hero) .filter-list button {
-    color: #e6e3df;
-    border-color: #73889b;
-  }
-  body:has(.home-hero) .filter-list button.active {
-    background: #aec8df;
-    color: #192c3d;
-  }
-  body:has(.home-hero) .filter-list button.active::before {
-    background: #294d6d;
-  }
-  body:has(.home-hero) .featured-experiment {
-    background: #2a3945;
-  }
+html[data-theme="dark"] body:has(.home-hero) {
+  --background: #212d36;
+  --foreground: #f2eeea;
+  --muted: #bac4cb;
+  --border: #42515a;
+  --surface: #2b3944;
+  --chart-surface: #2e4152;
+  --accent: #a6c5e1;
+  --hero-blue: #284b6b;
+}
+html[data-theme="dark"] body:has(.home-hero) .filter-list button {
+  color: #e6e3df;
+  border-color: #73889b;
+}
+html[data-theme="dark"] body:has(.home-hero) .filter-list button.active {
+  background: #aec8df;
+  color: #192c3d;
+}
+html[data-theme="dark"]
+  body:has(.home-hero)
+  .filter-list
+  button.active::before {
+  background: #294d6d;
+}
+html[data-theme="dark"] body:has(.home-hero) .featured-experiment {
+  background: #2a3945;
 }

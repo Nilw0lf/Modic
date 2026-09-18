@@ -112,6 +112,7 @@ test("dark mode, reduced motion, and responsive filters", async ({
 }, testInfo) => {
   await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });
   await page.goto("/");
+  await page.getByRole("button", { name: "Switch to dark mode" }).click();
   expect(
     await page
       .locator("body")
@@ -156,6 +157,7 @@ test("dark mode, reduced motion, and responsive filters", async ({
     colorScheme: "light",
     reducedMotion: "no-preference",
   });
+  await page.getByRole("button", { name: "Switch to light mode" }).click();
   await page.screenshot({
     path: testInfo.outputPath("ruin-light.png"),
     fullPage: true,

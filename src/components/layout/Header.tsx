@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 const links = [
   "Effects",
   "Learn",
@@ -24,21 +25,24 @@ export function Header() {
           </Link>
         ))}
       </nav>
-      <Link href="/explore" className="header-explore">
-        Start exploring <ArrowUpRight size={18} aria-hidden="true" />
-      </Link>
-      <details className="mobile-nav">
-        <summary>
-          Menu <span aria-hidden="true">+</span>
-        </summary>
-        <nav aria-label="Mobile navigation">
-          {links.map((label) => (
-            <Link key={label} href={`/${label.toLowerCase()}`}>
-              {label}
-            </Link>
-          ))}
-        </nav>
-      </details>
+      <div className="header-actions">
+        <ThemeToggle />
+        <Link href="/explore" className="header-explore">
+          Start exploring <ArrowUpRight size={18} aria-hidden="true" />
+        </Link>
+        <details className="mobile-nav">
+          <summary>
+            Menu <span aria-hidden="true">+</span>
+          </summary>
+          <nav aria-label="Mobile navigation">
+            {links.map((label) => (
+              <Link key={label} href={`/${label.toLowerCase()}`}>
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </details>
+      </div>
     </header>
   );
 }

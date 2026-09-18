@@ -30,3 +30,29 @@ test("hero model responds to its stake control and opens matching experiment set
   await expect(page).toHaveURL(/risk=0.07/);
   await expect(page.getByLabel("Risk per round")).toHaveValue("7");
 });
+
+test("theme defaults to light, persists, and the wide layout uses the viewport", async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.setViewportSize({ width: 2200, height: 1100 });
+  await page.goto("/");
+
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  expect(
+    await page
+      .locator(".page-shell")
+      .evaluate((element) => element.clientWidth),
+  ).toBeGreaterThan(1750);
+
+  await page.getByRole("button", { name: "Switch to dark mode" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(
+    page.getByRole("button", { name: "Switch to light mode" }),
+  ).toBeVisible();
+
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.getByRole("button", { name: "Switch to light mode" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+});

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --background: #fafbf9;
   --foreground: #262b29;
   --muted: #65706c;
@@ -146,6 +147,46 @@ p {
 }
 .mobile-nav {
   display: none;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.theme-toggle {
+  min-width: 76px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--background) 72%, transparent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--foreground);
+  font-size: 12px;
+  line-height: 1;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.theme-icon {
+  flex: 0 0 auto;
+}
+.theme-icon-dark {
+  display: none;
+}
+html[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+html[data-theme="dark"] .theme-icon-dark {
+  display: block;
 }
 .eyebrow {
   font-family: var(--font-mono), monospace;
@@ -1168,6 +1209,7 @@ input[type="range"] {
   }
   .site-header {
     height: 80px;
+    gap: 14px;
   }
   .brand {
     font-size: 24px;
@@ -1184,6 +1226,22 @@ input[type="range"] {
     display: block;
     position: relative;
     font-size: 13px;
+  }
+  .header-actions {
+    gap: 11px;
+  }
+  .theme-toggle {
+    min-width: 38px;
+    width: 38px;
+    padding: 0;
+  }
+  .theme-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
   .mobile-nav summary {
     cursor: pointer;
