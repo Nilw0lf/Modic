@@ -4,6 +4,7 @@ import ruin from "@/content/effects/gamblers-ruin.json";
 import extensions from "@/content/effects/discovery.json";
 import foundations from "@/content/effects/foundations.json";
 import { z } from "zod";
+import { expansionArticles } from "@/data/expansion";
 export const articleSchema = z.object({
   whatToNotice: z.string().optional(),
   explanationTitle: z.string().optional(),
@@ -24,6 +25,7 @@ export const articleSchema = z.object({
 });
 export type Article = z.infer<typeof articleSchema>;
 const content: Record<string, unknown> = {
+  ...expansionArticles,
   ...planned,
   ...extensions,
   ...foundations,

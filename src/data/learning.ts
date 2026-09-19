@@ -1,3 +1,44 @@
+import { newExperiments } from "./expansion";
+
+export const learningCollections = [
+  {
+    title: "Start with a surprise",
+    description:
+      "Three accessible probability puzzles, then two everyday trade-offs.",
+    slugs: [
+      "monty-hall",
+      "birthday-paradox",
+      "law-of-large-numbers",
+      "compound-growth",
+      "opportunity-cost",
+    ],
+  },
+  {
+    title: "Understand your decisions",
+    description:
+      "Test assumptions about prices, projects, patience, evidence and memory.",
+    slugs: [
+      "anchoring-bias",
+      "sunk-cost-fallacy",
+      "present-bias",
+      "confirmation-bias",
+      "forgetting-curve",
+    ],
+  },
+  {
+    title: "See the bigger system",
+    description:
+      "Explore how local choices, incentives and feedback shape collective outcomes.",
+    slugs: [
+      "diminishing-returns",
+      "prisoners-dilemma",
+      "tragedy-of-the-commons",
+      "schelling-segregation",
+      "butterfly-effect",
+    ],
+  },
+];
+
 export const learningPath = [
   {
     slug: "base-rate-neglect",
@@ -43,6 +84,11 @@ export const learningPath = [
   },
 ];
 export const glossary = [
+  ...newExperiments.map((e) => ({
+    term: e.name,
+    definition: e.description,
+    slug: e.id,
+  })),
   {
     term: "Base rate",
     definition: "How common something is before you observe new evidence.",

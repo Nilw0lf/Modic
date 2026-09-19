@@ -43,9 +43,10 @@ export default function AboutPage() {
             The collection currently contains {effects.length} field notes and{" "}
             {effects.filter((effect) => effect.status === "live").length}{" "}
             complete experiments spanning evidence, uncertainty, concentration,
-            networks, and risk. Other simulations are marked as planned. Thinker
-            associations and reading lists are provisional editorial content
-            awaiting source review.
+            networks, risk, learning, and cooperation. Other simulations are
+            marked as planned. Sourced thinker associations link to supporting
+            references; associations still awaiting review are marked as
+            provisional.
           </p>
         </section>
         <section className="article-section">

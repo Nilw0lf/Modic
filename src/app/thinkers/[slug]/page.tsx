@@ -59,10 +59,9 @@ export default async function ThinkerPage({
         </section>
       ))}
       <p className="editorial-note">
-        These relationships are provisional editorial associations. They
-        distinguish discussion, development, and popularization; they do not
-        imply sole invention. Individual attribution records support source
-        links as the collection is researched.
+        These relationships distinguish discussion, development, and
+        popularization; they do not imply sole invention. Effect pages include
+        supporting references where verified and label provisional associations.
       </p>
     </>
   );

@@ -1,5 +1,7 @@
 import { thinkerSchema } from "@/types/catalog";
+import { expansionThinkers } from "./expansion";
 export const thinkers = thinkerSchema.array().parse([
+  ...expansionThinkers,
   {
     id: "taleb",
     slug: "nassim-nicholas-taleb",

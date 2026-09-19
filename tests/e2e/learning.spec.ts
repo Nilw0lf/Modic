@@ -18,7 +18,7 @@ test("homepage actions, guided learning, glossary search, and continuous path", 
     page.getByRole("heading", { name: "No matching terms." }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear glossary search" }).click();
-  await expect(page.locator(".glossary-grid > div")).toHaveCount(16);
+  await expect(page.locator(".glossary-grid > div")).toHaveCount(31);
   await page.getByRole("link", { name: "Begin the first experiment" }).click();
   await expect(page).toHaveURL(/base-rate-neglect$/);
   await page

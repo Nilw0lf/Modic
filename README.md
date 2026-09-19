@@ -2,7 +2,9 @@
 
 An interactive field guide to how the world behaves. Built as an editorial publication, with experiments embedded near the beginning of an idea rather than hidden beneath an article.
 
-The collection includes fourteen effects, seven categories, six thinkers, local search, and six complete experiments: Lindy Effect, Gambler’s Ruin, Base Rate Neglect, Regression to the Mean, Power Laws, and Network Effects. Eight experiments are explicitly **planned**. The homepage provides prominent Start learning and Surprise me actions; /learn contains a six-stop learning path and searchable glossary, with previous/next navigation on the live experiment pages. The site has no accounts, analytics, database, or external search service.
+The collection includes 29 concepts, seven categories, 13 thinkers, local search, and 21 interactive experiments. Eight further experiments are explicitly **planned**. The original six experiments are joined by Monty Hall, Birthday Paradox, Law of Large Numbers, Compound Growth, Diminishing Returns, Opportunity Cost, Sunk Cost Fallacy, Anchoring Bias, Confirmation Bias, Present Bias, Forgetting Curve, Tragedy of the Commons, Prisoner’s Dilemma, Schelling’s Segregation Model, and Butterfly Effect. Each new concept includes model assumptions, a practical example and a reading reference.
+
+The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, three new five-experiment routes and a 31-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
 
 ## Run locally
 
@@ -73,7 +75,7 @@ Pages and editorial rendering are Server Components. Only filtering and simulati
 
 JSON is the equivalent content-file format used in place of MDX. It keeps prose separate from React while validating available article sections. No arbitrary HTML from content is evaluated. KaTeX renders only a fixed, trusted model formula.
 
-The browser receives the small catalog for local filtering. Category and thinker directories are server rendered. Each live experiment has its own dynamic import; future simulations can use their own charts without changing the generic article layout.
+The browser receives the catalog for local filtering. Category and thinker directories are server rendered. Original simulations have individual dynamic imports; the 15 everyday concepts share a lazy-loaded UI module in `components/simulations/everyday`. Their deterministic model functions live in `lib/simulations/everyday.ts`; sourced content, controls and presets live in `data/expansion.ts`.
 
 ## Add an effect: Matthew Effect
 

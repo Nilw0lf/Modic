@@ -15,13 +15,24 @@ export function ThinkerRelationships({ effect }: { effect: Effect }) {
                 {relationshipLabels[link.relationship]}
               </span>
               <Link href={`/thinkers/${thinker.slug}`}>{thinker.name} ↗</Link>
+              {link.editorialStatus === "verified" &&
+                link.sources.map((source, i) => (
+                  <a key={source} className="text-link" href={source}>
+                    Supporting reference
+                    {link.sources.length > 1 ? ` ${i + 1}` : ""} ↗
+                  </a>
+                ))}
             </div>
           );
         })}
       </div>
-      <p className="small-note">
-        Provisional editorial associations; source review is pending.
-      </p>
+      {effect.thinkerRelationships.some(
+        (link) => link.editorialStatus === "provisional",
+      ) && (
+        <p className="small-note">
+          Associations marked provisional are awaiting source review.
+        </p>
+      )}
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { effectSchema, type ThinkerRelationshipType } from "@/types/catalog";
+import { expansionEffects } from "./expansion";
 const attribution = (
   effect: string,
   thinkerId: string,
@@ -11,6 +12,7 @@ const attribution = (
   sources: [],
 });
 export const effects = effectSchema.array().parse([
+  ...expansionEffects,
   {
     id: "lindy",
     slug: "lindy-effect",

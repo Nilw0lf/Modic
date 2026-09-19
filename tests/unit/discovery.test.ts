@@ -6,14 +6,14 @@ import { effectSchema } from "@/types/catalog";
 describe("discovery", () => {
   it("calculates all collection counts from metadata", () => {
     expect(collectionSummary(effects)).toBe(
-      "14 ideas · 6 interactive · 8 in development",
+      "29 ideas · 21 interactive · 8 in development",
     );
     expect(collectionSummary([])).toBe(
       "0 ideas · 0 interactive · 0 in development",
     );
   });
   it("chooses only live effects, including both ends of the random range", () => {
-    expect(chooseLiveEffect(effects, () => 0)?.id).toBe("lindy");
+    expect(chooseLiveEffect(effects, () => 0)?.id).toBe("monty-hall");
     expect(chooseLiveEffect(effects, () => 0.9999)?.id).toBe("network");
     expect(
       chooseLiveEffect(effects.filter((e) => e.status === "planned")),
@@ -29,7 +29,12 @@ describe("discovery", () => {
         "all",
         "thought-experiment",
       ).map((e) => e.id),
-    ).toEqual(["ergodicity"]);
+    ).toEqual([
+      "sunk-cost-fallacy",
+      "anchoring-bias",
+      "present-bias",
+      "ergodicity",
+    ]);
     expect(
       effectSchema.safeParse({ ...effects[0], experimentType: "unknown" })
         .success,

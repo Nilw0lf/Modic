@@ -1,0 +1,313 @@
+.everyday-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 36px;
+  padding: 0 30px 26px;
+}
+.everyday-figure {
+  margin: 12px 20px 25px;
+}
+.everyday-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.everyday-figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+.everyday-figure figcaption span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.everyday-figure figcaption i {
+  width: 18px;
+  height: 3px;
+}
+.everyday-assumption {
+  font-size: 12px;
+  padding: 20px 30px;
+  border-top: 1px solid var(--border);
+}
+.concept-play {
+  padding: 24px 30px;
+  border-block: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+}
+.concept-play h3 {
+  font-size: 21px;
+  margin-bottom: 14px;
+}
+.concept-play p {
+  font-size: 13px;
+}
+.concept-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+.concept-actions button {
+  padding: 10px 16px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: 5px;
+  font-size: 13px;
+  color: var(--accent);
+}
+.concept-actions button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--chart-surface);
+}
+.concept-challenge {
+  padding: 0 30px;
+}
+.monty-doors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+.monty-doors button {
+  display: grid;
+  gap: 12px;
+  min-height: 150px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--foreground);
+  opacity: 1;
+}
+.monty-doors button.chosen {
+  border: 2px solid var(--accent);
+  background: var(--chart-surface);
+}
+.monty-doors strong {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--accent);
+}
+.monty-doors small {
+  font-size: 11px;
+  min-height: 18px;
+}
+.birthday-room {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 18px 30px;
+}
+.birthday-room span {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font:
+    12px var(--font-mono),
+    monospace;
+}
+.birthday-room .matching {
+  background: var(--accent);
+  color: var(--background);
+  font-weight: 700;
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.neighbourhood-wrap {
+  max-width: 470px;
+  margin: 16px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.neighbourhood-grid {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+}
+.neighbourhood-wrap p {
+  font-size: 12px;
+  margin-top: 12px;
+}
+.triple-inputs,
+.strategy-selects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 18px 0;
+}
+.triple-inputs label,
+.strategy-selects label {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.triple-inputs input,
+.strategy-selects select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  background: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font: inherit;
+}
+.rule-example {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.rule-example strong {
+  font:
+    36px var(--font-mono),
+    monospace;
+  color: var(--accent);
+}
+.rule-feedback {
+  margin: 20px 0;
+  font-size: 14px;
+}
+.test-history {
+  max-height: 240px;
+  overflow: auto;
+  padding: 0;
+  list-style: none;
+}
+.test-history li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.test-history strong {
+  font-weight: 500;
+  color: var(--accent);
+}
+.payoff-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 28px;
+  font-size: 13px;
+  text-align: center;
+}
+.payoff-table caption {
+  text-align: left;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.payoff-table td,
+.payoff-table th {
+  padding: 12px;
+  border: 1px solid var(--border);
+}
+.payoff-table th {
+  font-weight: 500;
+  background: var(--surface);
+}
+.learning-collections {
+  padding: 0 0 56px;
+}
+.learning-collections > h2 {
+  font-size: 32px;
+  margin-bottom: 22px;
+}
+.learning-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.learning-collection {
+  padding: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.learning-collection h3 {
+  font-size: 23px;
+  margin: 12px 0;
+}
+.learning-collection p {
+  font-size: 13px;
+}
+.learning-collection ol {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+.learning-collection li {
+  padding: 8px 0;
+  font-size: 13px;
+}
+.learning-collection a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 760px) {
+  .everyday-controls {
+    padding: 0 18px 22px;
+    gap: 22px 18px;
+  }
+  .everyday-figure {
+    margin: 12px 5px 22px;
+  }
+  .everyday-figure svg .chart-tick,
+  .everyday-figure svg .chart-label {
+    font-size: 14px;
+  }
+  .everyday-figure figcaption {
+    font-size: 11px;
+    gap: 8px 14px;
+    padding: 0 12px;
+  }
+  .concept-play {
+    padding: 22px 18px;
+  }
+  .concept-challenge {
+    padding: 0 18px;
+  }
+  .everyday-assumption {
+    padding: 18px;
+  }
+  .monty-doors {
+    gap: 8px;
+  }
+  .monty-doors button {
+    padding: 10px 4px;
+    min-height: 130px;
+  }
+  .monty-doors strong {
+    font-size: 22px;
+  }
+  .birthday-room {
+    padding: 18px;
+  }
+  .learning-collection-grid {
+    grid-template-columns: 1fr;
+  }
+  .strategy-selects {
+    flex-direction: column;
+  }
+}
+@media (max-width: 390px) {
+  .everyday-controls {
+    grid-template-columns: 1fr;
+  }
+}

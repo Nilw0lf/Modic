@@ -5,7 +5,7 @@ test("discovery links are independent, counts are dynamic, and surprise chooses 
 }) => {
   await page.goto("/");
   await expect(
-    page.getByText("14 ideas · 6 interactive · 8 in development"),
+    page.getByText("29 ideas · 21 interactive · 8 in development"),
   ).toBeVisible();
   const card = page.locator(".effect-card").filter({
     has: page.getByRole("heading", { name: "Lindy Effect", exact: true }),
@@ -21,12 +21,13 @@ test("discovery links are independent, counts are dynamic, and surprise chooses 
   await expect(page).toHaveURL(/thinkers\/nassim-nicholas-taleb/);
   await page.goto("/");
   await page.getByLabel("Explore by format").selectOption("thought-experiment");
-  await expect(page.locator(".effect-card")).toHaveCount(1);
-  await expect(page.locator(".effect-card")).toContainText("Ergodicity");
+  await expect(page.locator(".effect-card")).toHaveCount(4);
+  await expect(
+    page.getByRole("heading", { name: "Ergodicity", exact: true }),
+  ).toBeVisible();
   await page.getByRole("button", { name: "Surprise me" }).click();
-  await expect(page).toHaveURL(
-    /effects\/(lindy-effect|gamblers-ruin|base-rate-neglect|regression-to-the-mean|power-laws|network-effects)$/,
-  );
+  await expect(page).toHaveURL(/effects\/[a-z-]+$/);
+  await expect(page.locator(".simulation-shell")).toBeVisible();
 });
 
 test("one-life keyboard controls, absorbing ruin, pending changes, and many-life statistics", async ({

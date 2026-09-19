@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { pageMetadata } from "@/lib/metadata";
-import { learningPath } from "@/data/learning";
+import { learningPath, learningCollections } from "@/data/learning";
 import { effects } from "@/lib/catalog";
 import { Glossary } from "@/components/learning/Glossary";
 export const metadata = pageMetadata(
   "Learn",
-  "A guided path through six interactive experiments, with a glossary of the ideas along the way.",
+  "Guided routes through probability, everyday decisions and complex systems, with an interactive glossary.",
   "/learn",
 );
 export default function LearnPage() {
@@ -37,6 +37,31 @@ export default function LearnPage() {
           6 experiments · about 27 minutes · no prerequisites
         </p>
       </header>
+      <section
+        className="learning-collections"
+        aria-labelledby="collections-title"
+      >
+        <span className="eyebrow">PICK YOUR NEXT QUESTION</span>
+        <h2 id="collections-title">Three new routes into the world.</h2>
+        <div className="learning-collection-grid">
+          {learningCollections.map((collection, i) => (
+            <article className="learning-collection" key={collection.title}>
+              <span className="eyebrow">ROUTE 0{i + 1} · 5 EXPERIMENTS</span>
+              <h3>{collection.title}</h3>
+              <p>{collection.description}</p>
+              <ol>
+                {collection.slugs.map((slug) => (
+                  <li key={slug}>
+                    <Link href={`/effects/${slug}`}>
+                      {effects.find((e) => e.slug === slug)!.name} ↗
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="learning-path" aria-labelledby="path-heading">
         <div className="section-heading">
           <div>
