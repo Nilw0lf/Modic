@@ -1,4 +1,5 @@
 import type { Effect, Thinker } from "@/types/catalog";
+import { strategyEntries, strategyThinkers } from "./strategy-expansion";
 
 export type Control = {
   key: string;
@@ -9,7 +10,7 @@ export type Control = {
   value: number;
   suffix?: string;
 };
-type Entry = {
+export type Entry = {
   id: string;
   name: string;
   description: string;
@@ -641,6 +642,8 @@ export const newExperiments: Entry[] = [
   },
 ];
 
+newExperiments.push(...strategyEntries);
+
 export const expansionEffects: Effect[] = newExperiments.map((e) => ({
   id: e.id,
   slug: e.id,
@@ -668,14 +671,24 @@ export const expansionEffects: Effect[] = newExperiments.map((e) => ({
     : "intuitive",
   simulationType: e.id,
   experimentType: e.format ?? "simulation",
-  relatedEffectIds: e.categories.includes("behavior")
-    ? ["base-rate", "regression"]
-    : e.categories.includes("complexity")
-      ? ["network", "power-laws"]
-      : ["ruin", "base-rate"],
+  relatedEffectIds:
+    e.thinker === "taleb"
+      ? ["lindy", "antifragility", "barbell-strategy"]
+          .filter((id) => id !== e.id)
+          .slice(0, 2)
+      : e.categories.includes("games")
+        ? ["prisoners-dilemma", "stag-hunt", "nash-bargaining"]
+            .filter((id) => id !== e.id)
+            .slice(0, 2)
+        : e.categories.includes("behavior")
+          ? ["base-rate", "regression"]
+          : e.categories.includes("complexity")
+            ? ["network", "power-laws"]
+            : ["ruin", "base-rate"],
 }));
 
 export const expansionThinkers: Thinker[] = [
+  ...strategyThinkers,
   {
     id: "thaler",
     slug: "richard-thaler",

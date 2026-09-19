@@ -42,7 +42,7 @@ export default function LearnPage() {
         aria-labelledby="collections-title"
       >
         <span className="eyebrow">PICK YOUR NEXT QUESTION</span>
-        <h2 id="collections-title">Three new routes into the world.</h2>
+        <h2 id="collections-title">Find your next route into the world.</h2>
         <div className="learning-collection-grid">
           {learningCollections.map((collection, i) => (
             <article className="learning-collection" key={collection.title}>

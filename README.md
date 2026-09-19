@@ -2,9 +2,9 @@
 
 An interactive field guide to how the world behaves. Built as an editorial publication, with experiments embedded near the beginning of an idea rather than hidden beneath an article.
 
-The collection includes 29 concepts, seven categories, 13 thinkers, local search, and 21 interactive experiments. Eight further experiments are explicitly **planned**. The original six experiments are joined by Monty Hall, Birthday Paradox, Law of Large Numbers, Compound Growth, Diminishing Returns, Opportunity Cost, Sunk Cost Fallacy, Anchoring Bias, Confirmation Bias, Present Bias, Forgetting Curve, Tragedy of the Commons, Prisoner’s Dilemma, Schelling’s Segregation Model, and Butterfly Effect. Each new concept includes model assumptions, a practical example and a reading reference.
+The collection includes 44 concepts, seven categories, 17 thinkers, local search, and 36 interactive experiments. Eight further experiments are explicitly **planned**. The original six experiments are joined by Monty Hall, Birthday Paradox, Law of Large Numbers, Compound Growth, Diminishing Returns, Opportunity Cost, Sunk Cost Fallacy, Anchoring Bias, Confirmation Bias, Present Bias, Forgetting Curve, Tragedy of the Commons, Prisoner’s Dilemma, Schelling’s Segregation Model, and Butterfly Effect. Each new concept includes model assumptions, a practical example and a reading reference.
 
-The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, three new five-experiment routes and a 31-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
+The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, six five-experiment routes and a 46-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
 
 ## Run locally
 
@@ -268,3 +268,5 @@ The default start script binds to localhost for local development. For a contain
 The catalog has stable effect, category, thinker, and attribution IDs. Keep public editorial data separate from user-owned state. A future database can add users, bookmarks (`user_id`, `effect_id`), and saved simulations (`user_id`, `effect_id`, versioned inputs, seed) without changing the simulation math or public route structure.
 
 Introduce server-side repository functions at that point; keep secrets off the client. If using Supabase, require authentication and row-level security for user-specific records. The current MVP intentionally has no auth screens or nonfunctional bookmark controls.
+
+The latest expansion adds five Taleb-inspired experiments (Antifragility, Barbell Strategy, Optionality, Skin in the Game, Turkey Problem) and ten strategic-interaction models (Stag Hunt, Chicken, Matching Pennies, Coordination, Public Goods, Ultimatum, Nash Bargaining, Vickrey Auction, Winner’s Curse, Market for Lemons). Four payoff tables support playable rounds and computed pure-equilibrium highlights. Models state their assumptions and distinguish illustrative formulas from the authors’ original research.

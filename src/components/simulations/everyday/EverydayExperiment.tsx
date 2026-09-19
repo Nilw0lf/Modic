@@ -14,6 +14,7 @@ import {
 import { seededRandom } from "@/lib/simulations/random";
 import { SimulationShell } from "@/components/simulation/SimulationShell";
 import { Slider, Stats, Notice } from "../foundations/Shared";
+import { StrategyBoard } from "./StrategyBoard";
 
 const colors = ["var(--accent)", "var(--negative)", "var(--positive)"];
 const format = (n: number) =>
@@ -467,6 +468,7 @@ export default function EverydayExperiment({ id }: { id: string }) {
     "law-of-large-numbers",
     "schelling-segregation",
     "prisoners-dilemma",
+    "winners-curse",
   ].includes(id);
   function reset() {
     setSettings(initial());
@@ -522,6 +524,12 @@ export default function EverydayExperiment({ id }: { id: string }) {
         </div>
       )}
       {id === "monty-hall" && <MontyDoors key={resetKey} seed={seed} />}
+      <StrategyBoard
+        key={`${resetKey}-${JSON.stringify(settings)}`}
+        id={id}
+        settings={settings}
+        seed={seed}
+      />
       {id === "confirmation-bias" && <ConfirmationGame key={resetKey} />}
       {id === "prisoners-dilemma" && (
         <DilemmaGame
@@ -610,6 +618,17 @@ export default function EverydayExperiment({ id }: { id: string }) {
                 "sunk-cost-fallacy": settings.success,
                 "anchoring-bias": settings.anchor,
                 "present-bias": settings.offset,
+                antifragility: settings.spread,
+                "barbell-strategy": settings.return,
+                optionality: settings.value,
+                "skin-in-the-game": settings.liability,
+                "stag-hunt": settings.opponent,
+                "chicken-game": settings.opponent,
+                "matching-pennies": settings.opponent,
+                "coordination-game": settings.opponent,
+                "public-goods": settings.contribution,
+                "ultimatum-game": settings.offer,
+                "vickrey-auction": settings.bid,
               }[id]
             }
           />

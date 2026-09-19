@@ -1,4 +1,5 @@
 import { seededRandom } from "./random";
+import { strategyModel } from "./strategy";
 
 export type Point = { x: number; y: number };
 export type Series = { name: string; points: Point[] };
@@ -557,6 +558,6 @@ export function model(id: string, s: Settings, seed = 41): ModelResult {
       };
     }
     default:
-      throw new Error(`Unknown model: ${id}`);
+      return strategyModel(id, s, seed);
   }
 }

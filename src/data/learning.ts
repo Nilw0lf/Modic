@@ -2,6 +2,42 @@ import { newExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Think with Taleb",
+    description:
+      "Stress the assumptions, cap the downside and ask who bears the cost.",
+    slugs: [
+      "antifragility",
+      "barbell-strategy",
+      "optionality",
+      "skin-in-the-game",
+      "turkey-problem",
+    ],
+  },
+  {
+    title: "Play the incentives",
+    description:
+      "Explore trust, conflict, unpredictability, conventions and collective action.",
+    slugs: [
+      "stag-hunt",
+      "chicken-game",
+      "matching-pennies",
+      "coordination-game",
+      "public-goods",
+    ],
+  },
+  {
+    title: "Negotiate and design markets",
+    description:
+      "Test offers, outside options, auction rules and hidden information.",
+    slugs: [
+      "ultimatum-game",
+      "nash-bargaining",
+      "vickrey-auction",
+      "winners-curse",
+      "market-for-lemons",
+    ],
+  },
+  {
     title: "Start with a surprise",
     description:
       "Three accessible probability puzzles, then two everyday trade-offs.",

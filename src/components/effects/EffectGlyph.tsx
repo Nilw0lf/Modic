@@ -16,7 +16,125 @@ export function EffectGlyph({
       viewBox="0 0 180 88"
       aria-hidden="true"
     >
-      {kind === "monty-hall" ? (
+      {[
+        "stag-hunt",
+        "chicken-game",
+        "matching-pennies",
+        "coordination-game",
+        "public-goods",
+        "ultimatum-game",
+        "nash-bargaining",
+        "vickrey-auction",
+        "winners-curse",
+        "market-for-lemons",
+        "antifragility",
+        "barbell-strategy",
+        "optionality",
+        "skin-in-the-game",
+        "turkey-problem",
+      ].includes(kind) ? (
+        <g {...common}>
+          {kind === "antifragility" ? (
+            <>
+              <path d="M15 15Q90 135 165 15" />
+              <path d="M15 73Q90 -47 165 73" strokeDasharray="4 4" />
+              <path d="M15 44H165" opacity=".4" />
+            </>
+          ) : kind === "barbell-strategy" ? (
+            <>
+              <rect x="20" y="16" width="35" height="56" />
+              <path d="M55 44H130" />
+              <rect x="130" y="32" width="22" height="24" />
+            </>
+          ) : kind === "optionality" ? (
+            <>
+              <path d="M15 65H85L165 10" />
+              <path d="M15 80L165 10" opacity=".3" strokeDasharray="4 4" />
+            </>
+          ) : kind === "skin-in-the-game" ? (
+            <>
+              <path d="M90 12V76M35 30H145M35 30L15 60H55ZM145 30L125 60H165Z" />
+              <circle cx="90" cy="30" r="5" fill="currentColor" />
+            </>
+          ) : kind === "turkey-problem" ? (
+            <>
+              <path d="M10 25L35 24L65 23L100 22L125 21V75H170" />
+              <path d="M125 10V80" opacity=".3" strokeDasharray="4 4" />
+            </>
+          ) : kind === "nash-bargaining" ? (
+            <>
+              <path d="M10 75Q90 -55 170 75" />
+              <path d="M90 12V78" strokeDasharray="4 4" />
+              <circle cx="90" cy="10" r="4" />
+            </>
+          ) : kind === "market-for-lemons" ? (
+            <>
+              <path d="M10 15H40V28H75V44H110V59H145V73H170" />
+              <path d="M10 74H170" opacity=".3" />
+            </>
+          ) : kind === "winners-curse" || kind === "vickrey-auction" ? (
+            <>
+              {[20, 45, 65, 85, 125].map((x, i) => (
+                <rect
+                  key={x}
+                  x={x}
+                  y={70 - i * 11}
+                  width="14"
+                  height={10 + i * 11}
+                  opacity={i === 4 ? 1 : 0.35}
+                />
+              ))}
+              <path d="M10 38H165" strokeDasharray="4 4" />
+            </>
+          ) : kind === "public-goods" ? (
+            <>
+              <circle cx="90" cy="44" r="15" />
+              {[25, 65, 115, 155].map((x, i) => (
+                <g key={x}>
+                  <circle cx={x} cy={i % 2 ? 75 : 12} r="6" />
+                  <path d={`M${x} ${i % 2 ? 69 : 18}L90 44`} opacity=".5" />
+                </g>
+              ))}
+            </>
+          ) : kind === "ultimatum-game" ? (
+            <>
+              <rect x="20" y="24" width="140" height="40" />
+              <path d="M115 24V64" />
+              <path d="M20 76H115M120 76H160" />
+            </>
+          ) : (
+            <>
+              <rect x="30" y="10" width="120" height="68" />
+              <path d="M90 10V78M30 44H150" />
+              {(kind === "chicken-game"
+                ? [
+                    [120, 27],
+                    [60, 61],
+                  ]
+                : kind === "matching-pennies"
+                  ? [
+                      [60, 27],
+                      [120, 27],
+                      [60, 61],
+                      [120, 61],
+                    ]
+                  : [
+                      [60, 27],
+                      [120, 61],
+                    ]
+              ).map(([x, y]) => (
+                <circle
+                  key={`${x}-${y}`}
+                  cx={x}
+                  cy={y}
+                  r="7"
+                  fill={kind === "matching-pennies" ? "none" : "currentColor"}
+                />
+              ))}
+            </>
+          )}
+        </g>
+      ) : kind === "monty-hall" ? (
         <g {...common}>
           {[25, 75, 125].map((x, i) => (
             <g key={x}>

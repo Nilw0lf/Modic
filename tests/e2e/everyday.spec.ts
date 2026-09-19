@@ -40,6 +40,30 @@ for (const entry of newExperiments)
       if (entry.id !== "prisoners-dilemma")
         await expect(stats).not.toHaveText(before!);
       await page.getByRole("button", { name: /Try this:/ }).click();
+      if (
+        [
+          "stag-hunt",
+          "chicken-game",
+          "matching-pennies",
+          "coordination-game",
+        ].includes(entry.id)
+      ) {
+        const board = page.getByRole("region", {
+          name: "Play the payoff table",
+        });
+        await board
+          .getByRole("button", { name: /^Play / })
+          .first()
+          .click();
+        await expect(board.getByRole("status")).toContainText("Round 1");
+        await board
+          .getByRole("button", { name: /^Play / })
+          .nth(1)
+          .click();
+        await expect(board.getByRole("status")).toContainText("Round 2");
+        await board.getByRole("button", { name: "Clear rounds" }).click();
+        await expect(board.getByRole("status")).toContainText("first round");
+      }
       if (entry.id === "monty-hall") {
         await page.getByRole("button", { name: /Door 1/ }).click();
         await page.getByRole("button", { name: "Switch", exact: true }).click();
@@ -74,6 +98,9 @@ for (const entry of newExperiments)
         "schelling-segregation",
         "prisoners-dilemma",
         "compound-growth",
+        "stag-hunt",
+        "nash-bargaining",
+        "antifragility",
       ].includes(entry.id)
     )
       await page.screenshot({
