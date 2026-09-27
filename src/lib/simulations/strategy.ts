@@ -1,5 +1,6 @@
 import type { ModelResult, Settings, Series } from "./everyday";
 import { seededRandom } from "./random";
+import { playModel } from "./play";
 
 export type MatrixGame = {
   actions: [string, string];
@@ -399,6 +400,6 @@ export function strategyModel(id: string, s: Settings, seed = 41): ModelResult {
       };
     }
     default:
-      throw new Error(`Unknown strategy model: ${id}`);
+      return playModel(id, s, seed);
   }
 }

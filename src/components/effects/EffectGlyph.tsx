@@ -17,22 +17,119 @@ export function EffectGlyph({
       aria-hidden="true"
     >
       {[
-        "stag-hunt",
-        "chicken-game",
-        "matching-pennies",
-        "coordination-game",
-        "public-goods",
-        "ultimatum-game",
-        "nash-bargaining",
-        "vickrey-auction",
-        "winners-curse",
-        "market-for-lemons",
-        "antifragility",
-        "barbell-strategy",
-        "optionality",
-        "skin-in-the-game",
-        "turkey-problem",
+        "simpsons-paradox",
+        "ellsberg-urn",
+        "allais-paradox",
+        "information-cascade",
+        "threshold-public-good",
+        "trust-game",
+        "centipede-game",
+        "volunteers-dilemma",
+        "beauty-contest",
+        "hotelling-location",
       ].includes(kind) ? (
+        <g {...common}>
+          {kind === "simpsons-paradox" ? (
+            <>
+              <path d="M15 62L65 38M15 75L65 51M100 38L165 62M100 51L165 75" />
+              <path d="M82 8V80" strokeDasharray="3 4" />
+            </>
+          ) : kind === "ellsberg-urn" ? (
+            <>
+              <path d="M20 15H75V75H20ZM105 15H160V75H105Z" />
+              {[32, 48, 63, 117, 133, 148].map((x, i) => (
+                <circle
+                  key={x}
+                  cx={x}
+                  cy={30 + (i % 2) * 24}
+                  r="5"
+                  fill={i < 3 || i === 3 ? "currentColor" : "none"}
+                />
+              ))}
+            </>
+          ) : kind === "allais-paradox" ? (
+            <>
+              <path d="M15 70H80V38H125V15H165" />
+              <path d="M15 75L165 15" strokeDasharray="3 4" />
+            </>
+          ) : kind === "information-cascade" ? (
+            <>
+              <path d="M20 22L60 34L100 48L140 62" />
+              {[20, 60, 100, 140].map((x, i) => (
+                <circle
+                  key={x}
+                  cx={x}
+                  cy={22 + i * 13}
+                  r="8"
+                  fill={i === 3 ? "currentColor" : "none"}
+                />
+              ))}
+            </>
+          ) : kind === "threshold-public-good" ? (
+            <>
+              <path d="M18 70H165M18 70V15M18 42H165" strokeDasharray="4 4" />
+              <path d="M18 65H80V60H112V25H165" />
+            </>
+          ) : kind === "trust-game" ? (
+            <>
+              <circle cx="27" cy="44" r="14" />
+              <circle cx="151" cy="44" r="14" />
+              <path d="M43 35H130L120 25M130 35L120 45M137 57H50L60 47M50 57L60 67" />
+            </>
+          ) : kind === "centipede-game" ? (
+            <>
+              <path d="M15 72L45 62L75 50L105 37L135 23L165 8" />
+              {[15, 45, 75, 105, 135, 165].map((x, i) => (
+                <circle
+                  key={x}
+                  cx={x}
+                  cy={72 - i * (64 / 5)}
+                  r="4"
+                  fill="currentColor"
+                />
+              ))}
+            </>
+          ) : kind === "volunteers-dilemma" ? (
+            <>
+              <circle cx="90" cy="18" r="8" fill="currentColor" />
+              {[20, 55, 125, 160].map((x) => (
+                <circle key={x} cx={x} cy="67" r="8" />
+              ))}
+              <path d="M90 27V62M80 52L90 62L100 52" />
+            </>
+          ) : kind === "beauty-contest" ? (
+            <>
+              <path d="M15 70Q90 -18 165 70" />
+              <path d="M90 10V78" strokeDasharray="3 4" />
+              <circle cx="90" cy="26" r="5" fill="currentColor" />
+            </>
+          ) : (
+            <>
+              <path d="M15 70H165" />
+              {[30, 60, 90, 120, 150].map((x) => (
+                <path key={x} d={`M${x} 64V76`} />
+              ))}
+              <path d="M50 23V57M43 30L50 23L57 30M130 23V57M123 30L130 23L137 30" />
+            </>
+          )}
+        </g>
+      ) : [
+          "stag-hunt",
+          "chicken-game",
+          "matching-pennies",
+          "coordination-game",
+          "public-goods",
+          "ultimatum-game",
+          "nash-bargaining",
+          "vickrey-auction",
+          "winners-curse",
+          "market-for-lemons",
+          "antifragility",
+          "barbell-strategy",
+          "optionality",
+          "skin-in-the-game",
+          "turkey-problem",
+        ].includes(kind) ? (
         <g {...common}>
           {kind === "antifragility" ? (
             <>

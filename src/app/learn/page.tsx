@@ -46,7 +46,9 @@ export default function LearnPage() {
         <div className="learning-collection-grid">
           {learningCollections.map((collection, i) => (
             <article className="learning-collection" key={collection.title}>
-              <span className="eyebrow">ROUTE 0{i + 1} · 5 EXPERIMENTS</span>
+              <span className="eyebrow">
+                ROUTE {String(i + 1).padStart(2, "0")} · 5 EXPERIMENTS
+              </span>
               <h3>{collection.title}</h3>
               <p>{collection.description}</p>
               <ol>

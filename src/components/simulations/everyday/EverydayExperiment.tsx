@@ -15,6 +15,7 @@ import { seededRandom } from "@/lib/simulations/random";
 import { SimulationShell } from "@/components/simulation/SimulationShell";
 import { Slider, Stats, Notice } from "../foundations/Shared";
 import { StrategyBoard } from "./StrategyBoard";
+import { PlayBoard } from "./PlayBoard";
 
 const colors = ["var(--accent)", "var(--negative)", "var(--positive)"];
 const format = (n: number) =>
@@ -469,6 +470,12 @@ export default function EverydayExperiment({ id }: { id: string }) {
     "schelling-segregation",
     "prisoners-dilemma",
     "winners-curse",
+    "ellsberg-urn",
+    "information-cascade",
+    "threshold-public-good",
+    "volunteers-dilemma",
+    "beauty-contest",
+    "centipede-game",
   ].includes(id);
   function reset() {
     setSettings(initial());
@@ -526,6 +533,12 @@ export default function EverydayExperiment({ id }: { id: string }) {
       {id === "monty-hall" && <MontyDoors key={resetKey} seed={seed} />}
       <StrategyBoard
         key={`${resetKey}-${JSON.stringify(settings)}`}
+        id={id}
+        settings={settings}
+        seed={seed}
+      />
+      <PlayBoard
+        key={`play-${resetKey}-${seed}-${id === "information-cascade" ? `${settings.accuracy}-${settings.people}` : ""}`}
         id={id}
         settings={settings}
         seed={seed}
@@ -629,6 +642,13 @@ export default function EverydayExperiment({ id }: { id: string }) {
                 "public-goods": settings.contribution,
                 "ultimatum-game": settings.offer,
                 "vickrey-auction": settings.bid,
+                "simpsons-paradox": settings.easyA,
+                "allais-paradox": undefined,
+                "threshold-public-good": settings.pledge,
+                "trust-game": settings.send,
+                "volunteers-dilemma": settings.chance,
+                "beauty-contest": settings.guess,
+                "hotelling-location": settings.you,
               }[id]
             }
           />

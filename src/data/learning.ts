@@ -2,6 +2,30 @@ import { newExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Read the evidence",
+    description:
+      "Reveal the hidden groups, ambiguous odds and signals behind a crowd's choices.",
+    slugs: [
+      "simpsons-paradox",
+      "ellsberg-urn",
+      "allais-paradox",
+      "information-cascade",
+      "beauty-contest",
+    ],
+  },
+  {
+    title: "Play it together",
+    description:
+      "Try trust, shared funding, waiting for help, strategic patience and competing locations.",
+    slugs: [
+      "trust-game",
+      "threshold-public-good",
+      "volunteers-dilemma",
+      "centipede-game",
+      "hotelling-location",
+    ],
+  },
+  {
     title: "Think with Taleb",
     description:
       "Stress the assumptions, cap the downside and ask who bears the cost.",

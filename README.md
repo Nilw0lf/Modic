@@ -2,9 +2,9 @@
 
 An interactive field guide to how the world behaves. Built as an editorial publication, with experiments embedded near the beginning of an idea rather than hidden beneath an article.
 
-The collection includes 44 concepts, seven categories, 17 thinkers, local search, and 36 interactive experiments. Eight further experiments are explicitly **planned**. The original six experiments are joined by Monty Hall, Birthday Paradox, Law of Large Numbers, Compound Growth, Diminishing Returns, Opportunity Cost, Sunk Cost Fallacy, Anchoring Bias, Confirmation Bias, Present Bias, Forgetting Curve, Tragedy of the Commons, Prisoner’s Dilemma, Schelling’s Segregation Model, and Butterfly Effect. Each new concept includes model assumptions, a practical example and a reading reference.
+The collection includes 54 concepts, seven categories, 23 thinkers, local search, and 46 interactive experiments. Eight further experiments are explicitly **planned**. Newer playable lessons include Simpson’s Paradox, Ellsberg’s Urns, the Allais Paradox, Information Cascades, Threshold Public Goods, the Trust Game, the Centipede Game, the Volunteer’s Dilemma, the Beauty Contest Game, and Hotelling’s Location Game. Each concept includes model assumptions, a practical example and a reading reference.
 
-The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, six five-experiment routes and a 46-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
+The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, eight five-experiment routes and a 56-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
 
 ## Run locally
 

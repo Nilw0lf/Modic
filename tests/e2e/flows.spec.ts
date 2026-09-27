@@ -6,9 +6,9 @@ test("home, local search, category filters, and empty recovery", async ({
   await expect(
     page.getByRole("heading", { name: "See how the world behaves." }),
   ).toBeVisible();
-  await expect(page.locator(".effect-card")).toHaveCount(44);
+  await expect(page.locator(".effect-card")).toHaveCount(54);
   await page.getByRole("button", { name: "Game Theory", exact: true }).click();
-  await expect(page.locator(".effect-card")).toHaveCount(14);
+  await expect(page.locator(".effect-card")).toHaveCount(21);
   await expect(
     page.getByRole("heading", { name: "Prisoner’s Dilemma", exact: true }),
   ).toBeVisible();
@@ -20,7 +20,7 @@ test("home, local search, category filters, and empty recovery", async ({
     page.getByRole("heading", { name: "No effects found." }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear search and filters" }).click();
-  await expect(page.locator(".effect-card")).toHaveCount(44);
+  await expect(page.locator(".effect-card")).toHaveCount(54);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,
@@ -76,7 +76,7 @@ test("category and thinker routes group real relationships", async ({
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "Risk & Uncertainty",
   );
-  await expect(page.locator(".effect-card")).toHaveCount(11);
+  await expect(page.locator(".effect-card")).toHaveCount(13);
   await page.goto("/thinkers/nassim-nicholas-taleb");
   await expect(
     page.getByRole("heading", { name: "Popularized", exact: true }),
