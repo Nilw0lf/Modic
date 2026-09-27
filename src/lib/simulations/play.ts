@@ -1,5 +1,6 @@
 import type { ModelResult, Settings, Series } from "./everyday";
 import { seededRandom } from "./random";
+import { atlasModel } from "./atlas";
 
 const f = (n: number) =>
   n.toLocaleString("en-US", { maximumFractionDigits: 1 });
@@ -326,6 +327,6 @@ export function playModel(id: string, s: Settings, seed = 41): ModelResult {
       };
     }
     default:
-      throw new Error(`Unknown play model: ${id}`);
+      return atlasModel(id, s, seed);
   }
 }

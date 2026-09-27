@@ -49,4 +49,36 @@ export const categories = categorySchema.array().parse([
     description:
       "What happens when the best choice depends on what everyone else does.",
   },
+  {
+    id: "information",
+    slug: "information-and-signals",
+    name: "Information & Signals",
+    description:
+      "How clues, uncertainty and communication shape what we can know.",
+  },
+  {
+    id: "operations",
+    slug: "operations-and-systems",
+    name: "Operations & Systems",
+    description: "Queues, bottlenecks and feedback in the systems we build.",
+  },
+  {
+    id: "ecology",
+    slug: "ecology-and-growth",
+    name: "Ecology & Growth",
+    description: "Population, resources and interaction in living systems.",
+  },
+  {
+    id: "social",
+    slug: "social-dynamics",
+    name: "Social Dynamics",
+    description: "How many individual choices add up to group patterns.",
+  },
+  {
+    id: "learning",
+    slug: "learning-and-memory",
+    name: "Learning & Memory",
+    description:
+      "How experience, repetition and evidence change what we remember and do.",
+  },
 ]);

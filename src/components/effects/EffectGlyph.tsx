@@ -1,3 +1,5 @@
+import { atlasEntries } from "@/data/atlas-expansion";
+
 export function EffectGlyph({
   kind,
   large = false,
@@ -10,24 +12,85 @@ export function EffectGlyph({
     stroke: "currentColor",
     strokeWidth: large ? 1.5 : 1.3,
   };
+  const atlas = atlasEntries.find((entry) => entry.id === kind);
   return (
     <svg
       className={`effect-glyph glyph-${kind} ${large ? "large" : ""}`}
       viewBox="0 0 180 88"
       aria-hidden="true"
     >
-      {[
-        "simpsons-paradox",
-        "ellsberg-urn",
-        "allais-paradox",
-        "information-cascade",
-        "threshold-public-good",
-        "trust-game",
-        "centipede-game",
-        "volunteers-dilemma",
-        "beauty-contest",
-        "hotelling-location",
-      ].includes(kind) ? (
+      {atlas ? (
+        <g {...common}>
+          {atlas.categories.includes("ecology") ? (
+            <>
+              <path d="M12 73C35 73 39 22 83 22S132 73 168 35" />
+              <path
+                d="M12 66C45 5 65 65 94 65S143 13 168 24"
+                strokeDasharray="4 4"
+              />
+              <circle cx="94" cy="65" r="4" fill="currentColor" />
+            </>
+          ) : atlas.categories.includes("operations") ? (
+            <>
+              <path d="M10 45H60L70 30H110L120 45H170" />
+              <path d="M10 65H43L54 50H96L108 65H170" strokeDasharray="4 4" />
+              {[42, 90, 139].map((x) => (
+                <circle key={x} cx={x} cy="45" r="4" fill="currentColor" />
+              ))}
+            </>
+          ) : atlas.categories.includes("information") ? (
+            <>
+              {[22, 48, 74, 100, 126, 152].map((x, i) => (
+                <path
+                  key={x}
+                  d={`M${x} 70V${17 + ((i * 19 + kind.length * 7) % 48)}`}
+                />
+              ))}
+              <path
+                d="M12 72H168M12 14H168"
+                strokeDasharray="3 5"
+                opacity=".45"
+              />
+            </>
+          ) : atlas.categories.includes("social") ||
+            atlas.categories.includes("games") ? (
+            <>
+              {[24, 56, 90, 124, 156].map((x, i) => (
+                <circle
+                  key={x}
+                  cx={x}
+                  cy={28 + (i % 2) * 25}
+                  r="7"
+                  fill={i === 2 ? "currentColor" : "none"}
+                />
+              ))}
+              <path
+                d="M31 30L49 52M63 52L83 29M97 29L117 52M131 52L149 29"
+                strokeDasharray="3 4"
+              />
+            </>
+          ) : (
+            <>
+              <path d="M12 70H168M20 65L53 45L86 60L119 22L158 38" />
+              <path
+                d="M20 38L53 60L86 30L119 53L158 18"
+                strokeDasharray="4 4"
+              />
+            </>
+          )}
+        </g>
+      ) : [
+          "simpsons-paradox",
+          "ellsberg-urn",
+          "allais-paradox",
+          "information-cascade",
+          "threshold-public-good",
+          "trust-game",
+          "centipede-game",
+          "volunteers-dilemma",
+          "beauty-contest",
+          "hotelling-location",
+        ].includes(kind) ? (
         <g {...common}>
           {kind === "simpsons-paradox" ? (
             <>

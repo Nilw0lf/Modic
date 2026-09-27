@@ -1,6 +1,7 @@
 import type { Effect, Thinker } from "@/types/catalog";
 import { strategyEntries, strategyThinkers } from "./strategy-expansion";
 import { playEntries, playThinkers } from "./play-expansion";
+import { atlasEntries, atlasThinkers } from "./atlas-expansion";
 
 export type Control = {
   key: string;
@@ -645,6 +646,7 @@ export const newExperiments: Entry[] = [
 
 newExperiments.push(...strategyEntries);
 newExperiments.push(...playEntries);
+newExperiments.push(...atlasEntries);
 
 export const expansionEffects: Effect[] = newExperiments.map((e) => ({
   id: e.id,
@@ -692,6 +694,7 @@ export const expansionEffects: Effect[] = newExperiments.map((e) => ({
 export const expansionThinkers: Thinker[] = [
   ...strategyThinkers,
   ...playThinkers,
+  ...atlasThinkers,
   {
     id: "thaler",
     slug: "richard-thaler",

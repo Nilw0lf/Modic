@@ -14,8 +14,8 @@ import { simulations } from "@/components/simulations/registry";
 describe("catalog", () => {
   it("validates unique identifiers and all relationship references", () => {
     expect(validateCatalog()).toBe(true);
-    expect(effects).toHaveLength(54);
-    expect(effects.filter((e) => e.status === "live")).toHaveLength(46);
+    expect(effects).toHaveLength(84);
+    expect(effects.filter((e) => e.status === "live")).toHaveLength(76);
   });
   it("rejects invalid statuses, missing categories, and relationship types", () => {
     expect(
@@ -68,7 +68,7 @@ describe("local search", () => {
     );
   it("finds names and descriptions case-insensitively", () => {
     expect(search("LINDY")).toEqual(["lindy"]);
-    expect(search("finite")).toEqual(["ruin"]);
+    expect(search("finite")).toEqual(["logistic-growth", "ruin"]);
   });
   it("searches categories and thinker names, ignoring accents", () => {
     expect(search("complex systems")).toContain("lindy");
@@ -77,10 +77,10 @@ describe("local search", () => {
   });
   it("combines category and query, and normalizes apostrophes", () => {
     expect(search("Taleb", "complexity")).toEqual(["antifragility", "lindy"]);
-    expect(search("Gambler's")).toEqual(["ruin"]);
+    expect(search("Gambler's")).toEqual(["gamblers-fallacy", "ruin"]);
   });
   it("handles empty and unmatched searches", () => {
-    expect(search("   ")).toHaveLength(54);
+    expect(search("   ")).toHaveLength(84);
     expect(search("zzzzzz")).toEqual([]);
   });
 });

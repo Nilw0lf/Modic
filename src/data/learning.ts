@@ -2,6 +2,78 @@ import { newExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Play with uncertainty",
+    description:
+      "Search, experiment, collect, and test your intuition about chance.",
+    slugs: [
+      "secretary-problem",
+      "multi-armed-bandit",
+      "coupon-collector",
+      "gamblers-fallacy",
+      "inspection-paradox",
+    ],
+  },
+  {
+    title: "Decode a message",
+    description:
+      "Guess digits, detect signals, and see what noise does to information.",
+    slugs: [
+      "benfords-law",
+      "signal-detection",
+      "shannon-entropy",
+      "noisy-channel",
+      "zipfs-law",
+    ],
+  },
+  {
+    title: "Fix the system",
+    description:
+      "Route traffic, add processors, clear queues and follow supply-chain feedback.",
+    slugs: [
+      "braess-paradox",
+      "amdahls-law",
+      "littles-law",
+      "bullwhip-effect",
+      "jevons-paradox",
+    ],
+  },
+  {
+    title: "Watch life grow",
+    description:
+      "Compare unequal shares, epidemic spread and interacting populations.",
+    slugs: [
+      "pareto-concentration",
+      "sir-epidemic",
+      "logistic-growth",
+      "predator-prey",
+      "allee-effect",
+    ],
+  },
+  {
+    title: "Choose with context",
+    description:
+      "Test how wording, ownership, alternatives and memory shape choices.",
+    slugs: [
+      "framing-effect",
+      "endowment-effect",
+      "decoy-effect",
+      "peak-end-rule",
+      "planning-fallacy",
+    ],
+  },
+  {
+    title: "Move with the crowd",
+    description:
+      "See how thresholds, imitation and competition change a group outcome.",
+    slugs: [
+      "social-tipping",
+      "bass-diffusion",
+      "median-voter",
+      "el-farol-bar",
+      "tullock-contest",
+    ],
+  },
+  {
     title: "Read the evidence",
     description:
       "Reveal the hidden groups, ambiguous odds and signals behind a crowd's choices.",

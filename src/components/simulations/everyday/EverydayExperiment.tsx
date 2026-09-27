@@ -16,6 +16,8 @@ import { SimulationShell } from "@/components/simulation/SimulationShell";
 import { Slider, Stats, Notice } from "../foundations/Shared";
 import { StrategyBoard } from "./StrategyBoard";
 import { PlayBoard } from "./PlayBoard";
+import { AtlasBoard } from "./AtlasBoard";
+import { atlasIds } from "@/data/atlas-expansion";
 
 const colors = ["var(--accent)", "var(--negative)", "var(--positive)"];
 const format = (n: number) =>
@@ -463,20 +465,22 @@ export default function EverydayExperiment({ id }: { id: string }) {
     () => (isGame ? null : model(id, settings, seed)),
     [id, isGame, settings, seed],
   );
-  const stochastic = [
-    "monty-hall",
-    "birthday-paradox",
-    "law-of-large-numbers",
-    "schelling-segregation",
-    "prisoners-dilemma",
-    "winners-curse",
-    "ellsberg-urn",
-    "information-cascade",
-    "threshold-public-good",
-    "volunteers-dilemma",
-    "beauty-contest",
-    "centipede-game",
-  ].includes(id);
+  const stochastic =
+    atlasIds.has(id) ||
+    [
+      "monty-hall",
+      "birthday-paradox",
+      "law-of-large-numbers",
+      "schelling-segregation",
+      "prisoners-dilemma",
+      "winners-curse",
+      "ellsberg-urn",
+      "information-cascade",
+      "threshold-public-good",
+      "volunteers-dilemma",
+      "beauty-contest",
+      "centipede-game",
+    ].includes(id);
   function reset() {
     setSettings(initial());
     setSeed(41);
@@ -539,6 +543,12 @@ export default function EverydayExperiment({ id }: { id: string }) {
       />
       <PlayBoard
         key={`play-${resetKey}-${seed}-${id === "information-cascade" ? `${settings.accuracy}-${settings.people}` : ""}`}
+        id={id}
+        settings={settings}
+        seed={seed}
+      />
+      <AtlasBoard
+        key={`atlas-${resetKey}-${seed}-${id}`}
         id={id}
         settings={settings}
         seed={seed}
