@@ -5,11 +5,21 @@ import extensions from "@/content/effects/discovery.json";
 import foundations from "@/content/effects/foundations.json";
 import { z } from "zod";
 import { expansionArticles } from "@/data/expansion";
+import { readerGuides } from "@/content/effects/guides";
+import { readerGuideSchema } from "@/content/effects/guides/types";
+import { additionalReadings } from "@/content/effects/guides/readings";
 export const articleSchema = z.object({
+  readerGuide: readerGuideSchema,
   whatToNotice: z.string().optional(),
   explanationTitle: z.string().optional(),
   sections: z
-    .array(z.object({ title: z.string(), paragraphs: z.array(z.string()) }))
+    .array(
+      z.object({
+        title: z.string(),
+        paragraphs: z.array(z.string()),
+        kind: z.enum(["model", "explanation", "applications"]).optional(),
+      }),
+    )
     .optional(),
   explanation: z.array(z.string()),
   whyItMatters: z.array(z.string()).optional(),
@@ -33,5 +43,18 @@ const content: Record<string, unknown> = {
   "gamblers-ruin": ruin,
 };
 export function getArticle(slug: string): Article {
-  return articleSchema.parse(content[slug]);
+  const entry = content[slug];
+  const article = articleSchema.parse({
+    ...(typeof entry === "object" && entry !== null ? entry : {}),
+    readerGuide: readerGuides[slug],
+  });
+  article.readingLinks = [
+    ...new Map(
+      [
+        ...(article.readingLinks ?? []),
+        ...(additionalReadings[slug] ?? []),
+      ].map((reading) => [reading.url, reading]),
+    ).values(),
+  ];
+  return article;
 }

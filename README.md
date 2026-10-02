@@ -8,6 +8,10 @@ The homepage provides Start learning and Surprise me actions. `/learn` contains 
 
 ## Run locally
 
+Every concept now has an individually written reader guide: a short definition, the underlying mechanism, help interpreting the experiment, a three-step worked example, a misconception check, a question and answer, and a reflection prompt. The reading layout includes a contents menu, practical applications, limitations and contextual source links. Deeper model assumptions use a native expandable panel; all explanatory text is server-rendered and remains readable without JavaScript. Page descriptions use each concept's precise definition, with terminology included naturally.
+
+When adding a concept, author its guide in `src/content/effects/guides/` and register it in the index. `getArticle` requires valid guide content, and `tests/unit/reading.test.ts` checks complete catalog coverage, distinct examples and sources. Article sections default to optional model detail; use `kind: "applications"` or `kind: "explanation"` for sections that belong in the main reading flow. `tests/e2e/reading.spec.ts` covers reading navigation, keyboard disclosure, themes, smaller screens and reading without JavaScript.
+
 Use Node.js 20.9+ (tested with Node 24) and pnpm 11.19.0. Install pnpm through Corepack or your preferred package manager if needed.
 
 ```sh

@@ -15,7 +15,7 @@ export async function generateMetadata({
   return effect
     ? pageMetadata(
         effect.name,
-        effect.shortDescription,
+        getArticle(effect.slug).readerGuide.definition,
         `/effects/${effect.slug}`,
       )
     : {};
