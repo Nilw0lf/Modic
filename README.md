@@ -24,7 +24,13 @@ pnpm build
 pnpm start
 ```
 
-Copy `.env.example` to `.env.local` if you need a custom canonical origin. Set `NEXT_PUBLIC_SITE_URL` to the actual HTTPS origin **before building for deployment**. The local fallback is `http://localhost:3000`.
+Production canonicals, Open Graph URLs, robots.txt and sitemap.xml use `https://modic.app`. Copy `.env.example` to `.env.local` only if you need a custom development origin; the development fallback is `http://localhost:3000`. Legacy Vercel origin variables cannot override the production domain.
+
+## Sitemap maintenance
+
+`/sitemap.xml` is generated from the catalog on every production build. It lists core pages, live experiments, and categories/thinkers connected to live experiments, grouped with alphabetical slugs and no query-string variants. Planned experiments enter automatically when their status changes to `live`. Adding a published effect and deploying automatically refreshes the sitemap, without editing XML. Regression tests enforce catalog coverage, uniqueness, HTTPS production URLs, and automatic additions.
+
+`/robots.txt` advertises `https://modic.app/sitemap.xml`. Submit that URL once in Google Search Console; it remains the same for future updates. No fabricated `lastmod` dates are emitted because the catalog does not record reliable content-modification dates. Google ignores `priority` and `changefreq`, so they are omitted. Keep this policy when adding future concepts.
 
 ## Stack and design choices
 
@@ -244,7 +250,7 @@ Static content and metadata are rendered on the server. Fonts are self-hosted. D
 2. In Vercel, choose **Add New → Project** and import the repository.
 3. Select the **Next.js** preset and **Node.js 24.x**. Keep the output directory at its framework default. Use `pnpm build` as the build command.
 4. Add `ENABLE_EXPERIMENTAL_COREPACK=1` so Vercel uses the `pnpm@11.19.0` version pinned in `package.json`. Leave the install command automatic.
-5. Set `NEXT_PUBLIC_SITE_URL` to your production HTTPS origin. If using the assigned Vercel domain, update this after the first deployment and redeploy so canonical URLs and the sitemap use the correct origin.
+5. Production SEO metadata uses `https://modic.app`; no origin environment variable is required.
 6. Deploy. To use your own domain, add it in the project's domain settings and follow the DNS instructions.
 
 No database or API keys are required. See [Vercel's Next.js guide](https://vercel.com/docs/frameworks/full-stack/nextjs) and [Corepack configuration](https://vercel.com/docs/builds/configure-a-build#corepack).
@@ -256,7 +262,7 @@ Cloudflare Workers is also an option, but requires a separate compatibility and 
 This is a standard Next.js application and can run on Vercel or another Node-compatible host. No hosting account is required for local development, and no public deployment was created by this task.
 
 1. Configure pnpm and Node on the host.
-2. Set `NEXT_PUBLIC_SITE_URL` to the real origin.
+2. Production SEO metadata uses `https://modic.app`. If the public domain ever changes, update the production origin in `src/lib/metadata.ts` and its regression tests together.
 3. Install with `pnpm install --frozen-lockfile`.
 4. Run lint, type checks, tests, and `pnpm build`.
 5. Start with `pnpm start`, or let the Next.js hosting integration manage the process.

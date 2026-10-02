@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+  process.env.NODE_ENV === "production"
+    ? "https://modic.app"
+    : process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export function pageMetadata(
   title: string,
   description: string,
