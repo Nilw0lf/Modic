@@ -10,6 +10,7 @@ import "@/styles/learning.css";
 import "@/styles/art-direction.css";
 import "@/styles/everyday.css";
 import "@/styles/reading.css";
+import "@/styles/simple.css";
 const sans = localFont({
   src: "../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
   variable: "--font-geist",

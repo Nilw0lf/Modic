@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { learningPath, learningCollections } from "@/data/learning";
-import { newExperiments } from "@/data/expansion";
+import { catalogExperiments } from "@/data/expansion";
 export function LearningTrail({ slug }: { slug: string }) {
   const index = learningPath.findIndex((s) => s.slug === slug);
   if (index < 0) {
     const collection = learningCollections.find((c) => c.slugs.includes(slug));
     if (!collection) return null;
     const position = collection.slugs.indexOf(slug);
-    const current = newExperiments.find((e) => e.id === slug)!;
-    const next = newExperiments.find(
+    const current = catalogExperiments.find((e) => e.id === slug)!;
+    const next = catalogExperiments.find(
       (e) => e.id === collection.slugs[position + 1],
     );
     return (

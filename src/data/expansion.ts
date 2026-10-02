@@ -2,6 +2,7 @@ import type { Effect, Thinker } from "@/types/catalog";
 import { strategyEntries, strategyThinkers } from "./strategy-expansion";
 import { playEntries, playThinkers } from "./play-expansion";
 import { atlasEntries, atlasThinkers } from "./atlas-expansion";
+import { simpleEntries, simpleThinkers } from "./simple-expansion";
 
 export type Control = {
   key: string;
@@ -28,6 +29,8 @@ export type Entry = {
   limitation: string;
   source: { title: string; url: string };
   thinker?: string;
+  coThinkers?: string[];
+  related?: string[];
   format?: Effect["experimentType"];
 };
 
@@ -648,22 +651,21 @@ newExperiments.push(...strategyEntries);
 newExperiments.push(...playEntries);
 newExperiments.push(...atlasEntries);
 
-export const expansionEffects: Effect[] = newExperiments.map((e) => ({
+export const catalogExperiments = [...newExperiments, ...simpleEntries];
+export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
   id: e.id,
   slug: e.id,
   name: e.name,
   shortDescription: e.description,
   categoryIds: e.categories,
   thinkerRelationships: e.thinker
-    ? [
-        {
-          id: `${e.id}-${e.thinker}`,
-          thinkerId: e.thinker,
-          relationship: "DISCUSSED",
-          editorialStatus: "verified",
-          sources: [e.source.url],
-        },
-      ]
+    ? [e.thinker, ...(e.coThinkers ?? [])].map((thinkerId) => ({
+        id: `${e.id}-${thinkerId}`,
+        thinkerId,
+        relationship: "DISCUSSED",
+        editorialStatus: "verified",
+        sources: [e.source.url],
+      }))
     : [],
   status: "live",
   difficulty: [
@@ -676,7 +678,8 @@ export const expansionEffects: Effect[] = newExperiments.map((e) => ({
   simulationType: e.id,
   experimentType: e.format ?? "simulation",
   relatedEffectIds:
-    e.thinker === "taleb"
+    e.related ??
+    (e.thinker === "taleb"
       ? ["lindy", "antifragility", "barbell-strategy"]
           .filter((id) => id !== e.id)
           .slice(0, 2)
@@ -688,10 +691,11 @@ export const expansionEffects: Effect[] = newExperiments.map((e) => ({
           ? ["base-rate", "regression"]
           : e.categories.includes("complexity")
             ? ["network", "power-laws"]
-            : ["ruin", "base-rate"],
+            : ["ruin", "base-rate"]),
 }));
 
 export const expansionThinkers: Thinker[] = [
+  ...simpleThinkers,
   ...strategyThinkers,
   ...playThinkers,
   ...atlasThinkers,
@@ -754,7 +758,7 @@ export const expansionThinkers: Thinker[] = [
 ];
 
 export const expansionArticles = Object.fromEntries(
-  newExperiments.map((e) => [
+  catalogExperiments.map((e) => [
     e.id,
     {
       explanationTitle: e.title,

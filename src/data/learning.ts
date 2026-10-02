@@ -1,6 +1,54 @@
-import { newExperiments } from "./expansion";
+import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
+  {
+    title: "Notice the hidden nudge",
+    description:
+      "Explore attention, first impressions and the way choices are presented.",
+    slugs: [
+      "stroop-effect",
+      "fitts-law",
+      "hicks-law",
+      "halo-effect",
+      "default-effect",
+    ],
+  },
+  {
+    title: "Check your judgment",
+    description:
+      "Test stories, headlines, budgets and confidence with short decision games.",
+    slugs: [
+      "conjunction-fallacy",
+      "availability-heuristic",
+      "mental-accounting",
+      "zero-risk-bias",
+      "dunning-kruger-effect",
+    ],
+  },
+  {
+    title: "Look at the whole system",
+    description:
+      "Separate selection, accumulation and shared errors from the headline result.",
+    slugs: [
+      "berksons-paradox",
+      "friendship-paradox",
+      "wisdom-of-crowds",
+      "random-walk",
+      "stocks-and-flows",
+    ],
+  },
+  {
+    title: "Choose with other people",
+    description:
+      "Buy useful information, combine risks and find where other choices affect yours.",
+    slugs: [
+      "value-of-information",
+      "diversification",
+      "tragedy-of-the-anticommons",
+      "minority-game",
+      "rock-paper-scissors",
+    ],
+  },
   {
     title: "Play with uncertainty",
     description:
@@ -216,7 +264,7 @@ export const learningPath = [
   },
 ];
 export const glossary = [
-  ...newExperiments.map((e) => ({
+  ...catalogExperiments.map((e) => ({
     term: e.name,
     definition: e.description,
     slug: e.id,

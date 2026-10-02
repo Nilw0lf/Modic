@@ -1,6 +1,13 @@
 import { categorySchema } from "@/types/catalog";
 export const categories = categorySchema.array().parse([
   {
+    id: "perception",
+    slug: "perception-and-design",
+    name: "Perception & Design",
+    description:
+      "Attention, pointing and choice: how small design decisions affect the tasks we perform.",
+  },
+  {
     id: "risk",
     slug: "risk-and-uncertainty",
     name: "Risk & Uncertainty",

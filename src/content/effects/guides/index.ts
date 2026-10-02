@@ -3,6 +3,7 @@ import { foundationGuides } from "./foundations";
 import { strategyGuides } from "./strategy";
 import { playGuides } from "./play";
 import { atlasGuides } from "./atlas";
+import { simpleGuides } from "./simple";
 import type { ReaderGuide } from "./types";
 
 export const readerGuides: Record<string, ReaderGuide> = {
@@ -11,4 +12,5 @@ export const readerGuides: Record<string, ReaderGuide> = {
   ...strategyGuides,
   ...playGuides,
   ...atlasGuides,
+  ...simpleGuides,
 };
