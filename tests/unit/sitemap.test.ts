@@ -10,12 +10,93 @@ async function production() {
   vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://modic.vercel.app");
   vi.stubEnv("VERCEL_PROJECT_PRODUCTION_URL", "modic.vercel.app");
   vi.resetModules();
-  const { default: sitemap } = await import("@/app/sitemap");
+  const { sitemapEntries: sitemap } = await import("@/lib/seo/sitemap");
   const catalog = await import("@/lib/catalog");
   return { sitemap, ...catalog };
 }
 
 describe("production sitemap", () => {
+  it("publishes an index of reachable, distinct XML child routes", async () => {
+    await production();
+    const { GET } = await import("@/app/sitemap.xml/route");
+    const { GET: childSitemap, generateStaticParams } =
+      await import("@/app/sitemap/[file]/route");
+    const { sitemapIndexUrls, sitemapGroups } =
+      await import("@/lib/seo/sitemap");
+    const response = GET();
+    const xml = await response.text();
+    expect(response.headers.get("content-type")).toBe(
+      "application/xml; charset=utf-8",
+    );
+    expect(response.headers.get("x-robots-tag")).toBe("noindex, follow");
+    expect(xml).toContain(
+      '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    );
+    expect(
+      [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]),
+    ).toEqual(sitemapIndexUrls());
+    expect(generateStaticParams()).toEqual([
+      { file: "pages.xml" },
+      { file: "effects.xml" },
+      { file: "categories.xml" },
+      { file: "thinkers.xml" },
+    ]);
+    const request = new Request("https://modic.app/sitemap.xml");
+    for (const group of sitemapGroups()) {
+      const child = await childSitemap(request, {
+        params: Promise.resolve({ file: `${group.id}.xml` }),
+      });
+      expect(child.status).toBe(200);
+      expect(child.headers.get("x-robots-tag")).toBe("noindex, follow");
+      const body = await child.text();
+      expect(body).toContain(
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+      );
+      expect(
+        [...body.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]),
+      ).toEqual(group.entries.map((entry) => entry.url));
+    }
+    for (const file of ["unknown.xml", "effects-2.xml", "effects.xml.xml"])
+      expect(
+        (await childSitemap(request, { params: Promise.resolve({ file }) }))
+          .status,
+      ).toBe(404);
+  });
+
+  it("escapes XML special characters without introducing extra nodes", async () => {
+    await production();
+    const { xmlSitemapResponse } = await import("@/lib/seo/sitemap");
+    const body = await xmlSitemapResponse("urlset", [
+      "https://modic.app/?a=1&b=<test>\"'",
+    ]).text();
+    expect(body).toContain(
+      "https://modic.app/?a=1&amp;b=&lt;test&gt;&quot;&apos;",
+    );
+    expect([...body.matchAll(/<loc>/g)]).toHaveLength(1);
+  });
+
+  it("splits growing groups at 1000 entries without missing or repeating URLs", async () => {
+    await production();
+    const { paginateSitemap } = await import("@/lib/seo/sitemap");
+    const urls = Array.from(
+      { length: 2001 },
+      (_, index) => `https://modic.app/effects/example-${index}`,
+    );
+    const groups = paginateSitemap("effects", urls);
+    expect(groups.map((group) => group.id)).toEqual([
+      "effects",
+      "effects-2",
+      "effects-3",
+    ]);
+    expect(groups.map((group) => group.entries.length)).toEqual([
+      1000, 1000, 1,
+    ]);
+    expect(
+      groups.flatMap((group) => group.entries.map((entry) => entry.url)),
+    ).toEqual(urls);
+    expect(paginateSitemap("empty", [])).toEqual([]);
+    expect(paginateSitemap("effects", urls.slice(0, 1000))).toHaveLength(1);
+  });
   it("lists each published canonical exactly once and excludes planned experiments", async () => {
     const { sitemap, effects, categories, thinkers } = await production();
     const published = effects.filter((effect) => effect.status === "live");
