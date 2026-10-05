@@ -3,6 +3,7 @@ import { strategyEntries, strategyThinkers } from "./strategy-expansion";
 import { playEntries, playThinkers } from "./play-expansion";
 import { atlasEntries, atlasThinkers } from "./atlas-expansion";
 import { simpleEntries, simpleThinkers } from "./simple-expansion";
+import { discoveryEntries, discoveryThinkers } from "./discovery-expansion";
 
 export type Control = {
   key: string;
@@ -651,7 +652,11 @@ newExperiments.push(...strategyEntries);
 newExperiments.push(...playEntries);
 newExperiments.push(...atlasEntries);
 
-export const catalogExperiments = [...newExperiments, ...simpleEntries];
+export const catalogExperiments = [
+  ...newExperiments,
+  ...simpleEntries,
+  ...discoveryEntries,
+];
 export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
   id: e.id,
   slug: e.id,
@@ -695,6 +700,7 @@ export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
 }));
 
 export const expansionThinkers: Thinker[] = [
+  ...discoveryThinkers,
   ...simpleThinkers,
   ...strategyThinkers,
   ...playThinkers,

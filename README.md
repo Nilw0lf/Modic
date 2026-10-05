@@ -2,11 +2,11 @@
 
 An interactive field guide to how the world behaves. Built as an editorial publication, with experiments embedded near the beginning of an idea rather than hidden beneath an article.
 
-The collection includes 104 concepts, 13 categories, 61 thinkers, local search, and 96 interactive experiments. Eight further experiments are explicitly **planned**. New playable lessons span sequential search, information theory, traffic, queues, ecology, behavioral choice, social dynamics and contests. Each concept includes model assumptions, a practical example and a reading reference.
+The collection includes 134 concepts, 13 categories, 81 thinkers, local search, and 126 interactive experiments. Eight further experiments are explicitly **planned**. New playable lessons span sequential search, information theory, traffic, queues, ecology, behavioral choice, social dynamics and contests. Each concept includes model assumptions, a practical example and a reading reference.
 
-The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, eighteen five-experiment routes and a 106-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
+The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, twenty-four five-experiment routes and a 136-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
 
-The latest twenty lessons add fourteen short games and six simulations, covering attention, judgment, networks, information, coordination and stocks and flows. Timed attention games record actual answers and response times; confidence calibration compares answers with confidence without diagnosing competence. Each lesson has its own reading guide and primary source, and automatically joins search, related concepts and the published sitemap.
+The latest thirty lessons add sixteen games and fourteen simulations, including logic cards, Nim, bidding, coin-pattern races, actual memory recall, voting cycles, diffusion, percolation and hysteresis. Each has its own original worked example, source, interpretation and reflection prompt. Timed attention games record actual answers and response times; confidence calibration compares answers with confidence without diagnosing competence. Each lesson has its own reading guide and primary source, and automatically joins search, related concepts and the published sitemap.
 
 ## Run locally
 

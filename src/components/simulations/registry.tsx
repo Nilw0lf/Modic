@@ -2,6 +2,15 @@ import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
 import { newExperiments } from "@/data/expansion";
 import { simpleEntries } from "@/data/simple-expansion";
+import { discoveryEntries } from "@/data/discovery-expansion";
+const DiscoveryExperiment = dynamic(
+  () => import("./discovery/DiscoveryExperiment"),
+  {
+    loading: () => (
+      <div className="simulation-loading">Preparing the experiment…</div>
+    ),
+  },
+);
 const SimpleExperiment = dynamic(() => import("./simple/SimpleExperiment"), {
   loading: () => (
     <div className="simulation-loading">Preparing the experiment…</div>
@@ -16,6 +25,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    discoveryEntries.map((entry) => [
+      entry.id,
+      function DiscoveryConceptExperiment() {
+        return <DiscoveryExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     simpleEntries.map((entry) => [
       entry.id,

@@ -2,6 +2,75 @@ import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Play the surprising odds",
+    description: "Race patterns, compare dice and trace the shape of chance.",
+    slugs: [
+      "penneys-game",
+      "nontransitive-dice",
+      "st-petersburg-paradox",
+      "galton-board",
+      "polya-urn",
+    ],
+  },
+  {
+    title: "Check the tempting answer",
+    description:
+      "Test rules and separate first impressions from relevant evidence.",
+    slugs: [
+      "wason-selection",
+      "cognitive-reflection",
+      "recognition-heuristic",
+      "affect-heuristic",
+      "scope-insensitivity",
+    ],
+  },
+  {
+    title: "Learn by trying",
+    description: "Explore memory, retrieval, attachment and perceived control.",
+    slugs: [
+      "serial-position-effect",
+      "testing-effect",
+      "ikea-effect",
+      "barnum-effect",
+      "illusion-of-control",
+    ],
+  },
+  {
+    title: "Think a move ahead",
+    description: "Inspect incentives, predictions and strategic positions.",
+    slugs: [
+      "nim",
+      "dollar-auction",
+      "travelers-dilemma",
+      "newcomb-problem",
+      "hawk-dove",
+    ],
+  },
+  {
+    title: "Connect the moving parts",
+    description:
+      "Build routes, spread a concentration and compare resilient arrangements.",
+    slugs: [
+      "percolation",
+      "small-world-shortcuts",
+      "diffusion",
+      "series-parallel-reliability",
+      "hysteresis",
+    ],
+  },
+  {
+    title: "Read a changing result",
+    description:
+      "Investigate collective choices, unequal shares, feedback and evidence.",
+    slugs: [
+      "condorcet-cycle",
+      "alabama-paradox",
+      "gini-coefficient",
+      "cobweb-model",
+      "bayesian-updating",
+    ],
+  },
+  {
     title: "Notice the hidden nudge",
     description:
       "Explore attention, first impressions and the way choices are presented.",
