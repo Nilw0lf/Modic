@@ -7,6 +7,7 @@ const links = [
   "Categories",
   "Thinkers",
   "Explore",
+  "Insights",
   "About",
 ];
 export function Header() {

@@ -10,6 +10,7 @@ export function Footer() {
       </div>
       <div>
         <span>An ongoing collection</span>
+        <Link href="/insights">Read Insights ↗</Link>
         <Link href="/about">About this project ↗</Link>
       </div>
     </footer>

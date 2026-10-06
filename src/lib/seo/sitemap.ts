@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { effects, categories, thinkers } from "@/lib/catalog";
 import { siteUrl } from "@/lib/metadata";
+import { insights } from "@/content/insights";
 
 export type SitemapGroup = { id: string; entries: MetadataRoute.Sitemap };
 export const sitemapPageSize = 1000;
@@ -32,6 +33,7 @@ export function sitemapGroups(): SitemapGroup[] {
       "/explore",
       "/learn",
       "/about",
+      "/insights",
     ],
     effects: sortedSlugs(published).map((slug) => `/effects/${slug}`),
     categories: sortedSlugs(
@@ -48,6 +50,7 @@ export function sitemapGroups(): SitemapGroup[] {
         ),
       ),
     ).map((slug) => `/thinkers/${slug}`),
+    insights: sortedSlugs(insights).map((slug) => `/insights/${slug}`),
   };
   return Object.entries(collections).flatMap(([id, paths]) =>
     paginateSitemap(

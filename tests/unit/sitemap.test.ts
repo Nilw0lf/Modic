@@ -40,6 +40,7 @@ describe("production sitemap", () => {
       { file: "effects.xml" },
       { file: "categories.xml" },
       { file: "thinkers.xml" },
+      { file: "insights.xml" },
     ]);
     const request = new Request("https://modic.app/sitemap.xml");
     for (const group of sitemapGroups()) {
@@ -99,6 +100,7 @@ describe("production sitemap", () => {
   });
   it("lists each published canonical exactly once and excludes planned experiments", async () => {
     const { sitemap, effects, categories, thinkers } = await production();
+    const { insights } = await import("@/content/insights");
     const published = effects.filter((effect) => effect.status === "live");
     const expected = [
       "/",
@@ -108,6 +110,8 @@ describe("production sitemap", () => {
       "/explore",
       "/learn",
       "/about",
+      "/insights",
+      ...insights.map((post) => `/insights/${post.slug}`),
       ...published.map((effect) => `/effects/${effect.slug}`),
       ...categories
         .filter((category) =>
@@ -185,10 +189,24 @@ describe("production sitemap", () => {
     }
   });
 
+  it("automatically includes new Insights without editing XML lists", async () => {
+    const { sitemap } = await production();
+    const { insights } = await import("@/content/insights");
+    const count = insights.length;
+    try {
+      insights.push({ ...insights[0], slug: "future-insight" });
+      expect(sitemap().map((entry) => entry.url)).toContain(
+        "https://modic.app/insights/future-insight",
+      );
+    } finally {
+      insights.splice(count);
+    }
+  });
+
   it("keeps entity groups sorted and does not invent freshness or ranking hints", async () => {
     const { sitemap } = await production();
     const entries = sitemap();
-    for (const prefix of ["effects", "categories", "thinkers"]) {
+    for (const prefix of ["effects", "categories", "thinkers", "insights"]) {
       const urls = entries
         .map((entry) => entry.url)
         .filter((url) => url.startsWith(`https://modic.app/${prefix}/`));
