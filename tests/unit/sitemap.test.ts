@@ -16,6 +16,19 @@ async function production() {
 }
 
 describe("production sitemap", () => {
+  it("enforces XML crawler headers when hosting serves the index as a static asset", async () => {
+    const { default: config } = await import("../../next.config");
+    expect(await config.headers?.()).toEqual([
+      {
+        source: "/sitemap.xml",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }],
+      },
+      {
+        source: "/sitemap/:file",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }],
+      },
+    ]);
+  });
   it("publishes an index of reachable, distinct XML child routes", async () => {
     await production();
     const { GET } = await import("@/app/sitemap.xml/route");
