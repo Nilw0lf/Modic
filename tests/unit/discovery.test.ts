@@ -6,7 +6,7 @@ import { effectSchema } from "@/types/catalog";
 describe("discovery", () => {
   it("calculates all collection counts from metadata", () => {
     expect(collectionSummary(effects)).toBe(
-      "134 ideas · 126 interactive · 8 in development",
+      "149 ideas · 141 interactive · 8 in development",
     );
     expect(collectionSummary([])).toBe(
       "0 ideas · 0 interactive · 0 in development",

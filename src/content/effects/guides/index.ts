@@ -5,6 +5,7 @@ import { playGuides } from "./play";
 import { atlasGuides } from "./atlas";
 import { simpleGuides } from "./simple";
 import { discoveryGuides } from "./discovery";
+import { frontierGuides } from "./frontier";
 import type { ReaderGuide } from "./types";
 
 export const readerGuides: Record<string, ReaderGuide> = {
@@ -15,4 +16,5 @@ export const readerGuides: Record<string, ReaderGuide> = {
   ...atlasGuides,
   ...simpleGuides,
   ...discoveryGuides,
+  ...frontierGuides,
 };

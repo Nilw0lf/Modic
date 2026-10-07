@@ -14,8 +14,8 @@ import { simulations } from "@/components/simulations/registry";
 describe("catalog", () => {
   it("validates unique identifiers and all relationship references", () => {
     expect(validateCatalog()).toBe(true);
-    expect(effects).toHaveLength(134);
-    expect(effects.filter((e) => e.status === "live")).toHaveLength(126);
+    expect(effects).toHaveLength(149);
+    expect(effects.filter((e) => e.status === "live")).toHaveLength(141);
   });
   it("rejects invalid statuses, missing categories, and relationship types", () => {
     expect(
@@ -80,7 +80,7 @@ describe("local search", () => {
     expect(search("Gambler's")).toEqual(["gamblers-fallacy", "ruin"]);
   });
   it("handles empty and unmatched searches", () => {
-    expect(search("   ")).toHaveLength(134);
+    expect(search("   ")).toHaveLength(149);
     expect(search("zzzzzz")).toEqual([]);
   });
 });

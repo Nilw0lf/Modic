@@ -4,6 +4,7 @@ import { playEntries, playThinkers } from "./play-expansion";
 import { atlasEntries, atlasThinkers } from "./atlas-expansion";
 import { simpleEntries, simpleThinkers } from "./simple-expansion";
 import { discoveryEntries, discoveryThinkers } from "./discovery-expansion";
+import { frontierEntries, frontierThinkers } from "./frontier-expansion";
 
 export type Control = {
   key: string;
@@ -33,6 +34,8 @@ export type Entry = {
   coThinkers?: string[];
   related?: string[];
   format?: Effect["experimentType"];
+  attributionStatus?: "provisional" | "verified";
+  relationship?: Effect["thinkerRelationships"][number]["relationship"];
 };
 
 export const newExperiments: Entry[] = [
@@ -656,6 +659,7 @@ export const catalogExperiments = [
   ...newExperiments,
   ...simpleEntries,
   ...discoveryEntries,
+  ...frontierEntries,
 ];
 export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
   id: e.id,
@@ -667,8 +671,8 @@ export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
     ? [e.thinker, ...(e.coThinkers ?? [])].map((thinkerId) => ({
         id: `${e.id}-${thinkerId}`,
         thinkerId,
-        relationship: "DISCUSSED",
-        editorialStatus: "verified",
+        relationship: e.relationship ?? "DISCUSSED",
+        editorialStatus: e.attributionStatus ?? "verified",
         sources: [e.source.url],
       }))
     : [],
@@ -700,6 +704,7 @@ export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
 }));
 
 export const expansionThinkers: Thinker[] = [
+  ...frontierThinkers,
   ...discoveryThinkers,
   ...simpleThinkers,
   ...strategyThinkers,

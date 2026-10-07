@@ -1,0 +1,453 @@
+.frontier-board {
+  padding: clamp(18px, 3vw, 34px);
+  border-top: 1px solid var(--border);
+}
+.frontier-board h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+}
+.frontier-board .frontier-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 18px 0 0;
+}
+.frontier-board .play-feedback {
+  margin: 22px 0;
+}
+.frontier-board button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--background);
+  border-color: var(--accent);
+}
+.frontier-preferences,
+.frontier-two-controls,
+.frontier-shopfront,
+.frontier-metric-cards,
+.frontier-pattern-rating {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin: 18px 0 24px;
+}
+.frontier-preferences > div,
+.frontier-shopfront > div,
+.frontier-metric-cards > div,
+.frontier-pattern-rating > div {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 22px;
+  border-radius: 7px;
+  min-width: 0;
+}
+.frontier-preferences p {
+  font-size: 13px;
+  margin: 9px 0;
+}
+.frontier-matches,
+.frontier-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 26px 0;
+}
+.frontier-matches > div,
+.frontier-fields > div {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.frontier-matches span,
+.frontier-matches small,
+.frontier-fields > div > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.frontier-matches strong {
+  font-size: 19px;
+}
+.frontier-log {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 17px 20px;
+  margin: 20px 0;
+  font-size: 13px;
+}
+.frontier-log summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.frontier-log ol {
+  padding-left: 20px;
+}
+.frontier-log li {
+  margin: 9px 0;
+}
+.frontier-log p {
+  margin-top: 15px;
+}
+.frontier-payoff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 25px 0;
+  max-width: 540px;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+.frontier-payoff-grid > * {
+  padding: 17px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-size: 14px;
+}
+.frontier-payoff-grid span {
+  background: var(--surface);
+}
+.frontier-output-bars {
+  margin: 26px 0;
+  display: grid;
+  gap: 17px;
+}
+.frontier-output-bars span {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+.frontier-output-bars i {
+  display: block;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 2px;
+  min-width: 0;
+}
+.frontier-output-bars > div:last-child i {
+  background: var(--positive);
+}
+.frontier-shopfront span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.frontier-shopfront strong {
+  display: block;
+  font-size: 30px;
+  margin: 10px 0;
+}
+.frontier-shopfront p {
+  font-size: 14px;
+}
+.frontier-contest {
+  padding: 26px;
+  background: var(--surface);
+  border-radius: 7px;
+  margin: 25px 0;
+}
+.frontier-contest > span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.frontier-contest > strong {
+  display: block;
+  font-size: 26px;
+  margin-top: 10px;
+}
+.frontier-cost-track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+.frontier-cost-track span {
+  border: 1px solid var(--border);
+  min-width: 42px;
+  padding: 8px;
+  text-align: center;
+  color: var(--muted);
+  border-radius: 4px;
+}
+.frontier-cost-track .spent {
+  color: var(--negative);
+  border-color: var(--negative);
+}
+.frontier-fields > div > strong {
+  font-size: 36px;
+  color: var(--accent);
+}
+.frontier-fields .play-actions {
+  gap: 8px;
+}
+.frontier-fields .play-actions button {
+  padding: 8px 14px;
+}
+.frontier-roads {
+  display: grid;
+  gap: 18px;
+  margin: 28px 0;
+}
+.frontier-roads > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 18px 20px;
+  border-radius: 6px;
+}
+.frontier-roads span {
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+}
+.frontier-roads strong {
+  font-size: 17px;
+  display: block;
+  margin: 6px 0 14px;
+}
+.frontier-roads i {
+  display: block;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+.frontier-roads > div:last-child i {
+  background: var(--positive);
+}
+.frontier-network {
+  max-width: 410px;
+  margin: 20px auto;
+}
+.frontier-network svg {
+  width: 100%;
+  display: block;
+}
+.frontier-network figcaption,
+.frontier-trajectory figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.frontier-node-picker {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 7px;
+  margin: 20px 0;
+}
+.frontier-node-picker button {
+  padding: 9px 0;
+}
+.frontier-trajectory {
+  margin: 25px 0;
+}
+.frontier-trajectory svg {
+  width: 100%;
+  display: block;
+}
+.frontier-metric-cards dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  font-size: 12px;
+  margin: 0;
+  align-items: baseline;
+}
+.frontier-metric-cards dt {
+  color: var(--muted);
+}
+.frontier-metric-cards dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+.frontier-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.frontier-table-wrap table {
+  min-width: 510px;
+  margin-bottom: 20px;
+}
+.frontier-privacy-count {
+  padding: 34px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+  margin: 28px 0;
+  border-radius: 7px;
+}
+.frontier-privacy-count > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.frontier-privacy-count strong {
+  display: block;
+  font-size: clamp(44px, 7vw, 66px);
+  color: var(--accent);
+  line-height: 1.4;
+}
+.frontier-attention-scene {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  min-height: 230px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  margin: 25px 0;
+}
+.frontier-attention-scene > span {
+  font-size: clamp(32px, 5vw, 50px);
+}
+.frontier-attention-scene .blue {
+  color: var(--accent);
+}
+.frontier-attention-scene .amber {
+  color: #bd7346;
+}
+.frontier-attention-scene .frontier-surprise {
+  font-size: 32px;
+  color: var(--foreground);
+  transform: rotate(20deg);
+}
+.frontier-answer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 20px;
+}
+.frontier-answer label {
+  width: 100%;
+  font-weight: 600;
+}
+.frontier-answer input {
+  width: 120px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 10px;
+}
+.frontier-change-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 25px 0;
+}
+.frontier-change-grid button {
+  min-height: 90px;
+  background: var(--surface);
+  position: relative;
+}
+.frontier-change-grid button > small {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.frontier-change-grid button > span {
+  display: block;
+  font-size: 35px;
+  color: var(--accent);
+}
+.frontier-change-grid.blank button {
+  background: var(--background);
+  opacity: 1;
+}
+.frontier-change-grid .revealed {
+  outline: 2px solid var(--positive);
+  outline-offset: -3px;
+}
+.frontier-comparison {
+  font-size: 20px;
+  font-weight: 600;
+}
+.frontier-pattern {
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin: 12px auto 22px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+.frontier-pattern-rating .play-actions {
+  justify-content: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.frontier-pattern-rating button {
+  padding: 8px 12px;
+  min-width: 44px;
+}
+.frontier-exposure-card {
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 30px;
+  margin: 20px 0;
+}
+@media (max-width: 650px) {
+  .frontier-preferences,
+  .frontier-shopfront,
+  .frontier-metric-cards,
+  .frontier-two-controls,
+  .frontier-pattern-rating {
+    grid-template-columns: 1fr;
+  }
+  .frontier-matches {
+    gap: 8px;
+  }
+  .frontier-matches > div {
+    padding: 12px;
+  }
+  .frontier-fields {
+    grid-template-columns: 1fr;
+  }
+  .frontier-fields > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .frontier-fields h3 {
+    margin: 0;
+  }
+  .frontier-fields .play-actions {
+    grid-column: 1 / -1;
+  }
+  .frontier-fields .play-actions button {
+    width: auto;
+    flex: 1;
+    min-height: 44px;
+  }
+  .frontier-pattern-rating .play-actions button {
+    width: auto;
+    flex: 1;
+    padding: 8px 4px;
+    min-height: 44px;
+  }
+  .frontier-fields > div > span {
+    grid-column: 1 / -1;
+  }
+  .frontier-node-picker {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .frontier-change-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .frontier-payoff-grid > * {
+    padding: 13px 9px;
+    font-size: 12px;
+  }
+  .frontier-board .simulation-stats {
+    grid-template-columns: 1fr;
+  }
+}

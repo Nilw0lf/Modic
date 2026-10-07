@@ -1,6 +1,13 @@
 import { categorySchema } from "@/types/catalog";
 export const categories = categorySchema.array().parse([
   {
+    id: "algorithms",
+    slug: "algorithms-and-society",
+    name: "Algorithms & Society",
+    description:
+      "Matching, privacy, fairness, and the feedback created when algorithms shape people's choices.",
+  },
+  {
     id: "perception",
     slug: "perception-and-design",
     name: "Perception & Design",

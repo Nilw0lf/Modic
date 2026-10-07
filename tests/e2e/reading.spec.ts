@@ -13,6 +13,9 @@ for (const slug of [
   "framing-effect",
   "tullock-contest",
   "bass-diffusion",
+  "stable-matching",
+  "algorithmic-fairness",
+  "mere-exposure-effect",
 ]) {
   test(`${slug}: readable field notes and working contents`, async ({
     page,

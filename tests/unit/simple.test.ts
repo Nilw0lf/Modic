@@ -44,7 +44,7 @@ describe("twenty approachable experiments", () => {
             expect(Number.isFinite(p.y)).toBe(true);
       }
     }
-    expect(effects.filter((e) => e.status === "live")).toHaveLength(126);
+    expect(effects.filter((e) => e.status === "live")).toHaveLength(141);
   });
   it("creates correlation through selection without changing the population", () => {
     const all = simpleModel("berksons-paradox", { selected: 0 })!,

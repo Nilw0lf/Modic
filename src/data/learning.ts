@@ -2,6 +2,42 @@ import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Play the strategic tradeoff",
+    description:
+      "Match partners, allocate a budget, and compare the costs of waiting and competing.",
+    slugs: [
+      "stable-matching",
+      "battle-of-the-sexes",
+      "colonel-blotto",
+      "war-of-attrition",
+      "cournot-competition",
+      "stackelberg-competition",
+      "bertrand-competition",
+    ],
+  },
+  {
+    title: "Question the algorithm",
+    description:
+      "Investigate fairness, privacy, and feedback before calling a system smart or efficient.",
+    slugs: [
+      "algorithmic-fairness",
+      "differential-privacy",
+      "performative-prediction",
+      "price-of-anarchy",
+      "complex-contagion",
+    ],
+  },
+  {
+    title: "Notice what attention misses",
+    description:
+      "Count, compare, and rate your own experience without turning a game into a diagnosis.",
+    slugs: [
+      "inattentional-blindness",
+      "change-blindness",
+      "mere-exposure-effect",
+    ],
+  },
+  {
     title: "Play the surprising odds",
     description: "Race patterns, compare dice and trace the shape of chance.",
     slugs: [

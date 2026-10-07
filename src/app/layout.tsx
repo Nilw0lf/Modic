@@ -13,6 +13,7 @@ import "@/styles/reading.css";
 import "@/styles/simple.css";
 import "@/styles/discovery.css";
 import "@/styles/insights.css";
+import "@/styles/frontier.css";
 const sans = localFont({
   src: "../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
   variable: "--font-geist",

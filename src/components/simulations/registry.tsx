@@ -3,6 +3,15 @@ import type { ComponentType } from "react";
 import { newExperiments } from "@/data/expansion";
 import { simpleEntries } from "@/data/simple-expansion";
 import { discoveryEntries } from "@/data/discovery-expansion";
+import { frontierEntries } from "@/data/frontier-expansion";
+const FrontierExperiment = dynamic(
+  () => import("./frontier/FrontierExperiment"),
+  {
+    loading: () => (
+      <div className="simulation-loading">Preparing the experiment…</div>
+    ),
+  },
+);
 const DiscoveryExperiment = dynamic(
   () => import("./discovery/DiscoveryExperiment"),
   {
@@ -25,6 +34,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    frontierEntries.map((entry) => [
+      entry.id,
+      function FrontierConceptExperiment() {
+        return <FrontierExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     discoveryEntries.map((entry) => [
       entry.id,
