@@ -4,6 +4,12 @@ import { newExperiments } from "@/data/expansion";
 import { simpleEntries } from "@/data/simple-expansion";
 import { discoveryEntries } from "@/data/discovery-expansion";
 import { frontierEntries } from "@/data/frontier-expansion";
+import { financeEntries } from "@/data/finance-expansion";
+const FinanceExperiment = dynamic(() => import("./finance/FinanceExperiment"), {
+  loading: () => (
+    <div className="simulation-loading">Preparing the experiment…</div>
+  ),
+});
 const FrontierExperiment = dynamic(
   () => import("./frontier/FrontierExperiment"),
   {
@@ -34,6 +40,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    financeEntries.map((entry) => [
+      entry.id,
+      function FinanceConceptExperiment() {
+        return <FinanceExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     frontierEntries.map((entry) => [
       entry.id,

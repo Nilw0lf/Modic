@@ -6,6 +6,7 @@ import { EffectHeader } from "./EffectHeader";
 import { EffectReading } from "./EffectReading";
 import { RelatedEffects } from "./RelatedEffects";
 import { LearningTrail } from "@/components/learning/LearningTrail";
+import { EffectInsights } from "@/components/insights/EffectInsights";
 export function EffectLayout({
   effect,
   article,
@@ -37,6 +38,7 @@ export function EffectLayout({
         )}
       </div>
       <EffectReading effect={effect} article={article} />
+      <EffectInsights slug={effect.slug} />
       <LearningTrail slug={effect.slug} />
       <RelatedEffects ids={effect.relatedEffectIds} />
     </>

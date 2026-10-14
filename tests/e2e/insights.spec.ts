@@ -8,7 +8,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
     "Make sense",
   );
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    10,
+    15,
   );
   await page.getByRole("button", { name: "Learning", exact: true }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(1);
@@ -19,7 +19,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
   await expect(page.getByRole("status")).toHaveText("0 articles");
   await page.getByRole("button", { name: "Reset filters" }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    10,
+    15,
   );
   await page
     .getByRole("searchbox", { name: "Search Insights" })
@@ -39,6 +39,11 @@ for (const slug of [
   "will-ai-replace-my-job-task-audit",
   "prediction-market-probabilities-explained",
   "subscription-traps-defaults-and-cancellation",
+  "compound-interest-explained-formula-fees-inflation",
+  "sunk-cost-fallacy-examples-relationships-projects",
+  "confirmation-bias-examples-how-to-avoid",
+  "portfolio-diversification-explained-correlation-rebalancing",
+  "naval-ravikant-wealth-specific-knowledge-leverage",
 ]) {
   test(`${slug}: navigable, sourced, readable in both themes`, async ({
     page,
@@ -100,7 +105,7 @@ test("article text and links are present without JavaScript", async ({
   ).toHaveCount(2);
   await page.goto("/insights");
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    10,
+    15,
   );
   await context.close();
 });

@@ -2,8 +2,10 @@ import { workAndAi } from "./work-and-ai";
 import { everydayDecisions } from "./everyday-decisions";
 import { uncertainty } from "./uncertainty";
 import type { Insight } from "./types";
+import { financeAndThinking } from "./finance-and-thinking";
 
 export const insights: Insight[] = [
+  ...financeAndThinking,
   workAndAi[0],
   everydayDecisions[0],
   uncertainty[0],
@@ -17,6 +19,17 @@ export const insights: Insight[] = [
 ];
 export const getInsight = (slug: string) =>
   insights.find((post) => post.slug === slug);
+export function insightsForEffect(slug: string) {
+  return insights
+    .filter(
+      (post) =>
+        post.experiments.some((e) => e.slug === slug) ||
+        post.sections.some((s) =>
+          s.paragraphs.some((p) => p.includes(`](/effects/${slug})`)),
+        ),
+    )
+    .slice(0, 3);
+}
 export function readingMinutes(post: Insight) {
   const text = [
     post.intro,

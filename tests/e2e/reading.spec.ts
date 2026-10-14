@@ -16,6 +16,9 @@ for (const slug of [
   "stable-matching",
   "algorithmic-fairness",
   "mere-exposure-effect",
+  "margin-calls",
+  "bond-duration",
+  "specific-knowledge",
 ]) {
   test(`${slug}: readable field notes and working contents`, async ({
     page,

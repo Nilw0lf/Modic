@@ -5,6 +5,7 @@ import { atlasEntries, atlasThinkers } from "./atlas-expansion";
 import { simpleEntries, simpleThinkers } from "./simple-expansion";
 import { discoveryEntries, discoveryThinkers } from "./discovery-expansion";
 import { frontierEntries, frontierThinkers } from "./frontier-expansion";
+import { financeEntries, financeThinkers } from "./finance-expansion";
 
 export type Control = {
   key: string;
@@ -660,6 +661,7 @@ export const catalogExperiments = [
   ...simpleEntries,
   ...discoveryEntries,
   ...frontierEntries,
+  ...financeEntries,
 ];
 export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
   id: e.id,
@@ -704,6 +706,7 @@ export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
 }));
 
 export const expansionThinkers: Thinker[] = [
+  ...financeThinkers,
   ...frontierThinkers,
   ...discoveryThinkers,
   ...simpleThinkers,

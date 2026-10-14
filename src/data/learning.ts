@@ -2,6 +2,43 @@ import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Follow the money",
+    description:
+      "Separate growth, costs, purchasing power, and the order in which withdrawals happen.",
+    slugs: [
+      "compound-growth",
+      "volatility-drag",
+      "fee-drag",
+      "real-return",
+      "sequence-of-returns",
+      "dollar-cost-averaging",
+    ],
+  },
+  {
+    title: "Run the finance desk",
+    description:
+      "Price cash flows, manage exposure, and inspect financing before a difficult market round.",
+    slugs: [
+      "discounted-cash-flow",
+      "bond-duration",
+      "portfolio-rebalancing",
+      "margin-calls",
+      "minsky-financing",
+    ],
+  },
+  {
+    title: "Build and judge",
+    description:
+      "Combine useful skills, distribute reusable work, and test the stories shaping your decisions.",
+    slugs: [
+      "permissionless-leverage",
+      "specific-knowledge",
+      "circle-of-competence",
+      "disposition-effect",
+      "house-money-effect",
+    ],
+  },
+  {
     title: "Play the strategic tradeoff",
     description:
       "Match partners, allocate a budget, and compare the costs of waiting and competing.",

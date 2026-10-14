@@ -4,6 +4,7 @@ import {
   insights,
   readingMinutes,
   relatedInsights,
+  insightsForEffect,
 } from "@/content/insights";
 import { getEffect } from "@/lib/catalog";
 import {
@@ -12,11 +13,20 @@ import {
 } from "@/app/insights/[slug]/page";
 
 describe("Insights editorial collection", () => {
-  it("publishes ten substantial, distinct practical guides", () => {
-    expect(insights).toHaveLength(10);
-    expect(new Set(insights.map((post) => post.slug)).size).toBe(10);
-    expect(new Set(insights.map((post) => post.intro)).size).toBe(10);
-    expect(new Set(insights.map((post) => post.reflection)).size).toBe(10);
+  it("offers contextual reading only where an article links the experiment", () => {
+    expect(insightsForEffect("fee-drag").map((p) => p.slug)).toContain(
+      "compound-interest-explained-formula-fees-inflation",
+    );
+    expect(
+      insightsForEffect("permissionless-leverage").map((p) => p.slug),
+    ).toContain("naval-ravikant-wealth-specific-knowledge-leverage");
+    expect(insightsForEffect("not-an-effect")).toEqual([]);
+  });
+  it("publishes fifteen substantial, distinct practical guides", () => {
+    expect(insights).toHaveLength(15);
+    expect(new Set(insights.map((post) => post.slug)).size).toBe(15);
+    expect(new Set(insights.map((post) => post.intro)).size).toBe(15);
+    expect(new Set(insights.map((post) => post.reflection)).size).toBe(15);
     for (const post of insights) {
       expect(post.slug).toMatch(/^[a-z0-9-]+$/);
       const text = JSON.stringify(post.sections).replace(/https?:[^\s"]+/g, "");

@@ -1,0 +1,260 @@
+.money-board .money-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.money-chart {
+  margin: 28px 0;
+}
+.money-chart svg {
+  width: 100%;
+  display: block;
+}
+.money-chart figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.money-tiles,
+.money-cashflows,
+.money-price-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.money-tiles > div,
+.money-cashflows > div,
+.money-price-strip > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+}
+.money-tiles span,
+.money-cashflows span,
+.money-price-strip span,
+.money-cashflows small,
+.money-price-strip small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.money-tiles strong,
+.money-cashflows strong,
+.money-price-strip strong {
+  color: var(--accent);
+  font-size: 25px;
+}
+.money-board .money-loss {
+  color: var(--negative);
+}
+.money-tiles button {
+  padding: 8px;
+  min-height: 44px;
+}
+.money-shop,
+.money-frame,
+.money-regime,
+.money-brief,
+.money-deal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 28px;
+  border-radius: 9px;
+  margin: 24px 0;
+}
+.money-shop > strong,
+.money-frame > strong,
+.money-regime > strong {
+  display: block;
+  font-size: clamp(26px, 4vw, 44px);
+  color: var(--accent);
+  margin: 12px 0;
+}
+.money-shop p,
+.money-frame p,
+.money-regime p,
+.money-brief p,
+.money-deal p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.money-shop > span,
+.money-frame > span,
+.money-regime > span,
+.money-brief > span,
+.money-deal > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.money-baskets {
+  color: var(--accent);
+  font-size: 30px;
+  overflow-wrap: anywhere;
+}
+.money-valuation,
+.money-offers,
+.money-studio {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.money-valuation > div,
+.money-offers > div,
+.money-studio > div {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  min-width: 0;
+}
+.money-valuation strong,
+.money-offers strong,
+.money-studio strong {
+  display: block;
+  color: var(--accent);
+  font-size: 30px;
+  margin: 12px 0;
+}
+.money-offers p,
+.money-studio p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+.money-valuation span,
+.money-studio span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.money-allocation {
+  display: flex;
+  min-height: 60px;
+  background: var(--surface);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 24px 0;
+}
+.money-allocation span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 14px;
+  flex: 1;
+}
+.money-allocation span:first-child {
+  background: var(--accent);
+  color: var(--background);
+  flex: none;
+  min-width: 70px;
+}
+.money-price-strip .purchased {
+  border-color: var(--accent);
+}
+.money-balance-sheet {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.money-balance-sheet > div {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.money-balance-sheet span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+}
+.money-balance-sheet strong {
+  display: block;
+  font-size: 24px;
+  color: var(--accent);
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+}
+.money-maintenance {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin: 24px 0;
+  font-size: 13px;
+}
+.money-maintenance > span {
+  grid-column: 1/-1;
+}
+.money-maintenance meter {
+  width: 100%;
+  height: 24px;
+}
+.money-ledger {
+  padding-left: 24px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.money-ledger li {
+  margin: 12px 0;
+}
+.money-skill-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.money-skill-cards button {
+  padding: 24px 12px;
+  min-height: 90px;
+}
+.money-skill-cards small {
+  display: block;
+  margin-top: 10px;
+  font-size: 11px;
+}
+.money-board details {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 24px 0;
+  font-size: 13px;
+}
+.money-board summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+@media (max-width: 650px) {
+  .money-chart svg text {
+    font-size: 22px;
+  }
+  .money-valuation,
+  .money-offers,
+  .money-studio {
+    grid-template-columns: 1fr;
+  }
+  .money-balance-sheet {
+    gap: 8px;
+  }
+  .money-balance-sheet > div {
+    padding: 14px 10px;
+  }
+  .money-balance-sheet strong {
+    font-size: 20px;
+  }
+  .money-skill-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .money-tiles,
+  .money-cashflows,
+  .money-price-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .money-controls {
+    min-width: 0;
+  }
+}

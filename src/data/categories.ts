@@ -1,6 +1,13 @@
 import { categorySchema } from "@/types/catalog";
 export const categories = categorySchema.array().parse([
   {
+    id: "finance",
+    slug: "personal-finance-and-investing",
+    name: "Finance & Investing",
+    description:
+      "Returns, cash flows, debt, investor behaviour, and the tradeoffs behind building wealth.",
+  },
+  {
     id: "algorithms",
     slug: "algorithms-and-society",
     name: "Algorithms & Society",

@@ -10,6 +10,24 @@ const ruin = {
 
 // Contextual readings supplement older entries; they do not certify authorship.
 export const additionalReadings: Record<string, Reading[]> = {
+  "discounted-cash-flow": [
+    {
+      title: "Aswath Damodaran, NYU Stern — Introduction to valuation",
+      url: "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/background/valintro.htm",
+    },
+  ],
+  "fee-drag": [
+    {
+      title: "SEC — How fees and expenses affect a portfolio",
+      url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated",
+    },
+  ],
+  "real-return": [
+    {
+      title: "Federal Reserve Education — What a dollar buys over time",
+      url: "https://www.federalreserveeducation.org/teaching-resources/economics/inflation/inflation-module",
+    },
+  ],
   "lindy-effect": [taleb],
   "fat-tails": [
     {

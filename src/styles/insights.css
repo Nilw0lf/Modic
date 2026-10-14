@@ -1,4 +1,13 @@
 /* Insights uses the shared light/dark tokens and an editorial reading width. */
+.effect-insights {
+  padding: 42px 0;
+  border-top: 1px solid var(--border);
+}
+.effect-insights > h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 12px 0 24px;
+  letter-spacing: -0.04em;
+}
 .insights-index,
 .insight-page {
   --insight-warm: #c8794f;
