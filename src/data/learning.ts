@@ -2,6 +2,42 @@ import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Choose a fair rule",
+    description:
+      "Compare outcomes, duties, opportunities, and the position you might occupy.",
+    slugs: [
+      "veil-of-ignorance",
+      "utilitarianism",
+      "categorical-imperative",
+      "capability-approach",
+      "trolley-problem",
+    ],
+  },
+  {
+    title: "Question what you know",
+    description:
+      "Test explanations, inspect who is heard, and explore identity and vague boundaries.",
+    slugs: [
+      "occams-razor",
+      "falsifiability",
+      "epistemic-injustice",
+      "ship-of-theseus",
+      "sorites-paradox",
+    ],
+  },
+  {
+    title: "Examine the good life",
+    description:
+      "Separate choice from luck, pleasant experience from reality, and novelty from durable value.",
+    slugs: [
+      "dichotomy-of-control",
+      "moral-luck",
+      "hedonic-adaptation",
+      "experience-machine",
+      "zenos-paradox",
+    ],
+  },
+  {
     title: "Follow the money",
     description:
       "Separate growth, costs, purchasing power, and the order in which withdrawals happen.",

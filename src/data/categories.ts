@@ -1,6 +1,13 @@
 import { categorySchema } from "@/types/catalog";
 export const categories = categorySchema.array().parse([
   {
+    id: "philosophy",
+    slug: "philosophy-and-ethics",
+    name: "Philosophy & Ethics",
+    description:
+      "Play with thought experiments about agency, knowledge, identity, justice, and what makes a life go well.",
+  },
+  {
     id: "finance",
     slug: "personal-finance-and-investing",
     name: "Finance & Investing",

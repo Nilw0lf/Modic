@@ -5,6 +5,15 @@ import { simpleEntries } from "@/data/simple-expansion";
 import { discoveryEntries } from "@/data/discovery-expansion";
 import { frontierEntries } from "@/data/frontier-expansion";
 import { financeEntries } from "@/data/finance-expansion";
+import { philosophyEntries } from "@/data/philosophy-expansion";
+const PhilosophyExperiment = dynamic(
+  () => import("./philosophy/PhilosophyExperiment"),
+  {
+    loading: () => (
+      <div className="simulation-loading">Preparing the experiment…</div>
+    ),
+  },
+);
 const FinanceExperiment = dynamic(() => import("./finance/FinanceExperiment"), {
   loading: () => (
     <div className="simulation-loading">Preparing the experiment…</div>
@@ -40,6 +49,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    philosophyEntries.map((entry) => [
+      entry.id,
+      function PhilosophyConceptExperiment() {
+        return <PhilosophyExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     financeEntries.map((entry) => [
       entry.id,

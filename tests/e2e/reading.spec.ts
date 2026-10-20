@@ -19,6 +19,9 @@ for (const slug of [
   "margin-calls",
   "bond-duration",
   "specific-knowledge",
+  "veil-of-ignorance",
+  "ship-of-theseus",
+  "hedonic-adaptation",
 ]) {
   test(`${slug}: readable field notes and working contents`, async ({
     page,

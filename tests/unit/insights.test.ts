@@ -22,11 +22,11 @@ describe("Insights editorial collection", () => {
     ).toContain("naval-ravikant-wealth-specific-knowledge-leverage");
     expect(insightsForEffect("not-an-effect")).toEqual([]);
   });
-  it("publishes fifteen substantial, distinct practical guides", () => {
-    expect(insights).toHaveLength(15);
-    expect(new Set(insights.map((post) => post.slug)).size).toBe(15);
-    expect(new Set(insights.map((post) => post.intro)).size).toBe(15);
-    expect(new Set(insights.map((post) => post.reflection)).size).toBe(15);
+  it("publishes twenty substantial, distinct practical guides", () => {
+    expect(insights).toHaveLength(20);
+    expect(new Set(insights.map((post) => post.slug)).size).toBe(20);
+    expect(new Set(insights.map((post) => post.intro)).size).toBe(20);
+    expect(new Set(insights.map((post) => post.reflection)).size).toBe(20);
     for (const post of insights) {
       expect(post.slug).toMatch(/^[a-z0-9-]+$/);
       const text = JSON.stringify(post.sections).replace(/https?:[^\s"]+/g, "");

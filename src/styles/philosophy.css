@@ -1,0 +1,502 @@
+.philo-board {
+  --philo-warm: #b97345;
+}
+.philo-mission {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.7;
+  margin: 12px 0 24px;
+}
+.philo-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+.philo-action-grid,
+.philo-policy-grid,
+.philo-rule-grid,
+.philo-pair,
+.philo-neighbourhoods,
+.philo-ships,
+.philo-ratings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.philo-policy-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.philo-action-grid > div,
+.philo-neighbourhoods > div,
+.philo-pair > div,
+.philo-ratings > div,
+.philo-policy,
+.philo-ships > div {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 22px;
+  min-width: 0;
+}
+.philo-action-grid > div > span,
+.philo-action-grid small,
+.philo-policy small,
+.philo-veil > span,
+.philo-dilemma > span,
+.philo-pair > div > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.philo-action-grid > div > strong {
+  font-size: 34px;
+  color: var(--accent);
+  display: block;
+  margin: 12px 0;
+}
+.philo-action-grid .play-actions {
+  margin: 12px 0;
+}
+.philo-action-grid .play-actions button {
+  flex: 1;
+  min-height: 44px;
+}
+.philo-veil,
+.philo-claim,
+.philo-dilemma {
+  padding: 28px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+  margin: 24px 0;
+}
+.philo-veil > strong {
+  display: block;
+  font-size: 28px;
+  color: var(--accent);
+  margin: 14px 0;
+}
+.philo-veil p,
+.philo-dilemma p,
+.philo-pair p,
+.philo-claim p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+.philo-policy {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 14px;
+  justify-content: space-between;
+}
+.philo-policy h3 {
+  margin: 0;
+}
+.philo-policy[aria-pressed="true"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.philo-policy:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.philo-policy[aria-pressed="true"] p,
+.philo-policy[aria-pressed="true"] small {
+  color: inherit;
+}
+.philo-share-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  min-height: 75px;
+}
+.philo-share-bars span {
+  background: var(--accent);
+  color: var(--background);
+  min-width: 25px;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+.philo-policy[aria-pressed="true"] .philo-share-bars span {
+  background: var(--background);
+  color: var(--accent);
+}
+.philo-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 24px 0;
+}
+.philo-benefits > div {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.philo-benefits strong {
+  display: block;
+  font-size: 36px;
+  color: var(--accent);
+  margin: 12px 0;
+}
+.philo-benefits span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.philo-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 24px 0;
+}
+.philo-table-wrap table {
+  min-width: 440px;
+}
+.philo-citizens {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.philo-citizens > div {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+}
+.philo-citizens span {
+  color: var(--accent);
+  display: block;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.philo-citizens small {
+  font-size: 11px;
+}
+.philo-citizens .exception {
+  border-style: dashed;
+  background: var(--surface);
+}
+.philo-citizens .exception span {
+  color: var(--philo-warm);
+}
+.philo-projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.philo-projects button {
+  padding: 20px 14px;
+}
+.philo-projects small {
+  display: block;
+  margin-top: 12px;
+  line-height: 1.7;
+  font-size: 11px;
+}
+.philo-neighbourhoods ul {
+  padding-left: 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 2;
+}
+.philo-neighbourhoods p {
+  font-size: 13px;
+}
+.philo-hull {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  padding: 16px 8px;
+  border-bottom: 8px solid var(--border);
+  border-radius: 0 0 30px 30px;
+}
+.philo-hull button {
+  min-height: 44px;
+  padding: 12px 5px;
+  font-size: 12px;
+}
+.philo-hull .new-plank {
+  color: var(--accent);
+  border-style: dashed;
+  opacity: 1;
+}
+.philo-hull .old-plank {
+  background: var(--accent);
+  color: var(--background);
+  opacity: 1;
+}
+.philo-ships p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+.philo-reasons {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 26px 0;
+}
+.philo-reasons legend {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 8px;
+}
+.philo-pile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 360px;
+  min-height: 120px;
+  align-content: flex-end;
+  padding: 22px;
+  border-bottom: 2px solid var(--border);
+  margin: 20px auto;
+}
+.philo-pile i {
+  width: 14px;
+  height: 9px;
+  background: var(--philo-warm);
+  border-radius: 40%;
+}
+.philo-ledger {
+  padding-left: 24px;
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 20px 0;
+}
+.philo-ledger li {
+  margin: 10px 0;
+}
+.philo-observations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.philo-observations > div {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.philo-observations span {
+  font-size: 12px;
+  display: block;
+  color: var(--muted);
+}
+.philo-observations strong {
+  display: block;
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 21px;
+}
+.philo-badges {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.philo-badges button {
+  min-height: 110px;
+  padding: 12px;
+}
+.philo-badges button:disabled {
+  opacity: 1;
+}
+.philo-badges span {
+  display: block;
+  font-size: 32px;
+  color: var(--muted);
+}
+.philo-badges .blue {
+  color: var(--accent);
+}
+.philo-badges .amber {
+  color: var(--philo-warm);
+}
+.philo-badges small {
+  display: block;
+  font-size: 12px;
+  margin-top: 12px;
+}
+.philo-track {
+  position: relative;
+  height: 100px;
+  border-bottom: 2px solid var(--border);
+  margin: 30px 15px 40px 0;
+}
+.philo-track > span {
+  position: absolute;
+  bottom: 10px;
+  font-size: 32px;
+  transform: translateX(-50%);
+  color: var(--accent);
+}
+.philo-track > i {
+  position: absolute;
+  bottom: 0;
+  height: 6px;
+  background: var(--accent);
+}
+.philo-track > b {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.philo-number-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.philo-number-list > div {
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 8px;
+}
+.philo-number-list dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+.philo-number-list dd {
+  margin: 12px 0 0;
+  font-size: 25px;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+.philo-track-choice {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  color: var(--accent);
+  font-size: 22px;
+  flex-wrap: wrap;
+}
+.philo-track-choice small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.philo-select {
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+  max-width: 430px;
+}
+.philo-select select {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 44px;
+  max-width: 100%;
+}
+.philo-rating-buttons {
+  display: flex;
+  gap: 7px;
+}
+.philo-rating-buttons button {
+  flex: 1;
+  min-width: 40px;
+  min-height: 44px;
+  padding: 8px 4px;
+}
+.philo-upgrade-track {
+  display: flex;
+  gap: 10px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+.philo-upgrade-track span {
+  padding: 14px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 6px;
+  font-size: 12px;
+}
+.philo-upgrade-track .spent {
+  border-color: var(--border);
+  color: var(--muted);
+}
+.philo-response {
+  max-width: 700px;
+  margin: 24px 0;
+}
+.philo-response svg {
+  width: 100%;
+  display: block;
+}
+.philo-response figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+@media (max-width: 650px) {
+  .philo-action-grid,
+  .philo-policy-grid,
+  .philo-rule-grid,
+  .philo-pair,
+  .philo-neighbourhoods,
+  .philo-ships,
+  .philo-ratings,
+  .philo-projects {
+    grid-template-columns: 1fr;
+  }
+  .philo-action-grid .play-actions button {
+    width: auto;
+    min-width: 44px;
+    padding: 8px 4px;
+  }
+  .philo-action-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .philo-action-grid > div {
+    padding: 15px 12px;
+  }
+  .philo-action-grid h3 {
+    font-size: 16px;
+    min-height: 2.8em;
+  }
+  .philo-action-grid small {
+    display: block;
+    line-height: 1.6;
+  }
+  .philo-citizens {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .philo-observations {
+    gap: 8px;
+  }
+  .philo-observations > div {
+    padding: 14px 9px;
+  }
+  .philo-observations strong {
+    font-size: 16px;
+  }
+  .philo-badges {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .philo-benefits > div {
+    padding: 20px 14px;
+  }
+  .philo-response svg text {
+    font-size: 22px;
+  }
+}

@@ -5,7 +5,7 @@ test("discovery links are independent, counts are dynamic, and surprise chooses 
 }) => {
   await page.goto("/");
   await expect(
-    page.getByText("164 ideas · 156 interactive · 8 in development"),
+    page.getByText("179 ideas · 171 interactive · 8 in development"),
   ).toBeVisible();
   const card = page.locator(".effect-card").filter({
     has: page.getByRole("heading", { name: "Lindy Effect", exact: true }),

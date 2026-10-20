@@ -3,8 +3,10 @@ import { everydayDecisions } from "./everyday-decisions";
 import { uncertainty } from "./uncertainty";
 import type { Insight } from "./types";
 import { financeAndThinking } from "./finance-and-thinking";
+import { philosophyAndLife } from "./philosophy-and-life";
 
 export const insights: Insight[] = [
+  ...philosophyAndLife,
   ...financeAndThinking,
   workAndAi[0],
   everydayDecisions[0],

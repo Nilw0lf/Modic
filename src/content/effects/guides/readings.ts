@@ -10,6 +10,18 @@ const ruin = {
 
 // Contextual readings supplement older entries; they do not certify authorship.
 export const additionalReadings: Record<string, Reading[]> = {
+  "dichotomy-of-control": [
+    {
+      title: "Epictetus — The Enchiridion, MIT Classics",
+      url: "https://classics.mit.edu/Epictetus/epicench.html",
+    },
+  ],
+  "hedonic-adaptation": [
+    {
+      title: "Diener, Lucas, and Scollon — Beyond the hedonic treadmill",
+      url: "https://pubmed.ncbi.nlm.nih.gov/16719675/",
+    },
+  ],
   "discounted-cash-flow": [
     {
       title: "Aswath Damodaran, NYU Stern — Introduction to valuation",

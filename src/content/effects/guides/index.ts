@@ -7,6 +7,7 @@ import { simpleGuides } from "./simple";
 import { discoveryGuides } from "./discovery";
 import { frontierGuides } from "./frontier";
 import { financeGuides } from "./finance";
+import { philosophyGuides } from "./philosophy";
 import type { ReaderGuide } from "./types";
 
 export const readerGuides: Record<string, ReaderGuide> = {
@@ -19,4 +20,5 @@ export const readerGuides: Record<string, ReaderGuide> = {
   ...discoveryGuides,
   ...frontierGuides,
   ...financeGuides,
+  ...philosophyGuides,
 };
