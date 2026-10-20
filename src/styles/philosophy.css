@@ -98,7 +98,7 @@
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
-.philo-policy:disabled {
+.philo-board .philo-policy:disabled {
   opacity: 1;
   cursor: default;
 }

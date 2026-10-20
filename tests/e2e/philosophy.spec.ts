@@ -44,6 +44,10 @@ const cases: Record<string, (p: Page) => Promise<void>> = {
     await expect(
       p.getByRole("button", { name: /^Equal shares/ }),
     ).toBeDisabled();
+    await expect(p.getByRole("button", { name: /^Equal shares/ })).toHaveCSS(
+      "opacity",
+      "1",
+    );
   },
   "trolley-problem": async (p) => {
     await p.getByRole("button", { name: "Intervene", exact: true }).click();
