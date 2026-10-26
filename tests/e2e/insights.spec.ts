@@ -8,7 +8,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
     "Make sense",
   );
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    20,
+    27,
   );
   await page.getByRole("button", { name: "Learning", exact: true }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(1);
@@ -19,7 +19,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
   await expect(page.getByRole("status")).toHaveText("0 articles");
   await page.getByRole("button", { name: "Reset filters" }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    20,
+    27,
   );
   await page
     .getByRole("searchbox", { name: "Search Insights" })
@@ -36,6 +36,13 @@ test("Insights library filters, searches, resets, and opens an article", async (
 });
 
 for (const slug of [
+  "correlation-vs-causation-confounding-natural-experiments",
+  "p-values-multiple-testing-false-discovery-rate",
+  "natural-selection-vs-genetic-drift-explained",
+  "feedback-loops-delay-overcorrection",
+  "interleaving-generation-cognitive-load-study-guide",
+  "brier-score-calibration-probability-forecasts",
+  "critical-path-method-project-bottlenecks",
   "will-ai-replace-my-job-task-audit",
   "prediction-market-probabilities-explained",
   "subscription-traps-defaults-and-cancellation",
@@ -110,7 +117,7 @@ test("article text and links are present without JavaScript", async ({
   ).toHaveCount(2);
   await page.goto("/insights");
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    20,
+    27,
   );
   await context.close();
 });

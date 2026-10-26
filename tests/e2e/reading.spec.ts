@@ -1,6 +1,12 @@
 import { test, expect } from "@playwright/test";
 
 for (const slug of [
+  "confounding",
+  "genetic-drift",
+  "strategic-voting",
+  "brachistochrone",
+  "brier-score",
+  "interleaving",
   "lindy-effect",
   "gamblers-ruin",
   "fat-tails",

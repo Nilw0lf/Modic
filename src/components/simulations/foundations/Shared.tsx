@@ -10,6 +10,7 @@ export function Slider({
   max,
   step = 1,
   suffix = "",
+  disabled = false,
   onChange,
 }: {
   id: string;
@@ -19,6 +20,7 @@ export function Slider({
   max: number;
   step?: number;
   suffix?: string;
+  disabled?: boolean;
   onChange: (v: number) => void;
 }) {
   return (
@@ -37,6 +39,7 @@ export function Slider({
         max={max}
         step={step}
         value={value}
+        disabled={disabled}
         onChange={(e) => onChange(Number(e.target.value))}
       />
       <div className="range-labels">

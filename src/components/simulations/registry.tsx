@@ -1,5 +1,11 @@
 import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
+import { depthEntries } from "@/data/depth-expansion";
+const DepthExperiment = dynamic(() => import("./depth/DepthExperiment"), {
+  loading: () => (
+    <div className="simulation-loading">Preparing the experiment…</div>
+  ),
+});
 import { newExperiments } from "@/data/expansion";
 import { simpleEntries } from "@/data/simple-expansion";
 import { discoveryEntries } from "@/data/discovery-expansion";
@@ -49,6 +55,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    depthEntries.map((entry) => [
+      entry.id,
+      function DepthConceptExperiment() {
+        return <DepthExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     philosophyEntries.map((entry) => [
       entry.id,

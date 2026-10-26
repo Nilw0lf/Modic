@@ -2,6 +2,75 @@ import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Ask what caused the change",
+    description: "Separate selection, thresholds, trends and discovery errors.",
+    slugs: [
+      "confounding",
+      "instrumental-variables",
+      "regression-discontinuity",
+      "difference-in-differences",
+      "false-discovery-rate",
+    ],
+  },
+  {
+    title: "Follow a changing population",
+    description: "Distinguish reproduction, sampling, pairing and competition.",
+    slugs: [
+      "natural-selection",
+      "genetic-drift",
+      "hardy-weinberg",
+      "mutation-selection-balance",
+      "competitive-exclusion",
+    ],
+  },
+  {
+    title: "Inspect strategic incentives",
+    description:
+      "Try auction rules, ballots, credentials, investment and bargaining.",
+    slugs: [
+      "revenue-equivalence",
+      "strategic-voting",
+      "costly-signaling",
+      "hold-up-problem",
+      "alternating-offer-bargaining",
+    ],
+  },
+  {
+    title: "Build within physical constraints",
+    description: "Investigate oscillation, control, timing, motion and energy.",
+    slugs: [
+      "resonance",
+      "feedback-delay",
+      "critical-path",
+      "brachistochrone",
+      "carnot-limit",
+    ],
+  },
+  {
+    title: "Read a noisy result",
+    description:
+      "Examine averages, sample sizes, measurement, retrieval and forecasts.",
+    slugs: [
+      "central-limit-theorem",
+      "law-of-small-numbers",
+      "regression-dilution",
+      "precision-recall",
+      "brier-score",
+    ],
+  },
+  {
+    title: "Practise learning deliberately",
+    description:
+      "Mix problems, produce answers, manage demands and explore generalisation.",
+    slugs: [
+      "interleaving",
+      "generation-effect",
+      "cognitive-load",
+      "satisficing",
+      "peak-shift",
+    ],
+  },
+  {
     title: "Choose a fair rule",
     description:
       "Compare outcomes, duties, opportunities, and the position you might occupy.",

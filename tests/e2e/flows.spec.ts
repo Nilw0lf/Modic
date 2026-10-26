@@ -6,9 +6,9 @@ test("home, local search, category filters, and empty recovery", async ({
   await expect(
     page.getByRole("heading", { name: "See how the world behaves." }),
   ).toBeVisible();
-  await expect(page.locator(".effect-card")).toHaveCount(179);
+  await expect(page.locator(".effect-card")).toHaveCount(209);
   await page.getByRole("button", { name: "Game Theory", exact: true }).click();
-  await expect(page.locator(".effect-card")).toHaveCount(43);
+  await expect(page.locator(".effect-card")).toHaveCount(48);
   await expect(
     page.getByRole("heading", { name: "Prisoner’s Dilemma", exact: true }),
   ).toBeVisible();
@@ -20,7 +20,7 @@ test("home, local search, category filters, and empty recovery", async ({
     page.getByRole("heading", { name: "No effects found." }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear search and filters" }).click();
-  await expect(page.locator(".effect-card")).toHaveCount(179);
+  await expect(page.locator(".effect-card")).toHaveCount(209);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,
@@ -92,11 +92,13 @@ test("category and thinker routes group real relationships", async ({
   ).toBeVisible();
   await expect(page.locator(".simulation-shell")).toHaveCount(0);
 });
-test("navigation and metadata", async ({ page, isMobile }) => {
+test("navigation and metadata", async ({ page }) => {
   await page.goto("/");
-  if (isMobile) await page.getByText("Menu", { exact: false }).first().click();
+  const menu = page.locator(".mobile-nav summary");
+  const compact = await menu.isVisible();
+  if (compact) await menu.click();
   const nav = page.getByRole("navigation", {
-    name: isMobile ? "Mobile navigation" : "Main navigation",
+    name: compact ? "Mobile navigation" : "Main navigation",
     exact: true,
   });
   await nav.getByRole("link", { name: "About", exact: true }).click();

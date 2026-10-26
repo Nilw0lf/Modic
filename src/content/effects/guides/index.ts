@@ -9,8 +9,10 @@ import { frontierGuides } from "./frontier";
 import { financeGuides } from "./finance";
 import { philosophyGuides } from "./philosophy";
 import type { ReaderGuide } from "./types";
+import { depthGuides } from "./depth";
 
 export const readerGuides: Record<string, ReaderGuide> = {
+  ...depthGuides,
   ...coreGuides,
   ...foundationGuides,
   ...strategyGuides,

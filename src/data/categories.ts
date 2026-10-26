@@ -1,6 +1,27 @@
 import { categorySchema } from "@/types/catalog";
 export const categories = categorySchema.array().parse([
   {
+    id: "causality",
+    slug: "causality-and-research",
+    name: "Causality & Research",
+    description:
+      "Separate association from intervention, examine assumptions and make better use of evidence.",
+  },
+  {
+    id: "evolution",
+    slug: "evolution-and-genetics",
+    name: "Evolution & Genetics",
+    description:
+      "Explore inheritance, selection, chance and competition in changing populations.",
+  },
+  {
+    id: "physics",
+    slug: "physics-and-engineering",
+    name: "Physics & Engineering",
+    description:
+      "Discover how energy, motion, feedback and constraints shape the systems we build.",
+  },
+  {
     id: "philosophy",
     slug: "philosophy-and-ethics",
     name: "Philosophy & Ethics",

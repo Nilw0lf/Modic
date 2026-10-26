@@ -4,8 +4,12 @@ import { uncertainty } from "./uncertainty";
 import type { Insight } from "./types";
 import { financeAndThinking } from "./finance-and-thinking";
 import { philosophyAndLife } from "./philosophy-and-life";
+import { deeperModels } from "./deeper-models";
+import { systemsAndLearning } from "./systems-and-learning";
 
 export const insights: Insight[] = [
+  ...deeperModels,
+  ...systemsAndLearning,
   ...philosophyAndLife,
   ...financeAndThinking,
   workAndAi[0],
