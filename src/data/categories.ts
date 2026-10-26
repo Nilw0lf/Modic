@@ -1,6 +1,20 @@
 import { categorySchema } from "@/types/catalog";
 export const categories = categorySchema.array().parse([
   {
+    id: "creativity",
+    slug: "creativity-and-problem-solving",
+    name: "Creativity & Problem Solving",
+    description:
+      "Reframe a problem, repurpose a tool and explore alternatives beyond a familiar solution.",
+  },
+  {
+    id: "collective",
+    slug: "collective-decisions",
+    name: "Collective Decisions",
+    description:
+      "Explore shared beliefs, voting power, coalition value and rules for making decisions together.",
+  },
+  {
     id: "causality",
     slug: "causality-and-research",
     name: "Causality & Research",

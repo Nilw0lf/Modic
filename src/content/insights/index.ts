@@ -6,8 +6,14 @@ import { financeAndThinking } from "./finance-and-thinking";
 import { philosophyAndLife } from "./philosophy-and-life";
 import { deeperModels } from "./deeper-models";
 import { systemsAndLearning } from "./systems-and-learning";
+import { zajoncAndGroups } from "./zajonc-and-groups";
+import { creativityAndCooperation } from "./creativity-and-cooperation";
+import { networksAndOptions } from "./networks-and-options";
 
 export const insights: Insight[] = [
+  ...zajoncAndGroups,
+  ...creativityAndCooperation,
+  ...networksAndOptions,
   ...deeperModels,
   ...systemsAndLearning,
   ...philosophyAndLife,

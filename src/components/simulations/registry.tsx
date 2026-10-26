@@ -1,5 +1,14 @@
 import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
+import { horizonEntries } from "@/data/horizons-expansion";
+const HorizonsExperiment = dynamic(
+  () => import("./horizons/HorizonsExperiment"),
+  {
+    loading: () => (
+      <div className="simulation-loading">Preparing the experiment…</div>
+    ),
+  },
+);
 import { depthEntries } from "@/data/depth-expansion";
 const DepthExperiment = dynamic(() => import("./depth/DepthExperiment"), {
   loading: () => (
@@ -55,6 +64,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    horizonEntries.map((entry) => [
+      entry.id,
+      function HorizonConceptExperiment() {
+        return <HorizonsExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     depthEntries.map((entry) => [
       entry.id,

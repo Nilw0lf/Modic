@@ -518,7 +518,7 @@ const people: [string, string, string, string[]][] = [
   [
     "zajonc",
     "Robert Zajonc",
-    "Psychologist known for research on affect, social psychology, and the attitudinal effects of mere exposure.",
+    "Psychologist whose research investigates mere exposure, social facilitation, affective priming, and the distinction between liking and recognition.",
     ["behavior", "perception"],
   ],
 ];

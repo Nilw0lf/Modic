@@ -8,7 +8,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
     "Make sense",
   );
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    27,
+    37,
   );
   await page.getByRole("button", { name: "Learning", exact: true }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(1);
@@ -19,7 +19,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
   await expect(page.getByRole("status")).toHaveText("0 articles");
   await page.getByRole("button", { name: "Reset filters" }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    27,
+    37,
   );
   await page
     .getByRole("searchbox", { name: "Search Insights" })
@@ -36,6 +36,17 @@ test("Insights library filters, searches, resets, and opens an article", async (
 });
 
 for (const slug of [
+  "robert-zajonc-explained-beyond-mere-exposure",
+  "social-facilitation-audience-performance-zajonc",
+  "affective-priming-vs-mere-exposure-liking-recognition",
+  "pluralistic-ignorance-abilene-paradox-team-decisions",
+  "functional-fixedness-einstellung-effect-problem-solving",
+  "shapley-value-banzhaf-voting-power-explained",
+  "comparative-advantage-explained-opportunity-cost",
+  "pagerank-preferential-attachment-popularity",
+  "parrondos-paradox-two-losing-games",
+  "real-options-minimax-regret-value-of-waiting",
+
   "correlation-vs-causation-confounding-natural-experiments",
   "p-values-multiple-testing-false-discovery-rate",
   "natural-selection-vs-genetic-drift-explained",
@@ -117,7 +128,7 @@ test("article text and links are present without JavaScript", async ({
   ).toHaveCount(2);
   await page.goto("/insights");
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    27,
+    37,
   );
   await context.close();
 });

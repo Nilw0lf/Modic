@@ -2,6 +2,89 @@ import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "Explore Zajonc beyond familiarity",
+    description:
+      "Distinguish exposure, affective context, recognition and dominant responses.",
+    slugs: [
+      "mere-exposure-effect",
+      "social-facilitation",
+      "affective-priming",
+      "liking-and-recognition",
+      "affect-heuristic",
+    ],
+  },
+  {
+    title: "Make private information visible",
+    description:
+      "Explore hidden preferences, apparent agreement and independent judgment.",
+    slugs: [
+      "pluralistic-ignorance",
+      "abilene-paradox",
+      "information-cascade",
+      "condorcet-jury-theorem",
+      "strategic-voting",
+    ],
+  },
+  {
+    title: "Try another representation",
+    description:
+      "Repurpose objects, question a routine and inspect perceptual organisation.",
+    slugs: [
+      "einstellung-effect",
+      "functional-fixedness",
+      "gestalt-closure",
+      "gestalt-proximity",
+      "webers-law",
+    ],
+  },
+  {
+    title: "Design cooperation rules",
+    description:
+      "Compare coalition credit, pivotal power, commitment and incentive-compatible payments.",
+    slugs: [
+      "shapley-value",
+      "banzhaf-power-index",
+      "credible-commitment",
+      "moral-hazard",
+      "vcg-public-project",
+    ],
+  },
+  {
+    title: "Inspect economic tradeoffs",
+    description: "Follow resource use, external costs and uneven productivity.",
+    slugs: [
+      "comparative-advantage",
+      "pigouvian-tax",
+      "coase-bargaining",
+      "hotelling-rule",
+      "baumol-cost-disease",
+    ],
+  },
+  {
+    title: "Trace a changing information system",
+    description:
+      "Explore state dependence, rank flow, network growth and error correction.",
+    slugs: [
+      "parrondos-paradox",
+      "pagerank",
+      "preferential-attachment",
+      "condorcet-jury-theorem",
+      "hamming-code",
+    ],
+  },
+  {
+    title: "Choose when to switch or commit",
+    description:
+      "Compare diminishing returns, regret, flexibility, curvature and search.",
+    slugs: [
+      "marginal-value-theorem",
+      "minimax-regret",
+      "real-options",
+      "jensens-inequality",
+      "simulated-annealing",
+    ],
+  },
+  {
     title: "Ask what caused the change",
     description: "Separate selection, thresholds, trends and discovery errors.",
     slugs: [

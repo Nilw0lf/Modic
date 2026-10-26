@@ -10,8 +10,10 @@ import { financeGuides } from "./finance";
 import { philosophyGuides } from "./philosophy";
 import type { ReaderGuide } from "./types";
 import { depthGuides } from "./depth";
+import { horizonGuides } from "./horizons";
 
 export const readerGuides: Record<string, ReaderGuide> = {
+  ...horizonGuides,
   ...depthGuides,
   ...coreGuides,
   ...foundationGuides,

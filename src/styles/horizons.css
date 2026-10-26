@@ -1,0 +1,225 @@
+.horizon-glyph {
+  width: min(100%, 160px);
+  height: 160px;
+  display: block;
+  margin: 0.5rem auto;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+}
+.horizon-prime {
+  font:
+    600 clamp(1.5rem, 4vw, 2.5rem) var(--font-mono),
+    monospace;
+  letter-spacing: 0.12em;
+  text-align: center;
+  padding: 1rem;
+  color: var(--foreground);
+}
+.horizon-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+.horizon-people {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+.horizon-people > div {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.horizon-people span {
+  color: var(--accent);
+  font-size: 2rem;
+}
+.horizon-people small {
+  color: var(--muted);
+}
+.horizon-jugs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.horizon-jugs > div {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.horizon-jugs meter {
+  width: 100%;
+  height: 2.5rem;
+  accent-color: var(--accent);
+}
+.horizon-jug-water {
+  position: relative;
+  height: 110px;
+  border: 2px solid var(--accent);
+  border-top-style: dashed;
+  border-radius: 3px 3px 15px 15px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.horizon-jug-water span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--accent);
+  opacity: 0.65;
+}
+.horizon-rank-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+.horizon-rank-map {
+  margin: 0;
+  min-width: 0;
+}
+.horizon-rank-map figcaption {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+}
+.horizon-workshop {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.horizon-wall {
+  min-height: 160px;
+  border-left: 6px solid var(--accent);
+  padding: 1rem;
+  position: relative;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+.horizon-shelf {
+  margin: 2rem 0 0;
+  max-width: 260px;
+  border-bottom: 12px solid var(--accent);
+  padding: 1rem;
+  color: var(--foreground);
+  background: var(--background);
+}
+.horizon-kit {
+  border-top: 1px dashed var(--border);
+  padding-top: 1rem;
+}
+.horizon-scene {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  max-height: 360px;
+  margin: auto;
+  color: var(--accent);
+}
+.horizon-scene text {
+  fill: var(--foreground);
+  font-size: 13px;
+}
+.horizon-link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+.horizon-votes {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.horizon-votes span {
+  display: grid;
+  place-items: center;
+  min-width: 42px;
+  min-height: 42px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 1.3rem;
+}
+.horizon-code {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+.horizon-code button {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem 0.4rem !important;
+  min-height: 95px;
+}
+.horizon-code strong {
+  font:
+    600 2rem var(--font-mono),
+    monospace;
+}
+.horizon-code small {
+  font-size: 0.75rem;
+}
+.horizon-berries {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.horizon-berries span {
+  text-align: center;
+  color: var(--accent);
+  font-size: 2rem;
+}
+.horizon-berries .picked {
+  opacity: 0.25;
+}
+.horizons-board input:disabled {
+  cursor: default;
+}
+@media (max-width: 600px) {
+  .horizon-rank-layout {
+    grid-template-columns: 1fr;
+  }
+  .horizon-people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .horizon-jugs {
+    gap: 0.5rem;
+  }
+  .horizon-jugs > div {
+    padding: 0.65rem;
+  }
+  .horizon-jugs button {
+    padding: 0.5rem !important;
+    font-size: 0.85rem;
+  }
+  .horizon-link-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .horizon-code {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .horizon-berries {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .horizon-glyph {
+    height: 130px;
+  }
+  .horizon-scene text {
+    font-size: 17px;
+  }
+}
