@@ -55,7 +55,7 @@ export function sitemapGroups(): SitemapGroup[] {
   return Object.entries(collections).flatMap(([id, paths]) =>
     paginateSitemap(
       id,
-      paths.map((path) => new URL(path, siteUrl).href),
+      paths.map((path) => new URL(path, siteUrl).href).sort(),
     ),
   );
 }

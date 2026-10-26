@@ -142,6 +142,11 @@ describe("production sitemap", () => {
         .map((thinker) => `/thinkers/${thinker.slug}`),
     ].map((path) => `https://modic.app${path}`);
     const urls = sitemap().map((entry) => entry.url);
+    const { sitemapGroups } = await import("@/lib/seo/sitemap");
+    for (const group of sitemapGroups()) {
+      const groupUrls = group.entries.map((entry) => entry.url);
+      expect(groupUrls).toEqual([...groupUrls].sort());
+    }
     expect([...urls].sort()).toEqual(expected.sort());
     expect(new Set(urls).size).toBe(urls.length);
     for (const url of urls) {
