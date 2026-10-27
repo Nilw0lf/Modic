@@ -1,5 +1,7 @@
 import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
+import { mosaicEntries } from "@/data/mosaic-expansion";
+const MosaicExperiment = dynamic(() => import("./mosaic/MosaicExperiment"));
 import { horizonEntries } from "@/data/horizons-expansion";
 const HorizonsExperiment = dynamic(
   () => import("./horizons/HorizonsExperiment"),
@@ -64,6 +66,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    mosaicEntries.map((entry) => [
+      entry.id,
+      function MosaicConceptExperiment() {
+        return <MosaicExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     horizonEntries.map((entry) => [
       entry.id,

@@ -22,11 +22,11 @@ describe("Insights editorial collection", () => {
     ).toContain("naval-ravikant-wealth-specific-knowledge-leverage");
     expect(insightsForEffect("not-an-effect")).toEqual([]);
   });
-  it("publishes thirty-seven substantial, distinct practical guides", () => {
-    expect(insights).toHaveLength(37);
-    expect(new Set(insights.map((post) => post.slug)).size).toBe(37);
-    expect(new Set(insights.map((post) => post.intro)).size).toBe(37);
-    expect(new Set(insights.map((post) => post.reflection)).size).toBe(37);
+  it("publishes forty-seven substantial, distinct practical guides", () => {
+    expect(insights).toHaveLength(47);
+    expect(new Set(insights.map((post) => post.slug)).size).toBe(47);
+    expect(new Set(insights.map((post) => post.intro)).size).toBe(47);
+    expect(new Set(insights.map((post) => post.reflection)).size).toBe(47);
     for (const post of insights) {
       expect(post.slug).toMatch(/^[a-z0-9-]+$/);
       const text = JSON.stringify(post.sections).replace(/https?:[^\s"]+/g, "");
@@ -35,6 +35,10 @@ describe("Insights editorial collection", () => {
       expect(new Set(post.sections.map((section) => section.id)).size).toBe(
         post.sections.length,
       );
+      for (const section of post.sections)
+        expect(["sources", "try-it", "related-insights", "main"]).not.toContain(
+          section.id,
+        );
       expect(
         post.sections.find((section) => section.id === "worked-example")?.steps,
       ).toHaveLength(3);

@@ -18,6 +18,7 @@ import "@/styles/finance.css";
 import "@/styles/philosophy.css";
 import "@/styles/depth.css";
 import "@/styles/horizons.css";
+import "@/styles/mosaic.css";
 const sans = localFont({
   src: "../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
   variable: "--font-geist",

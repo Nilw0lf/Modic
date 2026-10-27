@@ -2,11 +2,11 @@
 
 An interactive field guide to how the world behaves. Built as an editorial publication, with experiments embedded near the beginning of an idea rather than hidden beneath an article.
 
-The collection includes 134 concepts, 13 categories, 81 thinkers, local search, and 126 interactive experiments. Eight further experiments are explicitly **planned**. New playable lessons span sequential search, information theory, traffic, queues, ecology, behavioral choice, social dynamics and contests. Each concept includes model assumptions, a practical example and a reading reference.
+The collection includes 279 concepts, 21 categories, 221 thinker profiles, local search, 271 live interactive activities and 47 Insights articles. Eight further experiments are explicitly **planned**. Lessons span perception, learning, finance, game theory, philosophy, algorithms, statistics and natural systems. Each concept includes model assumptions, individually authored field notes, a worked example and contextual readings.
 
-The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, twenty-four five-experiment routes and a 136-term searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
+The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, themed five-experiment routes and a catalog-generated searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
 
-The latest thirty lessons add sixteen games and fourteen simulations, including logic cards, Nim, bidding, coin-pattern races, actual memory recall, voting cycles, diffusion, percolation and hysteresis. Each has its own original worked example, source, interpretation and reflection prompt. Timed attention games record actual answers and response times; confidence calibration compares answers with confidence without diagnosing competence. Each lesson has its own reading guide and primary source, and automatically joins search, related concepts and the published sitemap.
+The latest forty activities add optical matching exercises, memory tasks, repeated-study simulations, loan and portfolio models, auctions, a common-knowledge puzzle, equilibrium and ecology models, editable pathfinding, cache traces and philosophical argument games. `mosaic-expansion.ts` registers the batch, `simulations/mosaic/` contains eight focused board modules, and `lib/simulations/mosaic.ts` contains testable models. Ten related articles provide navigable worked examples, checklists, internal experiment links and external readings. New entries automatically join search, learning, thinker pages and the generated production sitemap.
 
 ## Run locally
 
@@ -209,7 +209,7 @@ Counts and thinker associations derive from catalog metadata. Surprise me choose
 
 `experimentType` supports `simulation`, `game`, `calculator`, `thought-experiment`, `visualization`, and `agent-model`; it defaults to `simulation` for existing records. The Explore format selector uses these values. Category filters scroll horizontally on mobile.
 
-The original light identity is preserved. Dark mode follows `prefers-color-scheme`, with the same typography and spacing. Bespoke glyphs use the `glyph-<effect-id>` class and targeted SVG elements for small CSS hover/focus responses. Motion is disabled under `prefers-reduced-motion`; the homepage feature remains an illustration, not a live simulation.
+The original light identity is preserved. Light mode is the default; the header toggle saves an explicit light/dark preference, with the same typography and spacing. Bespoke glyphs use the `glyph-<effect-id>` class and targeted SVG elements for small CSS hover/focus responses. Motion is disabled under `prefers-reduced-motion`; the homepage feature remains an illustration, not a live simulation.
 
 ## Testing and formatting
 

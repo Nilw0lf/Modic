@@ -6,7 +6,7 @@ import { effectSchema } from "@/types/catalog";
 describe("discovery", () => {
   it("calculates all collection counts from metadata", () => {
     expect(collectionSummary(effects)).toBe(
-      "239 ideas · 231 interactive · 8 in development",
+      "279 ideas · 271 interactive · 8 in development",
     );
     expect(collectionSummary([])).toBe(
       "0 ideas · 0 interactive · 0 in development",
@@ -33,6 +33,11 @@ describe("discovery", () => {
       "sunk-cost-fallacy",
       "anchoring-bias",
       "present-bias",
+      "buridans-ass",
+      "marys-room",
+      "gettier-problem",
+      "chinese-room",
+      "repugnant-conclusion",
       "ergodicity",
     ]);
     expect(

@@ -1,0 +1,260 @@
+.mosaic-board {
+  display: grid;
+  gap: 1.3rem;
+  min-width: 0;
+}
+.mosaic-board p {
+  max-width: 78ch;
+  line-height: 1.7;
+  margin: 0;
+}
+.mosaic-board fieldset {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-width: 0;
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+.mosaic-board legend {
+  padding: 0 0.35rem;
+  font-weight: 600;
+}
+.mosaic-board svg {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  overflow: hidden;
+}
+.mosaic-board svg text {
+  fill: var(--foreground);
+  font:
+    14px var(--font-mono),
+    monospace;
+}
+.mosaic-illusion {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--background);
+}
+.mosaic-arrows {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0.5rem;
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  letter-spacing: 0.2em;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.mosaic-arrows strong {
+  color: var(--accent);
+}
+.mosaic-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.mosaic-choice-grid fieldset button {
+  width: 100%;
+  white-space: normal;
+}
+.mosaic-panel,
+.mosaic-scene {
+  padding: 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--background);
+}
+.mosaic-scene {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 2rem;
+}
+.mosaic-study-dots {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0.3rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.mosaic-study-dots span {
+  text-align: center;
+  color: var(--muted);
+}
+.mosaic-study-dots .selected {
+  color: var(--accent);
+}
+.mosaic-coins,
+.mosaic-hats,
+.mosaic-cards,
+.mosaic-request-stream {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.mosaic-coins span,
+.mosaic-hats span,
+.mosaic-cards > span,
+.mosaic-request-stream span {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  background: var(--background);
+}
+.mosaic-cards strong {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+}
+.mosaic-request-stream .visited {
+  background: var(--accent);
+  color: var(--background);
+}
+.mosaic-vessel {
+  display: flex;
+  height: 140px;
+  border: 2px solid var(--border);
+  border-radius: 0 0 24px 24px;
+  overflow: hidden;
+}
+.mosaic-vessel > div {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  min-width: 0;
+  background: var(--accent);
+  color: var(--background);
+  font:
+    600 1.2rem var(--font-mono),
+    monospace;
+}
+.mosaic-vessel > div + div {
+  background: var(--foreground);
+  border-left: 2px solid var(--background);
+}
+.mosaic-resources {
+  display: grid;
+  gap: 1rem;
+}
+.mosaic-resources > div {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 2fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+.mosaic-resources meter {
+  width: 100%;
+  height: 1.6rem;
+  accent-color: var(--accent);
+}
+.mosaic-search-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  max-width: 560px;
+  margin: auto;
+  width: 100%;
+}
+.mosaic-search-grid button {
+  aspect-ratio: 1;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  font-size: 1rem;
+}
+.mosaic-search-grid .wall {
+  background: var(--foreground);
+  color: var(--background);
+}
+.mosaic-search-grid .closed {
+  background: color-mix(in srgb, var(--foreground) 18%, var(--background));
+}
+.mosaic-search-grid .open {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+.mosaic-search-grid .path {
+  background: var(--accent);
+  color: var(--background);
+}
+.mosaic-districts {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 2px;
+  max-width: 380px;
+  width: 100%;
+  margin: auto;
+  border: 2px solid var(--foreground);
+  padding: 4px;
+}
+.mosaic-districts button {
+  aspect-ratio: 1;
+  min-width: 0 !important;
+  padding: 0 !important;
+  border-radius: 3px !important;
+  font-weight: 700;
+}
+.mosaic-districts button[data-party="A"] {
+  background: var(--accent);
+  color: var(--background);
+}
+.mosaic-districts.rows button:nth-child(5n) {
+  border-right: 0;
+}
+.mosaic-districts.rows button {
+  border-bottom: 4px solid var(--foreground);
+}
+.mosaic-districts.columns button {
+  border-right: 4px solid var(--foreground);
+}
+.mosaic-mary {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  background: #888;
+  color: #111;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.mosaic-mary.revealed {
+  background: #c83230;
+  color: white;
+}
+.mosaic-symbol {
+  font-size: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mosaic-board button {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+:root[data-theme="dark"] .mosaic-board {
+  --accent: #a8b9ff;
+}
+@media (max-width: 600px) {
+  .mosaic-choice-grid {
+    grid-template-columns: 1fr;
+  }
+  .mosaic-resources > div {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mosaic-resources meter {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+  .mosaic-board svg text {
+    font-size: 16px;
+  }
+  .mosaic-board .depth-actions > button {
+    flex: 1 1 130px;
+  }
+  .mosaic-study-dots {
+    gap: 0;
+    padding: 0.5rem;
+  }
+}

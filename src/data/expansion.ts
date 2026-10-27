@@ -9,6 +9,7 @@ import { financeEntries, financeThinkers } from "./finance-expansion";
 import { philosophyEntries, philosophyThinkers } from "./philosophy-expansion";
 import { depthEntries, depthThinkers } from "./depth-expansion";
 import { horizonEntries, horizonThinkers } from "./horizons-expansion";
+import { mosaicEntries, mosaicThinkers } from "./mosaic-expansion";
 
 export type Control = {
   key: string;
@@ -668,6 +669,7 @@ export const catalogExperiments = [
   ...philosophyEntries,
   ...depthEntries,
   ...horizonEntries,
+  ...mosaicEntries,
 ];
 export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
   id: e.id,
@@ -712,6 +714,7 @@ export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
 }));
 
 export const expansionThinkers: Thinker[] = [
+  ...mosaicThinkers,
   ...horizonThinkers,
   ...depthThinkers,
   ...philosophyThinkers,

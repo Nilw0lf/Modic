@@ -11,8 +11,10 @@ import { philosophyGuides } from "./philosophy";
 import type { ReaderGuide } from "./types";
 import { depthGuides } from "./depth";
 import { horizonGuides } from "./horizons";
+import { mosaicGuides } from "./mosaic";
 
 export const readerGuides: Record<string, ReaderGuide> = {
+  ...mosaicGuides,
   ...horizonGuides,
   ...depthGuides,
   ...coreGuides,

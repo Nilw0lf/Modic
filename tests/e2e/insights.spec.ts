@@ -8,7 +8,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
     "Make sense",
   );
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    37,
+    47,
   );
   await page.getByRole("button", { name: "Learning", exact: true }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(1);
@@ -19,7 +19,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
   await expect(page.getByRole("status")).toHaveText("0 articles");
   await page.getByRole("button", { name: "Reset filters" }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    37,
+    47,
   );
   await page
     .getByRole("searchbox", { name: "Search Insights" })
@@ -36,6 +36,16 @@ test("Insights library filters, searches, resets, and opens an article", async (
 });
 
 for (const slug of [
+  "confidence-intervals-vs-statistical-power",
+  "bootstrap-resampling-anscombe-quartet-data-analysis",
+  "misinformation-memory-if-then-plans",
+  "debt-snowball-vs-avalanche-amortization",
+  "efficient-frontier-correlation-diversification",
+  "optical-illusions-context-size-brightness",
+  "dutch-vs-all-pay-auctions-screening",
+  "gettier-marys-room-chinese-room-knowledge",
+  "dijkstra-vs-a-star-search-explained",
+  "paradox-of-enrichment-more-resources-stability",
   "robert-zajonc-explained-beyond-mere-exposure",
   "social-facilitation-audience-performance-zajonc",
   "affective-priming-vs-mere-exposure-liking-recognition",
@@ -128,7 +138,7 @@ test("article text and links are present without JavaScript", async ({
   ).toHaveCount(2);
   await page.goto("/insights");
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    37,
+    47,
   );
   await context.close();
 });

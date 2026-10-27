@@ -9,8 +9,16 @@ import { systemsAndLearning } from "./systems-and-learning";
 import { zajoncAndGroups } from "./zajonc-and-groups";
 import { creativityAndCooperation } from "./creativity-and-cooperation";
 import { networksAndOptions } from "./networks-and-options";
+import { mosaicEvidence } from "./mosaic-evidence";
+import { mosaicFinance } from "./mosaic-finance";
+import { mosaicThinking } from "./mosaic-thinking";
+import { mosaicSystems } from "./mosaic-systems";
 
 export const insights: Insight[] = [
+  ...mosaicEvidence,
+  ...mosaicFinance,
+  ...mosaicThinking,
+  ...mosaicSystems,
   ...zajoncAndGroups,
   ...creativityAndCooperation,
   ...networksAndOptions,

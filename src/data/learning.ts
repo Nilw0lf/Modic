@@ -2,6 +2,101 @@ import { catalogExperiments } from "./expansion";
 
 export const learningCollections = [
   {
+    title: "See context change perception",
+    description:
+      "Match size, length and brightness, then inspect figure–ground cues.",
+    slugs: [
+      "flanker-effect",
+      "ebbinghaus-illusion",
+      "muller-lyer-illusion",
+      "simultaneous-contrast",
+      "figure-ground",
+    ],
+  },
+  {
+    title: "Make memory and plans inspectable",
+    description:
+      "Separate suggestions, assumptions, knowledge locations and action cues.",
+    slugs: [
+      "misinformation-effect",
+      "false-consensus-effect",
+      "fundamental-attribution-error",
+      "transactive-memory",
+      "implementation-intentions",
+    ],
+  },
+  {
+    title: "Look behind statistical summaries",
+    description:
+      "Compare coverage, power, sequential evidence, resampling and raw plots.",
+    slugs: [
+      "confidence-intervals",
+      "statistical-power",
+      "sequential-probability-ratio-test",
+      "bootstrap-resampling",
+      "anscombes-quartet",
+    ],
+  },
+  {
+    title: "Inspect financial tradeoffs",
+    description:
+      "Trace payments, repayment priorities, bond curvature, payouts and portfolio risk.",
+    slugs: [
+      "loan-amortization",
+      "debt-snowball-avalanche",
+      "bond-convexity",
+      "dividend-irrelevance",
+      "efficient-frontier",
+    ],
+  },
+  {
+    title: "Play with information and incentives",
+    description: "Bid, infer, design menus and compare the costs of moving.",
+    slugs: [
+      "dutch-auction",
+      "all-pay-auction",
+      "common-knowledge",
+      "screening-contracts",
+      "tiebout-sorting",
+    ],
+  },
+  {
+    title: "Perturb a natural system",
+    description:
+      "Explore conservation, limiting resources, feedback, locking and ecological stability.",
+    slugs: [
+      "le-chatelier-principle",
+      "law-of-the-minimum",
+      "ice-albedo-feedback",
+      "synchronization",
+      "paradox-of-enrichment",
+    ],
+  },
+  {
+    title: "Trace the algorithm’s decisions",
+    description:
+      "Inspect weighted routes, heuristics, caches, objective families and district maps.",
+    slugs: [
+      "dijkstras-algorithm",
+      "a-star-search",
+      "beladys-anomaly",
+      "no-free-lunch",
+      "gerrymandering",
+    ],
+  },
+  {
+    title: "Question what the result establishes",
+    description:
+      "Explore ties, experience, epistemic luck, understanding and population ethics.",
+    slugs: [
+      "buridans-ass",
+      "marys-room",
+      "gettier-problem",
+      "chinese-room",
+      "repugnant-conclusion",
+    ],
+  },
+  {
     title: "Explore Zajonc beyond familiarity",
     description:
       "Distinguish exposure, affective context, recognition and dominant responses.",

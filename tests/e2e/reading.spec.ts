@@ -1,6 +1,14 @@
 import { test, expect } from "@playwright/test";
 
 for (const slug of [
+  "ebbinghaus-illusion",
+  "misinformation-effect",
+  "confidence-intervals",
+  "loan-amortization",
+  "common-knowledge",
+  "paradox-of-enrichment",
+  "a-star-search",
+  "gettier-problem",
   "social-facilitation",
   "liking-and-recognition",
   "einstellung-effect",
