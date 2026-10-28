@@ -13,8 +13,18 @@ import { mosaicEvidence } from "./mosaic-evidence";
 import { mosaicFinance } from "./mosaic-finance";
 import { mosaicThinking } from "./mosaic-thinking";
 import { mosaicSystems } from "./mosaic-systems";
+import { prismNature } from "./prism-nature";
+import { prismEvidence } from "./prism-evidence";
+import { prismMind } from "./prism-mind";
+import { prismEconomy } from "./prism-economy";
+import { prismSociety } from "./prism-society";
 
 export const insights: Insight[] = [
+  ...prismNature,
+  ...prismEvidence,
+  ...prismMind,
+  ...prismEconomy,
+  ...prismSociety,
   ...mosaicEvidence,
   ...mosaicFinance,
   ...mosaicThinking,

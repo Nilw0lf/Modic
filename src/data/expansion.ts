@@ -10,6 +10,8 @@ import { philosophyEntries, philosophyThinkers } from "./philosophy-expansion";
 import { depthEntries, depthThinkers } from "./depth-expansion";
 import { horizonEntries, horizonThinkers } from "./horizons-expansion";
 import { mosaicEntries, mosaicThinkers } from "./mosaic-expansion";
+import { prismEntries } from "./prism-expansion";
+import { prismThinkers } from "./prism-thinkers";
 
 export type Control = {
   key: string;
@@ -670,6 +672,7 @@ export const catalogExperiments = [
   ...depthEntries,
   ...horizonEntries,
   ...mosaicEntries,
+  ...prismEntries,
 ];
 export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
   id: e.id,
@@ -714,6 +717,7 @@ export const expansionEffects: Effect[] = catalogExperiments.map((e) => ({
 }));
 
 export const expansionThinkers: Thinker[] = [
+  ...prismThinkers,
   ...mosaicThinkers,
   ...horizonThinkers,
   ...depthThinkers,

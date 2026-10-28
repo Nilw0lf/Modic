@@ -1,5 +1,7 @@
 import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
+import { prismEntries } from "@/data/prism-expansion";
+const PrismExperiment = dynamic(() => import("./prism/PrismExperiment"));
 import { mosaicEntries } from "@/data/mosaic-expansion";
 const MosaicExperiment = dynamic(() => import("./mosaic/MosaicExperiment"));
 import { horizonEntries } from "@/data/horizons-expansion";
@@ -66,6 +68,14 @@ const EverydayExperiment = dynamic(
   },
 );
 export const simulations: Record<string, ComponentType> = {
+  ...Object.fromEntries(
+    prismEntries.map((entry) => [
+      entry.id,
+      function PrismConceptExperiment() {
+        return <PrismExperiment id={entry.id} />;
+      },
+    ]),
+  ),
   ...Object.fromEntries(
     mosaicEntries.map((entry) => [
       entry.id,

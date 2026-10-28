@@ -5,7 +5,7 @@ test("discovery links are independent, counts are dynamic, and surprise chooses 
 }) => {
   await page.goto("/");
   await expect(
-    page.getByText("279 ideas · 271 interactive · 8 in development"),
+    page.getByText("349 ideas · 341 interactive · 8 in development"),
   ).toBeVisible();
   const card = page.locator(".effect-card").filter({
     has: page.getByRole("heading", { name: "Lindy Effect", exact: true }),
@@ -21,7 +21,7 @@ test("discovery links are independent, counts are dynamic, and surprise chooses 
   await expect(page).toHaveURL(/thinkers\/nassim-nicholas-taleb/);
   await page.goto("/");
   await page.getByLabel("Explore by format").selectOption("thought-experiment");
-  await expect(page.locator(".effect-card")).toHaveCount(9);
+  await expect(page.locator(".effect-card")).toHaveCount(16);
   await expect(
     page.getByRole("heading", { name: "Ergodicity", exact: true }),
   ).toBeVisible();

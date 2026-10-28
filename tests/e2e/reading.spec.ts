@@ -1,6 +1,20 @@
 import { test, expect } from "@playwright/test";
 
 for (const slug of [
+  "doppler-effect",
+  "ohms-law",
+  "island-biogeography",
+  "binary-search",
+  "sampling-bias",
+  "poisson-process",
+  "chunking",
+  "cognitive-dissonance",
+  "correlated-equilibrium",
+  "solow-growth",
+  "put-call-parity",
+  "newsvendor-problem",
+  "strength-of-weak-ties",
+  "brain-in-a-vat",
   "ebbinghaus-illusion",
   "misinformation-effect",
   "confidence-intervals",

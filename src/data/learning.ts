@@ -1,6 +1,69 @@
 import { catalogExperiments } from "./expansion";
+import { prismRows } from "./prism-expansion";
 
 export const learningCollections = [
+  ...[
+    [
+      "Follow light and waves",
+      "Change motion, media, distance and energy to separate wave mechanisms.",
+    ],
+    [
+      "Build physical intuition",
+      "Inspect circuits, flows, collisions and buoyancy through conservation.",
+    ],
+    [
+      "Explore changing ecosystems",
+      "Trace colonisation, patch occupancy, food webs and evolutionary incentives.",
+    ],
+    [
+      "Play with efficient computation",
+      "Search, sort, encode and distribute keys with visible guarantees.",
+    ],
+    [
+      "Audit an evidence pipeline",
+      "Separate who was sampled, what was published and what a summary supports.",
+    ],
+    [
+      "Make randomness precise",
+      "Generate events, condition on waiting and compare different random constructions.",
+    ],
+    [
+      "Test a learning routine",
+      "Practise recall, representation, spacing and remembering to act.",
+    ],
+    [
+      "Inspect a difficult choice",
+      "Reflect on commitments, freedom, comparison, attention and effort.",
+    ],
+    [
+      "Design messages and exchanges",
+      "Coordinate, persuade, communicate, trade and eliminate inferior actions.",
+    ],
+    [
+      "Trace market mechanisms",
+      "Compare capital, spending, tax burdens, buyer power and money rules.",
+    ],
+    [
+      "Read a financial ledger",
+      "Match cash flows, price retained risk and trace liquidity and drawdowns.",
+    ],
+    [
+      "Manage stock, time and experience",
+      "Balance shortages, batches, queues, learning and scheduling.",
+    ],
+    [
+      "Watch opinions move through networks",
+      "Change bridges, confidence, copying, trust and group mixing.",
+    ],
+    [
+      "Question knowledge and value",
+      "Explore reference, skepticism, future people, aggregation and induction.",
+    ],
+  ].map(([title, description], group) => ({
+    title,
+    description,
+    slugs: prismRows.slice(group * 5, group * 5 + 5).map((row) => row[0]),
+  })),
   {
     title: "See context change perception",
     description:

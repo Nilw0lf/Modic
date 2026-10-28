@@ -8,10 +8,10 @@ test("Insights library filters, searches, resets, and opens an article", async (
     "Make sense",
   );
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    47,
+    62,
   );
   await page.getByRole("button", { name: "Learning", exact: true }).click();
-  await expect(page.locator(".insight-directory .insight-card")).toHaveCount(1);
+  await expect(page.locator(".insight-directory .insight-card")).toHaveCount(2);
   await page.getByRole("button", { name: "All insights", exact: true }).click();
   await page
     .getByRole("searchbox", { name: "Search Insights" })
@@ -19,7 +19,7 @@ test("Insights library filters, searches, resets, and opens an article", async (
   await expect(page.getByRole("status")).toHaveText("0 articles");
   await page.getByRole("button", { name: "Reset filters" }).click();
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    47,
+    62,
   );
   await page
     .getByRole("searchbox", { name: "Search Insights" })
@@ -36,6 +36,21 @@ test("Insights library filters, searches, resets, and opens an article", async (
 });
 
 for (const slug of [
+  "doppler-effect-frequency-vs-intensity",
+  "ohms-law-vs-kirchhoffs-laws",
+  "island-biogeography-vs-metapopulations",
+  "binary-search-bloom-filter-consistent-hashing",
+  "sampling-bias-publication-bias-ecological-fallacy",
+  "bertrands-paradox-random-chords-explained",
+  "spaced-practice-chunking-dual-coding-study-plan",
+  "cognitive-dissonance-reactance-choice-overload-explained",
+  "cheap-talk-bayesian-persuasion-correlated-equilibrium",
+  "tax-incidence-monopsony-who-really-pays",
+  "put-call-parity-covered-interest-parity-explained",
+  "newsvendor-vs-economic-order-quantity-inventory",
+  "opinion-dynamics-consensus-degroot-bounded-confidence",
+  "twin-earth-brain-in-vat-goodman-knowledge",
+  "bank-runs-liquidity-mismatch-drawdown-insurance",
   "confidence-intervals-vs-statistical-power",
   "bootstrap-resampling-anscombe-quartet-data-analysis",
   "misinformation-memory-if-then-plans",
@@ -138,7 +153,7 @@ test("article text and links are present without JavaScript", async ({
   ).toHaveCount(2);
   await page.goto("/insights");
   await expect(page.locator(".insight-directory .insight-card")).toHaveCount(
-    47,
+    62,
   );
   await context.close();
 });

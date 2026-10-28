@@ -2,11 +2,11 @@
 
 An interactive field guide to how the world behaves. Built as an editorial publication, with experiments embedded near the beginning of an idea rather than hidden beneath an article.
 
-The collection includes 279 concepts, 21 categories, 221 thinker profiles, local search, 271 live interactive activities and 47 Insights articles. Eight further experiments are explicitly **planned**. Lessons span perception, learning, finance, game theory, philosophy, algorithms, statistics and natural systems. Each concept includes model assumptions, individually authored field notes, a worked example and contextual readings.
+The collection includes 349 concepts, 21 categories, 281 thinker profiles, local search, 341 live interactive activities and 62 Insights articles. Eight further experiments are explicitly **planned**. Lessons span perception, learning, finance, game theory, philosophy, algorithms, statistics and natural systems. Each concept includes model assumptions, individually authored field notes, a worked example and contextual readings.
 
 The homepage provides Start learning and Surprise me actions. `/learn` contains the original six-stop path, themed five-experiment routes and a catalog-generated searchable glossary. All live experiments have previous/next learning navigation. The header offers a saved light/dark choice, defaulting to light. The site has no accounts, analytics, database, or external search service.
 
-The latest forty activities add optical matching exercises, memory tasks, repeated-study simulations, loan and portfolio models, auctions, a common-knowledge puzzle, equilibrium and ecology models, editable pathfinding, cache traces and philosophical argument games. `mosaic-expansion.ts` registers the batch, `simulations/mosaic/` contains eight focused board modules, and `lib/simulations/mosaic.ts` contains testable models. Ten related articles provide navigable worked examples, checklists, internal experiment links and external readings. New entries automatically join search, learning, thinker pages and the generated production sitemap.
+The latest seventy activities span optics, mechanics, ecology, computing, research methods, probability, learning, psychology, game theory, economics, finance, operations, networks and philosophy. `prism-expansion.ts` registers the batch, `simulations/prism/` contains fourteen independently loaded board modules, and `lib/simulations/prism.ts` contains testable models. Fifteen related articles provide navigable worked examples, checklists, internal experiment links and external readings. Fourteen new five-stop paths help readers follow a subject. New entries automatically join search, learning, thinker pages and the generated production sitemap.
 
 ## Run locally
 
